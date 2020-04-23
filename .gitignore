@@ -1,0 +1,17 @@
+# Dependency directories
+node_modules/
+jspm_packages/
+
+### OSX ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+

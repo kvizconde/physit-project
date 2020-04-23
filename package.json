@@ -1,0 +1,25 @@
+{
+  "name": "physit-project",
+  "version": "1.0.0",
+  "description": "Physit - The Future of Physio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kvizconde/physit-project.git"
+  },
+  "keywords": [
+    "physio"
+  ],
+  "author": "Rehab In Motion",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kvizconde/physit-project/issues"
+  },
+  "homepage": "https://github.com/kvizconde/physit-project#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
