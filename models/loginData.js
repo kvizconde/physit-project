@@ -1,4 +1,4 @@
-let db = require('../util/database');
+const db = require('../util/database');
 
 // TODO: @Daniel - Define database functions here
 
