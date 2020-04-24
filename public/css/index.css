@@ -1,0 +1,77 @@
+/** CSS for index login page */
+
+/* Browser Reset added by Kevin Vizconde */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+/* End of Browser Reset */
+
+body {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  background-color: #22232a;
+  color: white;
+}
+
+/** Global div holding the logo for the the pages */
+
+.header_image_container {
+  position: relative;
+  width: 100%;
+  height: 8rem;
+  margin-top: 1rem;
+}
+
+/** The logo and title of our APP */
+
+.header_image_container img {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+}
+
+.top_banner {
+  overflow: hidden;
+}
+
+/** Div containing the banner of the page */
+
+.banner_container {
+  background: url(../images/Banner.png) repeat-x;
+  filter: brightness(60%);
+  height: 37rem;
+  width: 1000%;
+  animation: slide 60s linear infinite;
+}
+
+/** Animation for the banner of the page */
+@keyframes slide {
+
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-169.2rem, 0, 0);
+  }
+}
+
+/**  Log-in entry */
+
+.login-container {
+  width: 100%;
+  align-content: center;
+  text-align: center;
+  display: grid;
+}
