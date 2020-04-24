@@ -28,7 +28,7 @@ app.set('views', 'views');
 app.set('view engine', 'hbs');
 
 // create a variable that links to the route
-const routes = require('./routes/routes');
+const routes = require('./routes/loginRoute');
 
 app.use(routes);
 
