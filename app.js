@@ -30,6 +30,13 @@ app.set('view engine', 'hbs');
 // create a variable that links to the route
 const routes = require('./routes/loginRoute');
 
+app.get('/', (req, res) => {
+    res.render('index', {
+      title: 'Initial page',
+        style: true
+  });
+});
+
 app.use(routes);
 
 app.listen(port, () => {

@@ -3,7 +3,7 @@ let db = require('../util/database');
 // TODO: @Daniel - Define database functions here
 
 function addPhysioAccount(physioInfo) {
-    db.execute("INSERT into physiotherapist(physioID, password, firstname, lastname) values ('
+    db.execute("INSERT into physiotherapist(physioID, password, firstname, lastname) values ('"
     + physioInfo.physioID + "', '"
     + physioInfo.password + "', '"
     + physioInfo.firstname + "', '"

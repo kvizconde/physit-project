@@ -4,7 +4,7 @@ const loginModel = require('../models/logInData');
 
 exports.postLogin = (req, res) => {
     res.render('', {
-        title: 'Login Page',
+        title: 'Login area',
         data: req.body
     });
 }
