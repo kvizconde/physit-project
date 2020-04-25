@@ -1,1 +1,26 @@
-/* test */
+/* MASTER CSS FILE */
+
+/* Browser Reset added by Kevin Vizconde */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  min-height: 100vh;
+}
+
+/* End of Browser Reset */
+
+body {
+  box-sizing: border-box;
+  background: linear-gradient(to top, #0765af, #0c3867 20%, #020f28 50%);
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: #eee;
+}
