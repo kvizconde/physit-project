@@ -12,11 +12,13 @@ function getAllPTs() {
 
 // Selects physiotherapist account that matches physioID and password.
 function logIn(physioID, pword) {
-  return db.execute(`SELECT * FROM physiotherapist WHERE (physioID = "${physioID}" AND pword = "${pword}")`);
+  return db.execute(
+    `SELECT * FROM physiotherapist WHERE (physioID = "${physioID}" AND pword = "${pword}")`,
+  );
 }
 
 module.exports = {
   getPhysio,
   getAllPTs,
-  logIn
+  logIn,
 };
