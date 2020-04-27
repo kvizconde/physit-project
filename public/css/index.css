@@ -153,3 +153,26 @@ select:focus {
   margin: 0 auto;
   margin-right: 5rem;
 }
+
+/* ANIMATED BG JUST FOR SIGN UP PAGE */
+
+body {
+  background: linear-gradient(270deg, #0765af, #0c3867, #020f28);
+  background-size: 600% 600%;
+  animation: AnimationName 30s ease infinite;
+}
+
+@keyframes AnimationName {
+
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
