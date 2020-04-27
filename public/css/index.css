@@ -140,7 +140,6 @@ select:focus {
   transition: .1s ease-out;
   backface-visibility: hidden;
   border: none;
-  text-shadow: none;
 }
 
 .googleIcon {
