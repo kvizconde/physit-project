@@ -1,23 +1,5 @@
 /** CSS for index login page */
 
-/** Global div holding the logo for the the pages */
-
-.header_image_container {
-  position: relative;
-  width: 100%;
-  height: 8rem;
-  margin-top: 1rem;
-}
-
-/** The logo and title of our APP */
-
-.header_image_container img {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 100%;
-}
-
 .top_banner {
   overflow: hidden;
 }
@@ -25,9 +7,9 @@
 /** Div containing the banner of the page */
 
 .banner_container {
-  background: url(../images/Banner.png) repeat-x;
+  background: url(/img/Banner.png) repeat-x;
   filter: brightness(60%);
-  height: 37rem;
+  height: 35rem;
   width: 1000%;
   animation: slide 60s linear infinite;
 }
@@ -46,9 +28,151 @@
 
 /**  Log-in entry */
 
-.login-container {
-  width: 100%;
-  align-content: center;
+.login_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+}
+
+.login_container__form {
+  border-radius: 1.5rem;
   text-align: center;
-  display: grid;
+  height: 55rem;
+  width: 45rem;
+  padding: 3rem;
+  background-color: var(--bgLight);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.login_container__table {
+  border-spacing: 4rem 1rem;
+  color: var(--primaryGray);
+}
+
+.login_container__table h2 {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+
+.login_container__table h2:hover {
+  color: var(--midBlue);
+}
+
+.table--active {
+  color: var(--midBlue);
+}
+
+.login_container__form input,
+textarea {
+  min-height: 3rem;
+  width: 60%;
+  margin: .6rem;
+  padding: 0 1rem;
+  line-height: 1.7;
+  border-radius: .6rem;
+  border: none;
+}
+
+.login_container__form ::placeholder {
+  color: var(--primaryBlue);
+  text-transform: capitalize;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border: .2rem solid var(--primaryRed);
+  box-shadow: 0 0 .4rem var(--redGlow);
+  font-size: 1.2rem;
+}
+
+select:focus {
+  outline: none;
+}
+
+.login_container__logo {
+  height: 8rem;
+  margin-bottom: 2rem;
+  filter: drop-shadow(.4rem .5rem .5rem rgba(var(--boxShadows), .2));
+}
+
+.login_container__bttn {
+  margin: 1rem;
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  width: 60%;
+  height: 4rem;
+  text-align: center;
+  color: var(--primaryWhite);
+  border-radius: .6rem;
+  text-shadow: rgba(var(--boxShadows), .25) .15rem .3rem .3rem;
+  /* box-shadow: .3rem .5rem 1.2rem rgba(var(--boxShadows), .25); */
+}
+
+.login_container__bttn.signin {
+  background-color: var(--primaryYellow);
+  box-shadow: 0 0 1.6rem rgba(var(--yellowGlow), 1);
+}
+
+.login_container__bttn.signin:hover {
+  background-color: var(--secondaryYellow);
+  box-shadow: 0 0 1.2rem rgba(var(--yellowGlow), .7);
+}
+
+.login_container__bttn.google {
+  margin-top: 5rem;
+  background-color: var(--googleBlue);
+  box-shadow: 0 0 1.6rem rgba(var(--blueGlow), 1);
+  display: flex;
+  align-items: center;
+}
+
+.login_container__bttn.google:hover {
+  background-color: var(--primaryBlue);
+  box-shadow: 0 0 1.2rem rgba(var(--blueGlow), .7);
+}
+
+.login_container__bttn:hover {
+  transition: .1s ease-out;
+  backface-visibility: hidden;
+  border: none;
+}
+
+.googleIcon {
+  margin-left: .5rem;
+  height: 3.4rem;
+  background-color: var(--primaryWhite);
+  border-radius: .6rem;
+}
+
+.google_signIn {
+  margin: 0 auto;
+  margin-right: 5rem;
+}
+
+/* ANIMATED BG JUST FOR SIGN UP PAGE */
+
+body {
+  background: linear-gradient(270deg, #0765af, #0c3867, #020f28);
+  background-size: 600% 600%;
+  animation: AnimationName 30s ease infinite;
+}
+
+@keyframes AnimationName {
+
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
