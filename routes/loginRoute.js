@@ -6,6 +6,6 @@ const loginController = require("../controllers/loginController");
 router.get('/', loginController.getAllPT);
 
 // Route that runs log in authentication.
-router.post('/login', loginController.logIn);
+router.post('/homepage', loginController.postLogIn);
 
 module.exports = router;

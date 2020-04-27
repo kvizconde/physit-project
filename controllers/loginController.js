@@ -13,18 +13,18 @@ exports.getAllPT = (req, res, next) => {
 }
 
 // Basic log in authentication function. (Needs some clean up)
-exports.logIn = (req, res) => {
+exports.postLogIn = (req, res) => {
   let user = req.body.username;
   let pword = req.body.password;
 
   if (user && pword) {
     let attempt = loginModel.logIn(user, pword);
       attempt.then( ([data, metadata]) => {
-        console.log(typeof data[0]);
+        console.log(data[0]);
         if ((typeof data[0]) == "object") {
           res.render("home", {
             title : "HOME", 
-            indexJSCSS : true, 
+            indexJSCSS : false, 
             userInfo : data[0]})
         } else {
           res.send("Incorrect username or password.");
