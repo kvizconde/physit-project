@@ -6,7 +6,7 @@
 
   <!--Log-in entry goes here -->
   <section class="login_container">
-    <form class="login_container__form" method="POST" action="">
+    <form class="login_container__form" method="POST" action="/login">
       <img class="login_container__logo" src="img/physit_logo.png" alt="Phys-it Logo" />
       <table class="login_container__table">
         <tr>
@@ -19,7 +19,7 @@
         </tr>
       </table>
 
-      <input type="email" name="physioID" placeholder="email" required />
+      <input type="text" name="username" placeholder="physio ID" required />
       <input type="password" name="password" placeholder="password" required />
       <button class="login_container__bttn signin" type="submit">sign in</button>
       <button class="login_container__bttn google" type="button">

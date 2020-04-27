@@ -1,38 +1,40 @@
 const loginModel = require('../models/loginData');
-let physioIDHolder = {};
-let passwordHolder = {};
 
-// TODO: @Daniel or @Benson define login controller functions here
-
-exports.postLogin = ('/', (req, res, next) => {
-    let physioID = req.body.physioID;
-    let physioPassword = req.body.password;
-    
-    console.log(physioID);
-    console.log(physioPassword);
-
-    let physio = loginModel.getSpecificPhysioAccount(physioID, physioPassword);
-
-    physio.then(([data, metadata]) => {
-
-        console.log(data);
-
-        res.render('home', {
-            physiotherapist: data[0],
-            indexJSCSS: true
+// Test function that grabs all physiotherapist accounts from the database.
+exports.getAllPT = (req, res, next) => {
+  let pts = loginModel.getAllPTs();
+  pts.then( ([rows, fieldData]) => {
+    res.render('index', {
+        title : "testData",
+        testData : rows,
+        indexJSCSS : true
         });
-    }); 
-});
-
-exports.getLogin = ('/', (req, res) => {
-  res.render('index', { 
-      indexJSCSS: true 
   });
-});
+}
 
-// exports.postLogin = ('/', (req, res) => {
-//     res.render('', {
-//         title: 'Home screen',
-//         data: req.body
-//     });
-// });
+// Basic log in authentication function. (Needs some clean up)
+exports.logIn = (req, res) => {
+  let user = req.body.username;
+  let pword = req.body.password;
+
+  if (user && pword) {
+    let attempt = loginModel.logIn(user, pword);
+      attempt.then( ([data, metadata]) => {
+        console.log(typeof data[0]);
+        if ((typeof data[0]) == "object") {
+          res.render("home", {
+            title : "HOME", 
+            indexJSCSS : true, 
+            userInfo : data[0]})
+        } else {
+          res.send("Incorrect username or password.");
+        }
+      }).catch( ([data, metadata]) => {
+          res.send("catch: " + data);
+      });
+  } else {
+    res.send("Username or Password cannot be left empty.");
+    res.end();
+  }
+}
+
