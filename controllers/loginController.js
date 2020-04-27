@@ -25,7 +25,7 @@ exports.postLogIn = (req, res) => {
           res.render("home", {
             title : "HOME", 
             indexJSCSS : false, 
-            userInfo : data[0]})
+            physiotherapist : data[0]})
         } else {
           res.send("Incorrect username or password.");
         }
