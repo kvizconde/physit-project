@@ -21,7 +21,7 @@ exports.logIn = (req, res) => {
       attempt.then( ([data, metadata]) => {
         console.log(typeof data[0]);
         if ((typeof data[0]) == "object") {
-          res.render("loggedIn", {title : "HOME", indexJSCSS : true, userInfo : data[0]})
+          res.render("loggedIn", {title : "HOME", indexJSCSS : false, userInfo : data[0]})
         } else {
           res.send("Incorrect username or password.");
         }
