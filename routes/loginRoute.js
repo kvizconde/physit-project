@@ -1,14 +1,12 @@
 const express = require('express');
 
 const router = express.Router();
-// const loginController = require('../controllers/loginController');
-
-// router.get('/', loginController.postLogin);
 
 router.get('/', (req, res) => {
-  res.render('index', 
-    {indexJSCSS: true },
-    )
+  res.render('index', {
+    title: 'Login Page',
+    indexJSCSS: true,
   });
+});
 
 module.exports = router;
