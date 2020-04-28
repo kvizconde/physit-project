@@ -20,8 +20,7 @@
   filter: brightness(60%);
   height: 100%;
   width: 1000%;
-  animation: slide 60s linear infinite;
-  animation-direction: reverse;
+  animation: slide 60s linear infinite reverse;
 }
 
 /** Animation for the banner of the page */
@@ -117,7 +116,6 @@ select:focus {
 .login_container__logo {
   height: 8rem;
   margin-bottom: 2rem;
-  /* filter: drop-shadow(.4rem .5rem .5rem rgba(var(--boxShadows), .2)); */
 }
 
 .login_container__bttn {
