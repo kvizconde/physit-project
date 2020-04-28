@@ -6,22 +6,22 @@
 
   <!--Log-in entry goes here -->
   <section class="login_container">
-    <form class="login_container__form" method="POST" action="/homepage">
+    <form class="login_container__form" method="POST" action="/calendar">
       <img class="login_container__logo" src="img/physit_logo.png" alt="Phys-it Logo" />
       <table class="login_container__table">
         <tr>
           <th>
-            <h2 class="table--active"><a href="#">sign in</a></h2>
+            <h2 id="signin" class="table--active" onclick="onSignIn()"><a href="#">sign in</a></h2>
           </th>
           <th>
-            <h2><a href="#">sign up</a></h2>
+            <h2 id="signup"><a onclick="onSignUp()" href="#">sign up</a></h2>
           </th>
         </tr>
       </table>
 
-      <input type="text" name="username" placeholder="physio ID" required />
-      <input type="password" name="password" placeholder="password" required />
-      <button class="login_container__bttn signin" type="submit">sign in</button>
+      <input type="text" name="physioID" placeholder="physio ID" required />
+      <input id="password" type="password" name="password" placeholder="password" required />
+      <button id="signBttn" class="login_container__bttn signin" type="submit">sign in</button>
       <button class="login_container__bttn google" type="button">
         <img class="googleIcon" src="img/google.png" />
         <span class="google_signIn">sign in with google </span>
