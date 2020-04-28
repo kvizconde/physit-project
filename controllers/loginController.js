@@ -46,7 +46,9 @@ exports.postLogIn = (req, res) => {
             physiotherapist: data[0],
             });
         } else {
-            res.send('Username and password combination is invalid!');
+            // res.send('Username and password combination is invalid!');
+            res.redirect('/');
+
         }
         })
         .catch(([
