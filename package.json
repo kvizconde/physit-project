@@ -29,7 +29,6 @@
     "express-handlebars": "^4.0.3",
     "mysql2": "^2.1.0",
     "nodemailer": "^6.4.6",
-    "request": "^2.88.2",
-    "run": "^1.4.0"
+    "request": "^2.88.2"
   }
 }
