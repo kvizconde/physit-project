@@ -1,0 +1,61 @@
+<main>
+    {{!-- <p>I will be printing out stuff<br /></p> --}}
+
+
+    <div id="navBar">
+        <img src="img/physit_logo.png">
+    </div>
+
+    <div id="wrapper">
+        <div id="menu">
+            <div id="navbar_title">
+                <p class="navtext">Patient List</p>
+            </div>
+            <div id="log_out">
+                <button class="log_out" onclick="sign_out_function()">Log Out</button>
+            </div>
+        </div>
+        <div id="title">
+            <h2>Welcome, {{physiotherapist.firstname}} {{physiotherapist.lastname}}</h2>
+        </div>
+        <div id="listcontainer">
+            <table id="patients">
+                {{!-- <thead>
+                    <tr>
+                        <td id="titles">First Name</td>
+                        <td id="titles">Last Name</td>
+                        <td id="titles">Phone Number</td>
+                        <td id="titles">Appointment Time</td>
+                        <td id="titles">Action</td>
+                    </tr>
+                </thead> --}}
+                <tr>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Phone Number</th>
+                    <th>Appointment Time</th>
+                </tr>
+                <tr>
+                    <td>Jill</td>
+                    <td>Smith</td>
+                    <td>778-506-2929</td>
+                    <td>1:30-2:30</td>
+                </tr>
+                <tr>
+                    <td>Eve</td>
+                    <td>Jackson</td>
+                    <td>778-194-7088</td>
+                    <td>3:30-4:30</td>
+                </tr>
+                <tr>
+                    <td>John</td>
+                    <td>Doe</td>
+                    <td>604-180-8989</td>
+                    <td>5:30-6:30</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+</main>
