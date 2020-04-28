@@ -1,5 +1,9 @@
 const db = require('../util/database');
 
+function addPhysio() {
+    return db.execute(`INSERT INTO physiotherapist`)
+}
+
 // Selects physiotherapist account with matching physioID.
 function getPhysio(physioID) {
   return db.execute(`SELECT * FROM physit-project.physiotherapist WHERE physioID = "${physioID}"`);
@@ -11,18 +15,18 @@ function getAllPTs() {
 }
 
 // Selects physiotherapist account that matches physioID and password.
-function logIn(physioID, pword) {
-  return db.execute(
-    `SELECT * FROM physiotherapist WHERE (physioID = "${physioID}" AND pword = "${pword}")`,
-  );
-}
-
-// LOCAL VERSION
 // function logIn(physioID, pword) {
 //   return db.execute(
-//     `SELECT * FROM physiotherapist WHERE (physioID = "${physioID}" AND password = "${pword}")`,
+//     `SELECT * FROM physiotherapist WHERE (physioID = "${physioID}" AND pword = "${pword}")`,
 //   );
 // }
+
+// LOCAL VERSION
+function logIn(physioID, pword) {
+  return db.execute(
+    `SELECT * FROM physiotherapist WHERE (physioID = "${physioID}" AND password = "${pword}")`,
+  );
+}
 
 module.exports = {
   getPhysio,
