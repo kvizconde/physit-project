@@ -12,7 +12,10 @@
     {{#if indexJSCSS }}
     <link href="/css/index.css" rel="stylesheet" />
     {{/if}}
-    <script type="text/javascript" src="/js/index.js" defer></script>
+    {{#if patientListJSCSS }}
+    <link href="/css/patientList.css" rel="stylesheet" />
+    {{/if}}
+    <script type="text/javascript" src="/js/index.js" defer></script>  
   </head>
 
   <body>
