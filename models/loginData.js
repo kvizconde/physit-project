@@ -1,18 +1,24 @@
 const db = require('../util/database');
 
-// TODO: @Daniel - Define database functions here
+// Selects physiotherapist account with matching physioID.
+function getPhysio(physioID) {
+  return db.execute(`SELECT * FROM physit-project.physiotherapist WHERE physioID = "${physioID}"`);
+}
 
-function addPhysioAccount(physioInfo) {
-  db.execute(
-    `INSERT into physiotherapist(physioID, password, firstname, lastname) values ('${physioInfo.physioID}', '${physioInfo.password}', '${physioInfo.firstname}', '${physioInfo.lastname}')`,
+// Selects all physiotherapist accounts in database.
+function getAllPTs() {
+  return db.execute(`SELECT * FROM physiotherapist`);
+}
+
+// Selects physiotherapist account that matches physioID and password.
+function logIn(physioID, pword) {
+  return db.execute(
+    `SELECT * FROM physiotherapist WHERE (physioID = "${physioID}" AND pword = "${pword}")`,
   );
 }
 
-function getSpecificPhysio(physioID) {
-  return db.execute(`SELECT * FROM physit-project.physiotherapist WHERE physioID = ${physioID}`);
-}
-
 module.exports = {
-  addPhysios: addPhysioAccount,
-  getSpecificPhysio,
+  getPhysio,
+  getAllPTs,
+  logIn,
 };
