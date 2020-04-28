@@ -1,0 +1,157 @@
+body {
+    color: white;
+}
+
+#menu {
+    width: 100%;
+    height: 3.5em;
+    overflow: hidden;
+    margin: auto;
+    background-color: var(--midBlue);
+    border-top: solid 2px #29648A;
+    border-bottom: solid 2px #29648A;
+}
+
+
+/** The div containing the log out button for the pages */
+
+#navbar_title {
+    float: left;
+    margin: 0 0 0 2em;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 17pt;
+}
+
+#log_out {
+    float: right;
+    margin: 0 2em 0 0;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+/** The log out button for the pages */
+
+#log_out button {
+    font-size: 18pt;
+    width: 6em;
+    border-radius: 0.5em;
+    background-color: #289CCA;
+    cursor: pointer;
+}
+
+
+/** Global div holding the logo for the the pages */
+
+#navBar {
+    position: relative;
+    width: 100%;
+    height: 8em;
+    margin-top: 1em;
+}
+
+
+/** The logo and title of our APP */
+
+#navBar img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+}
+
+
+/** Table including the list of patients */
+
+#patients {
+    width: 100%;
+    /* background-color: #3C414F; */
+    background-color: var(--primaryBlack);
+    border: 1px solid #29648A;
+    padding: 1em;
+}
+
+
+/** Giving the td elements text shadows */
+
+body tr td {
+    text-shadow: black 2px 2px 2px;
+}
+
+
+/** Div containing the "Patient List" header */
+
+#title {
+    margin: 2em 0em 2em 2em;
+}
+
+
+/** Header for "Patient List" */
+
+#title h2 {
+    font-size: 27pt;
+    color: var(--textBlue);
+    text-shadow: black 1px 1px 1px;
+}
+
+
+/**  View buttons in the patient list area */
+
+#patients button {
+    font-size: 15pt;
+    border-radius: 11px;
+    background-color: #289CCA;
+    line-height: 2em;
+    color: black;
+}
+
+
+/** Anchor elements in the page */
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+/** Div containing the list of patients */
+
+#listcontainer {
+    width: 90%;
+    margin: auto;
+}
+
+
+/** Referencing just the categorizing td elements in the table (First Name, Last Name, etc) */
+
+#titles {
+    padding-bottom: 0.618em;
+    font-weight: bold;
+    font-size: 20pt;
+    color: var(--textBlue);
+}
+
+th {
+    padding-bottom: 0.618em;
+    font-weight: bold;
+    font-size: 20pt;
+    color: var(--textBlue);
+    text-align: left;
+}
+
+
+/** Changing the size of the td elements in the table */
+
+td {
+    font-size: 18pt;
+}
+
+
+/** Changing the colour of the button text to black */
+
+td a:visited {
+    color: black;
+}
