@@ -1,25 +1,25 @@
 let counter = 0;
 
 //this function alerts when user/pass combo not valid
-function checkData() {
-  var data = {};
-  data.email = document.getElementById("email");
-  data.password = document.getElementById("password");
-  $.ajax({
-    type: 'POST',
-    data: JSON.stringify(data),
-    cache: false,
-    contentType: 'application/json',
-    datatype: "json",
-    url: '/',
-    success: function(returns) {
-      if (returns) 
-        alert("User save");
-      else
-        alert("Error: user not save");
-    }
-  });
-}
+// function checkData() {
+//   var data = {};
+//   data.email = document.getElementById("email");
+//   data.password = document.getElementById("password");
+//   $.ajax({
+//     type: 'POST',
+//     data: JSON.stringify(data),
+//     cache: false,
+//     contentType: 'application/json',
+//     datatype: "json",
+//     url: '/',
+//     success: function(returns) {
+//       if (returns) 
+//         alert("User save");
+//       else
+//         alert("Error: user not save");
+//     }
+//   });
+// }
 
 function setAttributes(el, options) {
   Object.keys(options).forEach(attr => {
@@ -60,8 +60,18 @@ function onSignUp() {
 
     signBttn.textContent = 'sign up';
 
-    password.parentNode.insertBefore(firstName, password.nextSibling);
-    firstName.parentNode.insertBefore(lastName, firstName.nextSibling);
+    $(firstName)
+      .insertAfter(password)
+      .hide()
+      .show(400);
+
+    $(lastName)
+      .insertAfter(firstName)
+      .hide()
+      .show(600);
+
+    // password.parentNode.insertBefore(firstName, password.nextSibling);
+    // firstName.parentNode.insertBefore(lastName, firstName.nextSibling);
     counter++;
   }
 }
@@ -80,8 +90,8 @@ function onSignIn() {
   signBttn.textContent = 'sign in';
 
   if (firstName !== null) {
-    lastName.parentNode.removeChild(lastName);
-    firstName.parentNode.removeChild(firstName);
+    $(firstName).remove();
+    $(lastName).remove();
     counter = 0;
   }
 }

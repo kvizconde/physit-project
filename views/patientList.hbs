@@ -14,7 +14,11 @@
             </div>
         </div>
         <div id="title">
-            <h2>Welcome, {{physiotherapist.firstname}} {{physiotherapist.lastname}}</h2>
+            <!-- This is for the remote db -->
+            {{!-- <h2>Welcome, {{physiotherapist.fname}} {{physiotherapist.lname}}</h2> --}}
+
+            <!-- This is for the local db -->
+            <h2>Welcome, {{physiotherapist.firstName}} {{physiotherapist.lastName}}</h2>
         </div>
         <div id="listcontainer">
             <table id="patients">
@@ -51,7 +55,7 @@
                     <td>604-180-8989</td>
                     <td>5:30-6:30</td>
                 </tr> --}}
-                {{#each 0}}
+                {{#each 1}}
                 <tr>
                     <td>{{patient.firstName}}</td>
                     <td>{{patient.lastName}}</td>
