@@ -1,13 +1,15 @@
 <main class="main-container">
   <!-- particles.js container -->
   <div id="particles-js"></div>
-  <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js">
+  </script>
 
   <!--Log-in entry goes here -->
   <section class="login_container">
     <div class="form_wrapper">
       <form class="login_container__form" method="POST" action="/calendar">
-        <img class="login_container__logo" src="img/physit_logo.png" alt="Phys-it Logo" />
+        <img class="login_container__logo" src="img/physit_logo.png"
+          alt="Phys-it Logo" />
         <table class="login_container__table">
           <tr>
             <th>
@@ -22,9 +24,16 @@
         </table>
 
         <input type="text" name="physioID" placeholder="physio ID" required />
-        <input id="password" type="password" name="password" placeholder="password" required />
-        <button id="signBttn" class="login_container__bttn signin" type="submit">sign in</button>
-        <button class="login_container__bttn google" type="button">
+        {{#if passwordFailed}}
+        <input id="wrong_password" type="password" name="password"
+          placeholder="wrong password, try again!" />
+        {{else}}
+        <input id="password" type="password" name="password"
+          placeholder="password" required />
+        {{/if}}
+        <button id="signBttn" class="login_container__bttn signin"
+          type="submit">sign in</button>
+        <button class="login_container__bttn google" type="submit">
           <img class="googleIcon" src="img/google.png" />
           <span class="google_signIn">sign in with google </span>
         </button>
