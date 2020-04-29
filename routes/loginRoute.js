@@ -9,8 +9,12 @@ const loginController = require("../controllers/loginController");
 // Route that runs log in authentication.
 // router.post('/homepage', loginController.postLogIn);
 
+// Loads log in page.
+router.get('/', loginController.getLogin);
+
 // Route that runs log in authentication.
 router.post('/calendar', loginController.postLogIn);
+
 // ///////////////////////////////
 // //////DON'T REMOVE THIS ///////
 // ///////////////////////////////
@@ -20,6 +24,6 @@ router.post('/calendar', loginController.postLogIn);
 //     indexJSCSS: true,
 //   });
 // });
-router.get('/', loginController.getLogin);
+
 
 module.exports = router;
