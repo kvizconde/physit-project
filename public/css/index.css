@@ -1,40 +1,5 @@
 /** CSS for index login page */
 
-.flex_banner_container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
-
-.top_banner {
-  overflow: hidden;
-  width: 100%;
-  height: 35rem;
-}
-
-/** Div containing the banner of the page */
-
-.banner_container {
-  background: url(/img/Banner.png) repeat-x;
-  filter: brightness(60%);
-  height: 100%;
-  width: 1000%;
-  animation: slide 60s linear infinite reverse;
-}
-
-/** Animation for the banner of the page */
-@keyframes slide {
-
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-
-  100% {
-    transform: translate3d(-169.2rem, 0, 0);
-  }
-}
-
 /**  Log-in entry */
 
 .login_container {
@@ -49,7 +14,7 @@
   position: absolute;
   text-align: center;
   height: 100vh;
-  min-width: 60vw;
+  min-width: 55vw;
   padding: 3rem;
   background-color: var(--headingDark);
   display: flex;
@@ -173,11 +138,11 @@ select:focus {
 
 /* ANIMATED BG JUST FOR SIGN UP PAGE */
 
-body {
+/* body {
   background: linear-gradient(270deg, #0c3867, #020f28);
   background-size: 600% 600%;
   animation: AnimationName 30s ease infinite;
-}
+  /* background: linear-gradient(270deg, #ffce00, #ff4566); */
 
 @keyframes AnimationName {
 
@@ -192,4 +157,31 @@ body {
   100% {
     background-position: 0% 50%;
   }
+}
+
+/* ---- particles ---- */
+
+canvas {
+  display: block;
+  vertical-align: bottom;
+}
+
+/* ---- particles.js container ---- */
+
+body {
+  background: linear-gradient(270deg, #0c3867, #020f28);
+  background-position: 50% 50%;
+  background-size: 600% 600%;
+  animation: AnimationName 30s ease infinite;
+}
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(../img/body.png);
+  background-size: 45rem;
+  background-repeat: no-repeat;
+  background-position: 10% 50%;
+  filter: drop-shadow(0 0 3rem rgba(var(--blueGlow), .5));
 }
