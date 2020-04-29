@@ -29,6 +29,7 @@ function loadingPatientList(physioID) {
     const appointmentData = loginModel.getAppointmentsForPhysio(physioID);
 
     appointmentData.then(([data, metadata]) => {
+        
 
     }).catch(([data, metadata]) => {
         res.send("catch: " + data);

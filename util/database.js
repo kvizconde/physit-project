@@ -8,7 +8,7 @@ const mysql = require('mysql2');
 //   password: 'zOl8IYGf1s',
 // });
 
-//local database
+// local database
 const pool = mysql.createPool({
   host: 'localhost',
   user: 'root',
