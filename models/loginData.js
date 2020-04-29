@@ -15,21 +15,11 @@ function getAllPTs() {
 }
 
 // Selects physiotherapist account that matches physioID and password.
-function logInRemote(physioID, pword) {
-  return db.execute(
-    `SELECT * FROM physiotherapist WHERE (physioID = "${physioID}" AND pword = "${pword}")`,
-  );
-}
-
-// LOCAL VERSION
-function logInLocal(physioID, pword) {
+function logIn(physioID, pword) {
   return db.execute(
     `SELECT * FROM physiotherapist WHERE (physioID = "${physioID}" AND password = "${pword}")`,
   );
 }
-
-// uses logInLocal if logInRemote is not available
-const logIn = logInRemote || logInLocal;
 
 module.exports = {
   getPhysio,
