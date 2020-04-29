@@ -1,7 +1,7 @@
 const mysql = require('mysql2');
 
 // remote database
-const pool = mysql.createPool({
+const poolRemote = mysql.createPool({
   host: 'remotemysql.com',
   user: 'HHTh4BmIT4',
   database: 'HHTh4BmIT4',
@@ -9,11 +9,14 @@ const pool = mysql.createPool({
 });
 
 // local database
-// const pool = mysql.createPool({
-//   host: 'localhost',
-//   user: 'root',
-//   database: 'comp4944-project',
-//   password: 'password',
-// });
+const poolLocal = mysql.createPool({
+  host: 'localhost',
+  user: 'root',
+  database: 'comp4944-project',
+  password: 'password',
+});
+
+// uses poolLocal if poolRemote is not available
+const pool = poolRemote || poolLocal;
 
 module.exports = pool.promise();

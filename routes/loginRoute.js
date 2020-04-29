@@ -1,13 +1,10 @@
 const express = require('express');
-const router = express.Router();
-const loginController = require("../controllers/loginController");
 
+const router = express.Router();
+const loginController = require('../controllers/loginController');
 
 // // Test route that runs getAllPT from the log in controller.
 // router.get('/', loginController.getAllPT);
-
-// Route that runs log in authentication.
-// router.post('/homepage', loginController.postLogIn);
 
 // Loads log in page.
 router.get('/', loginController.getLogin);
@@ -24,6 +21,5 @@ router.post('/calendar', loginController.postLogIn);
 //     indexJSCSS: true,
 //   });
 // });
-
 
 module.exports = router;
