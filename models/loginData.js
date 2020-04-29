@@ -1,7 +1,7 @@
 const db = require('../util/database');
 
 function addPhysio() {
-    return db.execute(`INSERT INTO physiotherapist`)
+  return db.execute(`INSERT INTO physiotherapist`);
 }
 
 // Selects physiotherapist account with matching physioID.
