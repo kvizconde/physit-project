@@ -1,7 +1,5 @@
 <main>
-    {{!-- <p>I will be printing out stuff<br /></p> --}}
-
-
+    <!--This will print out a list populated with patients for a physio -->
     <div id="navBar">
         <img src="img/physit_logo.png">
     </div>
@@ -16,6 +14,10 @@
             </div>
         </div>
         <div id="title">
+            <!-- This is for the remote db -->
+            {{!-- <h2>Welcome, {{physiotherapist.fname}} {{physiotherapist.lname}}</h2> --}}
+
+            <!-- This is for the local db -->
             <h2>Welcome, {{physiotherapist.firstName}} {{physiotherapist.lastName}}</h2>
         </div>
         <div id="listcontainer">
@@ -35,7 +37,7 @@
                     <th>Phone Number</th>
                     <th>Appointment Time</th>
                 </tr>
-                <tr>
+                {{!-- <tr>
                     <td>Jill</td>
                     <td>Smith</td>
                     <td>778-506-2929</td>
@@ -52,7 +54,18 @@
                     <td>Doe</td>
                     <td>604-180-8989</td>
                     <td>5:30-6:30</td>
+                </tr> --}}
+                {{#each patients}}
+                <form method="GET" action="/home">
+                <tr>
+                    <td>{{this.firstName}}</td>
+                    <td>{{this.lastName}}</td>
+                    <td>{{this.phoneNumber}}</td>
+                    <td>{{this.startTime}} - {{this.endTime}}</td>
+                    <td><button type="submit">View More</button></td>    
                 </tr>
+                </form>
+                {{/each}}
             </table>
         </div>
     </div>
