@@ -13,10 +13,13 @@ const poolLocal = mysql.createPool({
   host: 'localhost',
   user: 'root',
   database: 'comp4944-project',
-  password: 'password',
+  password: 'COMP-4711',
 });
 
 // uses poolLocal if poolRemote is not available
-const pool = poolRemote || poolLocal;
+// const pool = poolRemote || poolLocal;
+
+//testing using the local
+const pool = poolLocal;
 
 module.exports = pool.promise();
