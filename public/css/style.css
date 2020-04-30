@@ -55,13 +55,21 @@ html {
 /* End of Browser Reset */
 
 body {
+  padding: 3rem;
+  height: 100vh;
+  width: 100%;
   box-sizing: border-box;
   font-family: "Nunito", sans-serif;
-  min-height: 100%;
-  width: 100%;
-  background: linear-gradient(to top, #0765af, #0c3867 20%, #020f28 50%);
+  background: radial-gradient(110vw 100vh at bottom, #0765af 5%, #0c3867 25%, #020f28 60%);
   font-weight: 400;
   font-size: 1.6rem;
+  line-height: 1.7;
+  color: var(--primaryWhite);
+}
+
+.home-container {
+  height: 100%;
+  padding: 1rem;
 }
 
 /* Reset Elements */
@@ -92,3 +100,42 @@ a {
 }
 
 /* ./END-Reset Elements */
+
+/* Patient Header */
+
+.patient_container > * {
+  font-weight: 300;
+  height: auto;
+}
+
+.patient_container__name {
+  letter-spacing: .2rem;
+  text-transform: uppercase;
+}
+
+.patient_container__info {
+  font-size: 2rem;
+  color: var(--primaryGray);
+}
+
+.patient--color {
+  color: var(--textBlue);
+}
+/* ./END-Patient Header */
+
+/* GLOBAL FOOTER */
+
+.footer_logo {
+  height: 6rem;
+}
+
+footer {
+  clear: both;
+  position: relative;
+  height: 8rem;
+  margin-top: -8rem;
+  display: flex;
+  align-items: flex-end;
+}
+
+/* ./END-GLOBAL FOOTER */

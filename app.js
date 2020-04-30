@@ -29,8 +29,10 @@ app.set('view engine', 'hbs');
 
 // create a variable that links to the route
 const loginRoute = require('./routes/loginRoute');
+const homeRoute = require('./routes/homeRoute');
 
 app.use(loginRoute);
+app.use(homeRoute);
 
 app.listen(port, () => {
   console.log(`server is up on port ${port}`);

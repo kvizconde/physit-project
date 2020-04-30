@@ -13,6 +13,6 @@ const loginController = require('../controllers/loginController');
 router.get('/', loginController.getLogin);
 
 // Route that runs log in authentication.
-router.post('/calendar', loginController.postLogIn);
+// router.post('/calendar', loginController.postLogIn);
 
 module.exports = router;
