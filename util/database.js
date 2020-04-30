@@ -17,9 +17,9 @@ const poolLocal = mysql.createPool({
 });
 
 // uses poolLocal if poolRemote is not available
-// const pool = poolRemote || poolLocal;
+const pool = poolRemote || poolLocal;
 
 //testing using the local
-const pool = poolLocal;
+// const pool = poolLocal;
 
 module.exports = pool.promise();

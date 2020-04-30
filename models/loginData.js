@@ -27,7 +27,7 @@ function logIn(physioID, pword) {
 // Join appointment and patient table to get related data
 function getPatientAppointmentData(physioID) {
   return db.execute(
-    `SELECT a.physioID, p.firstName, p.lastName, p.phoneNumber, a.startTime, a.endTime
+    `SELECT a.physioID, p.firstName, p.lastName, p.phoneNumber, a.appointmentTime, a.appointmentEndTime
       FROM appointment a
         INNER JOIN patient p 
             ON a.patientID = p.patientID

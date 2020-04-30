@@ -1,7 +1,7 @@
 const loginModel = require("../models/loginData");
 
 // Gets the initial Login page for the app
-exports.getLogin = (req, res, next) => {
+exports.getLogin = (req, res) => {
   res.render("index", {
     title: "Login Page",
     indexJSCSS: true,
@@ -42,11 +42,12 @@ exports.postLogIn = (req, res) => {
             });
           } else {
             // TODO: @Benson or @Daniel please figure out a way to stop directing it to /calendar if password is invalid
-            res.render("index", {
-              title: "Login Page",
-              indexJSCSS: true,
-              passwordFailed: true,
-            });
+            // res.render("index", {
+            //   title: "Login Page",
+            //   indexJSCSS: true,
+            //   passwordFailed: true,
+            // });
+            res.redirect('/');
           }
         })
         // catch for physiotherapist select query
