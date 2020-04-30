@@ -9,13 +9,21 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/style.css" />
-    {{#if indexJSCSS }}
+    {{# if indexJSCSS }}
     <link href="/css/index.css" rel="stylesheet" />
-    {{/if}}
-    {{#if patientListJSCSS }}
+    {{/ if }}
+    {{# if patientListJSCSS }}
     <link href="/css/patientList.css" rel="stylesheet" />
-    {{/if}}
-    <script type="text/javascript" src="/js/index.js" defer></script>  
+    {{/ if }}
+    {{# if homepageJSCSS }}
+    <link href="/css/home.css" rel="stylesheet" />
+    {{/ if }}
+    <script
+      src="https://code.jquery.com/jquery-3.5.0.js"
+      integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc="
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="/js/index.js" defer></script>
   </head>
 
   <body>
