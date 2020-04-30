@@ -20,12 +20,4 @@ const poolLocal = mysql.createPool({
 const pool = poolRemote || poolLocal;
 
 
-//local database
-const pool = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    database: 'comp4944-project',
-    password: 'password',
-});
-
 module.exports = pool.promise();
