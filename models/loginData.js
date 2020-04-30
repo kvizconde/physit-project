@@ -30,16 +30,27 @@ function logIn(physioID, pword) {
 }
 
 //pulling appointments
-function getAppointmentsForPhysio(physioID) {
+function getAppointmentsForPhysio(id) {
   return db.execute(
-    `SELECT * FROM appointment WHERE (physioID = "${physioID}")`,
+    `SELECT * FROM appointment WHERE (physioID = "${id}")`,
     );
 }
 
+//Getting a patient's information
 function getPatientInformation(patientID) {
   return db.execute(
     `SELECT * FROM patient WHERE (patientID = "${patientID}")`,
   );
+}
+
+function getPatientAppointmentData(physioID) {
+  return db.execute(
+    `SELECT a.physioID, p.firstName, p.lastName, p.phoneNumber, a.startTime, a.endTime
+      FROM appointment a
+        INNER JOIN patient p 
+            ON a.patientID = p.patientID
+            WHERE a.physioID = "${physioID}";`,
+  ); 
 }
 
 module.exports = {
@@ -48,4 +59,5 @@ module.exports = {
   logIn,
   getAppointmentsForPhysio,
   getPatientInformation,
+  getPatientAppointmentData,
 };

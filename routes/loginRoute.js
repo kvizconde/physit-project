@@ -1,6 +1,10 @@
 const express = require('express');
+
 const router = express.Router();
-const loginController = require("../controllers/loginController");
+const loginController = require('../controllers/loginController');
+
+// // Test route that runs getAllPT from the log in controller.
+// router.get('/', loginController.getAllPT);
 
 // ///////////////////////////////
 // //////DON'T REMOVE THIS ///////

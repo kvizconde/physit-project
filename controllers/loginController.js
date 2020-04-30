@@ -1,12 +1,12 @@
-const loginModel = require('../models/loginData');
+const loginModel = require("../models/loginData");
 
 // Grabs the main starting page
 exports.getLogin = (req, res, next) => {
-    res.render('index', {
-        title: 'Login Page',
-        indexJSCSS: true,
-    });
-}
+  res.render("index", {
+    title: "Login Page",
+    indexJSCSS: true,
+  });
+};
 
 // Test function that grabs all physiotherapist accounts from the database.
 // exports.getAllPT = (req, res, next) => {
@@ -24,44 +24,47 @@ exports.getLogin = (req, res, next) => {
 //     });
 // };
 
-function loadingPatientList(physioID) {
-
-    const appointmentData = loginModel.getAppointmentsForPhysio(physioID);
-
-    appointmentData.then(([data, metadata]) => {
-        
-
-    }).catch(([data, metadata]) => {
-        res.send("catch: " + data);
-    });
-
-}
-
 // Basic log in authentication function. (Needs some clean up)
 exports.postLogIn = (req, res) => {
-    const email = req.body.physioID;
-    const pword = req.body.password;
+  const email = req.body.physioID;
+  const pword = req.body.password;
+  let patientInformationList = [];
 
-    const attempt = loginModel.logIn(email, pword);
+  const patientInfo = loginModel.getPatientAppointmentData(req.body.physioID);
 
-    attempt.then(([data, metadata]) => {
-        
-        console.log(data[0]);
-        console.log(typeof data[0]);
-        if (typeof data[0] === 'object') {
-            res.render('patientList', {
-            title: 'HOME',
-            patientListJSCSS: true,
-            indexJSCSS: false,
-            physiotherapist: data[0],
-            });
-        } else {
-            res.send('Username and password combination is invalid!');
-            // res.redirect('/');
+  patientInfo.then(([patientData, metadata]) => {
+    
+    console.log(patientData[0]);
 
-        }
+    for(let i = 0; typeof patientData[i] === 'object'; i++) {
+        patientInformationList[i] = patientData[i];
+        console.log(patientInformationList[i]);
+    }
+
+  const attempt = loginModel.logIn(email, pword);
+
+  attempt.then(([physioData, metadata]) => {
+      console.log(physioData[0]);
+      console.log(typeof physioData[0]);
+
+      if (typeof physioData[0] === "object") {
+        res.render("patientList", {
+          title: "HOME",
+          patientListJSCSS: true,
+          indexJSCSS: false,
+          physiotherapist: physioData[0],
+          patients: patientInformationList
+        });
+      } else {
+        res.send("Username and password combination is invalid!");
+        // res.redirect('/');
+      }
     })
-    .catch(([data, metadata]) => {
-        res.send("catch: " + data);
+    // catch for physiotherapist select query
+    .catch(([physioData, metadata]) => {
+      res.send("catch: " + physioData);
+    });
+    }).catch(([patientData, metadata]) => {
+        res.send("catch: " + patientData);
     });
 };
