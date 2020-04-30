@@ -66,6 +66,11 @@ textarea {
   text-transform: capitalize;
 }
 
+#wrong_password::placeholder {
+  color: var(--primaryRed);
+}
+
+#wrong_password,
 input:focus,
 textarea:focus {
   outline: none;

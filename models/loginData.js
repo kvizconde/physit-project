@@ -4,11 +4,6 @@ const db = require('../util/database');
 //     return db.execute(`INSERT INTO physiotherapist`);
 // }
 
-// Selects physiotherapist account with matching physioID.
-function getPhysio(physioID) {
-  return db.execute(`SELECT * FROM physit-project.physiotherapist WHERE physioID = "${physioID}"`);
-}
-
 // Selects all physiotherapist accounts in database.
 function getAllPTs() {
   return db.execute(`SELECT * FROM physiotherapist`);
@@ -29,20 +24,7 @@ function logIn(physioID, pword) {
   );
 }
 
-//pulling appointments
-function getAppointmentsForPhysio(id) {
-  return db.execute(
-    `SELECT * FROM appointment WHERE (physioID = "${id}")`,
-    );
-}
-
-//Getting a patient's information
-function getPatientInformation(patientID) {
-  return db.execute(
-    `SELECT * FROM patient WHERE (patientID = "${patientID}")`,
-  );
-}
-
+// Join appointment and patient table to get related data
 function getPatientAppointmentData(physioID) {
   return db.execute(
     `SELECT a.physioID, p.firstName, p.lastName, p.phoneNumber, a.startTime, a.endTime
@@ -54,10 +36,7 @@ function getPatientAppointmentData(physioID) {
 }
 
 module.exports = {
-  getPhysio,
   getAllPTs,
   logIn,
-  getAppointmentsForPhysio,
-  getPatientInformation,
   getPatientAppointmentData,
 };
