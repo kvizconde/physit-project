@@ -1,7 +1,7 @@
 const loginModel = require("../models/loginData");
 
 // Gets the initial Login page for the app
-exports.getLogin = (req, res, next) => {
+exports.getLogin = (req, res) => {
   res.render("index", {
     title: "Login Page",
     indexJSCSS: true,
