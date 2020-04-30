@@ -56,15 +56,16 @@
                     <td>5:30-6:30</td>
                 </tr> --}}
                 {{#each patients}}
+                <form method="GET" action="/home">
                 <tr>
                     <td>{{this.firstName}}</td>
                     <td>{{this.lastName}}</td>
                     <td>{{this.phoneNumber}}</td>
                     <td>{{this.startTime}} - {{this.endTime}}</td>
-                    
+                    <td><button type="submit">View More</button></td>    
                 </tr>
+                </form>
                 {{/each}}
-                <p>{{appointments.startTime}}</p>
             </table>
         </div>
     </div>

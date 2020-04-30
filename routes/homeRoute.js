@@ -1,12 +1,7 @@
 const express = require('express');
-
 const router = express.Router();
+const homeController = require('../controllers/homeController');
 
-router.get('/home', (req, res) => {
-  res.render('home', {
-    title: 'The Future of Physio',
-    homepageJSCSS: true,
-  });
-});
+router.get('/home', homeController.getHome);
 
 module.exports = router;
