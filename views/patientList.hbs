@@ -35,7 +35,16 @@
                     <th>Phone Number</th>
                     <th>Appointment Time</th>
                 </tr>
-                <tr>
+
+                {{#each patients}}
+                    <tr>
+                        <td>{{this.firstName}}</td>
+                        <td>{{this.lastName}}</td>
+                        <td>{{this.phoneNumber}}</td>
+                        <td>{{this.appointmentTime}} - {{this.appointmentEndTime}}</td>
+                    </tr>
+                {{/each}}
+                {{!-- <tr>
                     <td>Jill</td>
                     <td>Smith</td>
                     <td>778-506-2929</td>
@@ -52,7 +61,7 @@
                     <td>Doe</td>
                     <td>604-180-8989</td>
                     <td>5:30-6:30</td>
-                </tr>
+                </tr> --}}
             </table>
         </div>
     </div>
