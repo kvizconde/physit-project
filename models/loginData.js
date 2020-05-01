@@ -13,13 +13,14 @@ function logIn(physioID, pword) {
 }
 
 // Join appointment and patient table to get related data
-function getPatientAppointmentData(physioID) {
+function getPatientAppointmentData(physioID, date) {
     return db.execute(
         `SELECT a.physioID, p.firstName, p.lastName, p.phoneNumber, a.appointmentTime, a.appointmentEndTime
-      FROM appointment a
-        INNER JOIN patient p 
-            ON a.patientID = p.patientID
-            WHERE a.physioID = "${physioID}";`,
+            FROM appointment a
+            INNER JOIN patient p 
+                ON a.patientID = p.patientID
+                WHERE a.physioID = "${physioID}"
+                AND a.appointmentDate = "${date}";`,
     );
 }
 
@@ -29,6 +30,13 @@ function logIn(physioID, pword) {
         `SELECT * FROM physiotherapist WHERE (physioID = "${physioID}" AND password = "${pword}")`,
     );
 }
+
+// // LOCAL VERSION
+// function logIn(physioID, pword) {
+//   return db.execute(
+//     `SELECT * FROM physiotherapist WHERE (physioID = "${physioID}" AND password = "${pword}")`,
+//   );
+// }
 
 module.exports = {
     getAllPTs,
