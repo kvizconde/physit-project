@@ -20,23 +20,49 @@ exports.getAllPT = (req, res, next) => {
 
 // Basic log in authentication function. (Needs some clean up)
 exports.postLogIn = (req, res) => {
+
+  let d = new Date("April 30, 2020 01:15:00");
+  let year = d.getFullYear().toString();
+  let day = d.getDate();
+  let month = d.getMonth();
+    
+  if (month < 9) {
+    month = month + 1;
+    month = "0" + month;
+  } else {
+    month = month + 1;
+    month.toString();
+  }
+   
+  let date = year + "-" + month + "-" + day;
+
   const email = req.body.physioID;
   const pword = req.body.password;
 
-  const attempt = loginModel.logIn(email, pword);
+  const getPatientListAttempt = loginModel.getAppointmentsOnDate(email, date);
 
-    attempt.then( ([data, metadata]) => {
-      console.log(data[0]);
-      console.log(typeof data[0]);
+  getPatientListAttempt.then( ([plist, metadata]) => {
+    let patientList = plist;
+
+    const logInAttempt = loginModel.logIn(email, pword);
+
+    logInAttempt.then( ([data, metadata]) => {
       if (typeof data[0] === 'object') {
         res.render('patientList', {title: 'HOME', 
                                   patientListJSCSS: true, 
                                   indexJSCSS: false, 
-                                  physiotherapist: data[0]});
+                                  physiotherapist: data[0],
+                                  patients : patientList});
       } else {
-        res.send('Username and password combination is invalid!');
+        res.render('index', {
+          title: 'Login Page',
+          indexJSCSS: true,
+        });
       }
     }).catch( (data) => {
       res.send("catch: " + data);
     });
+
+  });
+
 };
