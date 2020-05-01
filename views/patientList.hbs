@@ -1,7 +1,5 @@
 <main>
-    {{!-- <p>I will be printing out stuff<br /></p> --}}
-
-
+    <!--This will print out a list populated with patients for a physio -->
     <div id="navBar">
         <img src="img/physit_logo.png">
     </div>
@@ -12,58 +10,39 @@
                 <p class="navtext">Patient List</p>
             </div>
             <div id="log_out">
+            <form action="/" method="GET">
+
                 <button class="log_out" onclick="sign_out_function()">Log Out</button>
+
+            </form>
             </div>
         </div>
-        <div id="title">
-            <h2>Welcome, {{physiotherapist.firstName}} {{physiotherapist.lastName}}</h2>
-        </div>
-        <div id="listcontainer">
-            <table id="patients">
-                {{!-- <thead>
-                    <tr>
-                        <td id="titles">First Name</td>
-                        <td id="titles">Last Name</td>
-                        <td id="titles">Phone Number</td>
-                        <td id="titles">Appointment Time</td>
-                        <td id="titles">Action</td>
-                    </tr>
-                </thead> --}}
-                <tr>
-                    <th>First name</th>
-                    <th>Last name</th>
-                    <th>Phone Number</th>
-                    <th>Appointment Time</th>
-                </tr>
+    </div>
+    <div id="title">
 
-                {{#each patients}}
-                    <tr>
-                        <td>{{this.firstName}}</td>
-                        <td>{{this.lastName}}</td>
-                        <td>{{this.phoneNumber}}</td>
-                        <td>{{this.appointmentTime}} - {{this.appointmentEndTime}}</td>
-                    </tr>
-                {{/each}}
-                {{!-- <tr>
-                    <td>Jill</td>
-                    <td>Smith</td>
-                    <td>778-506-2929</td>
-                    <td>1:30-2:30</td>
-                </tr>
+        <h2>Welcome, {{physiotherapist.firstName}} {{physiotherapist.lastName}}</h2>
+    </div>
+    <div id="listcontainer">
+        <table id="patients">
+            <tr>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Phone Number</th>
+                <th>Appointment Time</th>
+            </tr>
+            {{#each patients}}
+            <form method="GET" action="/home">
                 <tr>
-                    <td>Eve</td>
-                    <td>Jackson</td>
-                    <td>778-194-7088</td>
-                    <td>3:30-4:30</td>
+                    <td>{{this.firstName}}</td>
+                    <td>{{this.lastName}}</td>
+                    <td>{{this.phoneNumber}}</td>
+                    <td>{{this.appointmentTime}} - {{this.appointmentEndTime}}</td>
+                    <td><button type="submit">View More</button></td>
                 </tr>
-                <tr>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>604-180-8989</td>
-                    <td>5:30-6:30</td>
-                </tr> --}}
-            </table>
-        </div>
+            </form>
+            {{/each}}
+        </table>
+    </div>
     </div>
 
 

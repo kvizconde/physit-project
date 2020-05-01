@@ -1,24 +1,14 @@
-const loginModel = require('../models/loginData');
+const loginModel = require("../models/loginData");
 
-exports.getLogin = (req, res, next) => {
-  res.render('index', {
-    title: 'Login Page',
+// Gets the initial Login page for the app
+exports.getLogin = (req, res) => {
+  res.render("index", {
+    title: "Login Page",
     indexJSCSS: true,
   });
 };
 
-// Test function that grabs all physiotherapist accounts from the database.
-exports.getAllPT = (req, res, next) => {
-  const pts = loginModel.getAllPTs();
-
-    pts.then( ([rows, fieldData]) => {
-      res.render('index', {title: 'testData', 
-                           testData: rows, 
-                           indexJSCSS: true});
-    });
-};
-
-// Basic log in authentication function. (Needs some clean up)
+// Logging into the patient list view
 exports.postLogIn = (req, res) => {
 
   let d = new Date("April 30, 2020 01:15:00");
@@ -38,29 +28,50 @@ exports.postLogIn = (req, res) => {
 
   const email = req.body.physioID;
   const pword = req.body.password;
+  let patientInformationList = [];
 
-  const getPatientListAttempt = loginModel.getAppointmentsOnDate(email, date);
+  const patientInfo = loginModel.getPatientAppointmentData(req.body.physioID);
 
-  getPatientListAttempt.then( ([plist, metadata]) => {
-    let patientList = plist;
+  patientInfo
+    .then(([patientData, metadata]) => {
+      console.log(patientData[0]);
 
-    const logInAttempt = loginModel.logIn(email, pword);
-
-    logInAttempt.then( ([data, metadata]) => {
-      if (typeof data[0] === 'object') {
-        res.render('patientList', {title: 'HOME', 
-                                  patientListJSCSS: true, 
-                                  indexJSCSS: false, 
-                                  physiotherapist: data[0],
-                                  patients : patientList});
-      } else {
-        res.render('index', {
-          title: 'Login Page',
-          indexJSCSS: true,
-        });
+      for (let i = 0; typeof patientData[i] === "object"; i++) {
+        patientInformationList[i] = patientData[i];
+        console.log(patientInformationList[i]);
       }
-    }).catch( (data) => {
-      res.send("catch: " + data);
+
+      const attempt = loginModel.logIn(email, pword);
+
+      attempt
+        .then(([physioData, metadata]) => {
+          console.log(physioData[0]);
+          console.log(typeof physioData[0]);
+
+          if (typeof physioData[0] === "object") {
+            res.render("patientList", {
+              title: "HOME",
+              patientListJSCSS: true,
+              indexJSCSS: false,
+              physiotherapist: physioData[0],
+              patients: patientInformationList,
+            });
+          } else {
+            // TODO: @Benson or @Daniel please figure out a way to stop directing it to /calendar if password is invalid
+            res.render("index", {
+              title: "Login Page",
+              indexJSCSS: true,
+              passwordFailed: true,
+            });
+          }
+        })
+        // catch for physiotherapist select query
+        .catch(([physioData, metadata]) => {
+          res.send("catch: " + physioData);
+        });
+    })
+    .catch(([patientData, metadata]) => {
+      res.send("catch: " + patientData);
     });
 
   });
