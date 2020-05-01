@@ -60,7 +60,8 @@ body {
   width: 100%;
   box-sizing: border-box;
   font-family: "Nunito", sans-serif;
-  background: radial-gradient(110vw 100vh at bottom, #0765af 5%, #0c3867 25%, #020f28 60%);
+  background: radial-gradient(110vw 100vh at bottom, #0765af 5%, #0c3867 25%, #020f28 60%) center /
+    cover;
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.7;
