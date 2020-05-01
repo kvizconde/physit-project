@@ -54,8 +54,6 @@ function onSignUp() {
       .hide()
       .show(700);
 
-    // password.parentNode.insertBefore(firstName, password.nextSibling);
-    // firstName.parentNode.insertBefore(lastName, firstName.nextSibling);
     counter++;
   }
 }
