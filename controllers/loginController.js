@@ -1,4 +1,5 @@
 const loginModel = require("../models/loginData");
+export let patientInfo = [];
 
 // Gets the initial Login page for the app
 exports.getLogin = (req, res) => {
@@ -31,6 +32,8 @@ exports.postLogIn = (req, res) => {
         .then(([physioData, metadata]) => {
           console.log(physioData[0]);
           console.log(typeof physioData[0]);
+
+          patientInfo = patientInformationList;
 
           if (typeof physioData[0] === "object") {
             res.render("patientList", {
