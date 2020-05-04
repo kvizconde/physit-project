@@ -1,5 +1,3 @@
-/* Work In Progress */
-
 .sketchfab-embed-wrapper {
   overflow: hidden;
   display: flex;
@@ -13,3 +11,14 @@
   height: 100%;
   width: 100%;
 }
+
+#homeActive .icon_title {
+  color: var(--primaryYellow);
+  text-shadow: 0 0 1.5rem rgba(var(--yellowGlow), 1);
+}
+
+#homeActive .icon--nav {
+  filter: invert(69%) sepia(93%) saturate(1025%) hue-rotate(0deg) brightness(105%) contrast(108%)
+    drop-shadow(0 0 1.5rem rgba(var(--yellowGlow), .6));
+}
+
