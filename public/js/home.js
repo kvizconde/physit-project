@@ -6,12 +6,14 @@ function nameHover() {
     mouseenter() {
       $(patientInfo)
         .insertAfter(patientName)
-        .slideDown(400);
+        .stop()
+        .slideDown(350);
     },
     mouseleave() {
       $(patientInfo)
         .insertAfter(patientName)
-        .slideUp(350);
+        .stop()
+        .slideUp(200);
     },
   });
 }
