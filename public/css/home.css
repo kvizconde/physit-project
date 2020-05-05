@@ -1,2 +1,15 @@
 /* Work In Progress */
 
+.sketchfab-embed-wrapper {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75%;
+  width: 95%;
+}
+
+.sketchfab-embed-wrapper iframe {
+  height: 100%;
+  width: 100%;
+}

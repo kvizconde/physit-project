@@ -8,6 +8,14 @@ const poolRemote = mysql.createPool({
   password: "zOl8IYGf1s",
 });
 
+// clever-cloud
+// const poolRemote = mysql.createPool({
+//     host: 'b3wnd7j8rn8z25sczm2l-mysql.services.clever-cloud.com',
+//     user: 'utxu7ewpav2kgjpe',
+//     database: 'b3wnd7j8rn8z25sczm2l',
+//     password: 'gER8FFQhiCDWrHfoMvCp',
+// });
+
 // local database
 const poolLocal = mysql.createPool({
   host: "localhost",
