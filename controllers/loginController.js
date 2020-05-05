@@ -1,5 +1,4 @@
 const loginModel = require("../models/loginData");
-export let patientInfo = [];
 
 // Gets the initial Login page for the app
 exports.getLogin = (req, res) => {
