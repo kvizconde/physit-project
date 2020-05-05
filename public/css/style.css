@@ -176,7 +176,7 @@ a {
     0 0 1.5rem var(--primaryYellow), 0 0 2rem var(--primaryYellow), 0 0 2.5rem var(--primaryYellow),
     0 0 3rem var(--primaryYellow), 0 0 3.5rem var(--primaryYellow);
 
-  transition: .25s ease-out;
+  transition: .2s ease-out;
 }
 
 .navigation_container__link:hover .icon--nav {
