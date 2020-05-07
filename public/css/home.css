@@ -1,121 +1,113 @@
 html {
-    min-height: 100vh;
+  min-height: 100vh;
 }
 
 body {
-    height: 100%;
+  height: 100%;
 }
 
 #homeActive .icon_title {
-    color: var(--primaryYellow);
-    text-shadow: 0 0 1.5rem rgba(var(--yellowGlow), 1);
+  color: var(--primaryYellow);
+  text-shadow: 0 0 1.5rem rgba(var(--yellowGlow), 1);
 }
 
 #homeActive .icon--nav {
-    filter: invert(69%) sepia(93%) saturate(1025%) hue-rotate(0deg) brightness(105%) contrast(108%) drop-shadow(0 0 1.5rem rgba(var(--yellowGlow), .6));
+  filter: invert(69%) sepia(93%) saturate(1025%) hue-rotate(0deg) brightness(105%) contrast(108%)
+    drop-shadow(0 0 1.5rem rgba(var(--yellowGlow), .6));
 }
 
 .human_container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 90%;
-    width: 100%;
-    flex: 1 0 75%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90%;
+  width: 100%;
+  flex: 1 0 75%;
 }
 
 .human_container__img {
-    height: 865px;
-    /* height: 55em; */
-    /** Doesn't work w/ anchorbox 
+  height: 865px;
+  /* height: 55em; */
+  /** Doesn't work w/ anchorbox
     height: 100%; */
 }
 
 #anchorbox {
-    margin-left: 30%;
-    position: relative;
-    display: inline-block;
-    /**Add or remove to see where anchorbox is */
-    /* border: 5px solid red; */
+  margin-left: 30%;
+  position: relative;
+  display: inline-block;
+  /** Add or remove to see where anchorbox is */
+  /* border: 5px solid red; */
 }
-
 
 /** All the clickable elements */
 
 #anchorbox a {
-    position: absolute;
-    width: 20%;
-    height: 12%;
-    border-radius: 50%;
-    cursor: pointer;
-    /**Add or remove to see where anchorbox is */
-    /* border: 5px solid red; */
+  position: absolute;
+  width: 20%;
+  height: 12%;
+  border-radius: 50%;
+  cursor: pointer;
+  /** Add or remove to see where anchorbox is */
+  /* border: 5px solid red; */
 }
 
 #anchorbox a:hover {
-    background-color: #ffce00;
+  background-color: #ffce00;
 }
-
 
 /** Anchor element for the clickable left shoulder */
 
 #leftShoulder {
-    top: 13%;
-    left: 25%;
+  top: 13%;
+  left: 25%;
 }
-
 
 /** Anchor element for the clickable right shoulder */
 
 #rightShoulder {
-    top: 13%;
-    left: 60%;
+  top: 13%;
+  left: 60%;
 }
-
 
 /** Anchor element for the clickable left elbow */
 
 #leftElbow {
-    top: 27%;
-    left: 20%;
+  top: 27%;
+  left: 20%;
 }
-
 
 /** Anchor element for the clickable left elbow */
 
 #rightElbow {
-    top: 27%;
-    left: 65%;
+  top: 27%;
+  left: 65%;
 }
-
 
 /** Anchor element for the clickable left hip */
 
 #leftHip {
-    top: 39%;
-    left: 31%;
+  top: 39%;
+  left: 31%;
 }
-
 
 /** Anchor element for the clickable right hip */
 
 #rightHip {
-    top: 39%;
-    left: 53%;
+  top: 39%;
+  left: 53%;
 }
-
 
 /** Anchor element for the clickable left knee */
 
 #leftKnee {
-    top: 62%;
-    left: 32%;
+  top: 62%;
+  left: 32%;
 }
-
 
 /** Anchor element for the clickable right knee */
 
 #rightKnee {
-    top: 62%;
-    left: 52%;
+  top: 62%;
+  left: 52%;
 }
