@@ -69,7 +69,9 @@ body {
 }
 
 .home-container {
-  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  height: 95vh;
   padding: 1rem;
 }
 
@@ -104,6 +106,11 @@ a {
 
 /* Patient Header */
 
+.header-wrapper {
+  height: 5%;
+  width: 100%;
+}
+
 .patient_container {
   width: 35rem;
 }
@@ -137,15 +144,14 @@ a {
 .navigation_container {
   display: flex;
   align-items: center;
-  position: absolute;
-  height: 50rem;
-  right: 4rem;
-  top: 60%;
-  transform: translateY(-50%);
+  justify-content: flex-end;
+  height: 90%;
+  flex: 1 0 25%;
+  width: 50%;
 }
 
 .navigation_container__contain {
-  height: 90%;
+  height: 50rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -196,10 +202,33 @@ a {
 footer {
   clear: both;
   position: relative;
-  height: 8rem;
   margin-top: -8rem;
   display: flex;
   align-items: flex-end;
 }
 
 /* ./END-GLOBAL FOOTER */
+
+/* media query for smaller monitors */
+@media (max-width: 1024px) {
+
+  .home-container {
+    height: 95vh;
+  }
+}
+
+/* media query for ipad */
+@media all and (device-width: 1024px) and (device-height: 768px) and (orientation: landscape) {
+
+  .home-container {
+    height: 90vh;
+  }
+
+  .navigation_container__contain {
+    height: 40rem;
+  }
+
+  footer {
+    margin-top: -5rem;
+  }
+}
