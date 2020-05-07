@@ -8,8 +8,8 @@ exports.getLogin = (req, res) => {
   });
 };
 
-// Logging into the patient list view
-exports.postLogIn = (req, res) => {
+const getDate = () => {
+  
   let d = new Date("April 30, 2020 01:15:00");
   let year = d.getFullYear().toString();
   let day = d.getDate();
@@ -24,11 +24,17 @@ exports.postLogIn = (req, res) => {
   }
    
   let date = year + "-" + month + "-" + day;
+  
+  return date;
+}
+
+// Logging into the patient list view
+exports.postLogIn = (req, res) => {
 
   const email = req.body.physioID;
   const pword = req.body.password;
 
-  const getPatientListAttempt = loginModel.getPatientAppointmentData(email, date);
+  const getPatientListAttempt = loginModel.getPatientAppointmentData(email, getDate());
 
   getPatientListAttempt.then( ([plist, metadata]) => {
     let patientList = plist;
