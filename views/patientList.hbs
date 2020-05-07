@@ -10,23 +10,91 @@
                 <p class="navtext">Patient List</p>
             </div>
             <div id="log_out">
-            <form action="/" method="GET">
+                <form action="/" method="GET">
 
-                <button class="log_out" onclick="sign_out_function()">Log Out</button>
+                    <button class="log_out">Log Out</button>
 
-            </form>
+                </form>
             </div>
         </div>
     </div>
     <div id="title">
-
         <h2>Welcome, {{physiotherapist.firstName}} {{physiotherapist.lastName}}</h2>
     </div>
+        <!-- PATIENT CARD STYLE LIST-->
+        <div id="card-container">
+            <form class="card-wrapper" action="/home">
+                <!-- patient 1 -->
+                <div class="card">
+                    <h1 class="time"> 9:30-10:30</h1>
+                    <h2 class="name"> John Hopkins</h2>
+                    <p class="phone"> 778 665 5556</p>
+                    <button type="submit" class="btn">View</button>
+                </div>
+                <!-- patient 2 -->
+                <div class="card">
+                    <h1 class="time"> 10:30-11:30</h1>
+                    <h2 class="name">Barbara Thomas</h2>
+                    <p class="phone">778 685 7456 </p>
+                    <button type="submit" class="btn">View</button>
+                </div>
+                <!-- patient 3 -->
+                <div class="card">
+                    <h1 class="time"> 11:30-12:30</h1>
+                    <h2 class="name"> Eugene Chan</h2>
+                    <p class="phone">778 165 8556 </p>
+                    <button type="submit" class="btn">View</button>
+                </div>
+                <!-- patient 4 -->
+                <div class="card">
+                    <h1 class="time"> 9:30-11:30</h1>
+                    <h2 class="name"> TEST</h2>
+                    <p class="phone">778 665 5556</p>
+                    <button type="submit" class="btn">View</button>
+                </div>
+                <!-- patient 5 -->
+                <div class="card">
+                    <h1 class="time"> 9:30-11:30</h1>
+                    <h2 class="name"> TEST</h2>
+                    <p class="phone">778 665 5556</p>
+                    <button type="submit" class="btn">View</button>
+                </div>
+                <!-- patient 6 -->
+                <div class="card">
+                    <h1 class="time"> 9:30-11:30</h1>
+                    <h2 class="name"> TEST</h2>
+                    <p class="phone">778 665 5556</p>
+                    <button type="submit" class="btn">View</button>
+                </div>
+            </form>
+        </div>
+
+    <!-- Breaking to avoid showing during demo, please delete after --> 
+    <br>
+    <br>
+    <br>
+
+    <!-- Loads from the db using cards, but displays it vertically for some reason @todo kevin-->
+    {{#each patients}}
+    <div id="card-container">
+        <form class="card-wrapper" method="GET" action="/home">
+            <!-- patient 1 -->
+            <div class="card">
+                <h1 class="time"> {{this.appointmentTime}} - {{this.appointmentEndTime}}</h1>
+                <h2 class="name"> {{this.firstName}} {{this.lastName}}</h2>
+                <p class="phone"> {{this.phoneNumber}}</p>
+                <button type="submit" class="btn">View</button>
+            </div>
+        </form>
+    </div>
+    {{/each}}
+
+    <!-- Old Patient List that loads properly from DB -->
     <div id="listcontainer">
         <table id="patients">
             <tr>
-                <th>First name</th>
-                <th>Last name</th>
+                <th>First Name</th>
+                <th>Last Name</th>
                 <th>Phone Number</th>
                 <th>Appointment Time</th>
             </tr>
