@@ -1,15 +1,9 @@
-.sketchfab-embed-wrapper {
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 75%;
-  width: 95%;
+html {
+  min-height: 100vh;
 }
 
-.sketchfab-embed-wrapper iframe {
+body {
   height: 100%;
-  width: 100%;
 }
 
 #homeActive .icon_title {
@@ -22,3 +16,16 @@
     drop-shadow(0 0 1.5rem rgba(var(--yellowGlow), .6));
 }
 
+.human_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90%;
+  width: 100%;
+  flex: 1 0 75%;
+}
+
+.human_container__img {
+  margin-left: 25%;
+  height: 100%;
+}
