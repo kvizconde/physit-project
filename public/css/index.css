@@ -194,3 +194,21 @@ body {
     background-position: 10% 50%;
     filter: drop-shadow(0 0 3rem rgba(var(--blueGlow), .5));
 }
+
+
+/* media query for smaller monitors */
+
+@media (max-width: 1024px) {
+    #particles-js {
+        background-size: 35rem;
+    }
+}
+
+
+/* media query for ipad */
+
+@media all and (device-width: 1024px) and (device-height: 768px) and (orientation: landscape) {
+    #particles-js {
+        background-size: 35rem;
+    }
+}

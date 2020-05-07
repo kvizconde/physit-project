@@ -1,2 +1,31 @@
-/* Work In Progress */
+html {
+  min-height: 100vh;
+}
 
+body {
+  height: 100%;
+}
+
+#homeActive .icon_title {
+  color: var(--primaryYellow);
+  text-shadow: 0 0 1.5rem rgba(var(--yellowGlow), 1);
+}
+
+#homeActive .icon--nav {
+  filter: invert(69%) sepia(93%) saturate(1025%) hue-rotate(0deg) brightness(105%) contrast(108%)
+    drop-shadow(0 0 1.5rem rgba(var(--yellowGlow), .6));
+}
+
+.human_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90%;
+  width: 100%;
+  flex: 1 0 75%;
+}
+
+.human_container__img {
+  margin-left: 25%;
+  height: 100%;
+}

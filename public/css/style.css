@@ -60,7 +60,8 @@ body {
   width: 100%;
   box-sizing: border-box;
   font-family: "Nunito", sans-serif;
-  background: radial-gradient(110vw 100vh at bottom, #0765af 5%, #0c3867 25%, #020f28 60%);
+  background: radial-gradient(110vw 100vh at bottom, #0765af 5%, #0c3867 25%, #020f28 60%) center /
+    cover;
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.7;
@@ -68,7 +69,9 @@ body {
 }
 
 .home-container {
-  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  height: 95vh;
   padding: 1rem;
 }
 
@@ -103,6 +106,15 @@ a {
 
 /* Patient Header */
 
+.header-wrapper {
+  height: 5%;
+  width: 100%;
+}
+
+.patient_container {
+  width: 35rem;
+}
+
 .patient_container > * {
   font-weight: 300;
   height: auto;
@@ -111,17 +123,75 @@ a {
 .patient_container__name {
   letter-spacing: .2rem;
   text-transform: uppercase;
+  display: block;
+  width: 30rem;
 }
 
 .patient_container__info {
   font-size: 2rem;
   color: var(--primaryGray);
+  display: none;
 }
 
 .patient--color {
   color: var(--textBlue);
 }
-/* ./END-Patient Header */
+
+/* ./END of Patient Header */
+
+/* Navigation Bar */
+
+.navigation_container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 90%;
+  flex: 1 0 25%;
+  width: 50%;
+}
+
+.navigation_container__contain {
+  height: 50rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation_container__icon {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.icon--nav {
+  width: 8rem;
+  filter: invert(1);
+}
+
+.icon_title {
+  margin-top: 1.5rem;
+  font-weight: 300;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: .15rem;
+}
+
+.navigation_container__link:hover .icon_title {
+  text-shadow: 0 0 .5rem var(--primaryWhite), 0 0 1rem var(--primaryWhite),
+    0 0 1.5rem var(--primaryYellow), 0 0 2rem var(--primaryYellow), 0 0 2.5rem var(--primaryYellow),
+    0 0 3rem var(--primaryYellow), 0 0 3.5rem var(--primaryYellow);
+
+  transition: .2s ease-out;
+}
+
+.navigation_container__link:hover .icon--nav {
+  filter: invert(69%) sepia(93%) saturate(1025%) hue-rotate(0deg) brightness(105%) contrast(108%)
+    drop-shadow(0 0 2.5rem rgba(var(--yellowGlow), 1));
+  transition: .15s ease-out;
+}
+
+/* ./END of Navigation Bar */
 
 /* GLOBAL FOOTER */
 
@@ -132,10 +202,33 @@ a {
 footer {
   clear: both;
   position: relative;
-  height: 8rem;
   margin-top: -8rem;
   display: flex;
   align-items: flex-end;
 }
 
 /* ./END-GLOBAL FOOTER */
+
+/* media query for smaller monitors */
+@media (max-width: 1024px) {
+
+  .home-container {
+    height: 95vh;
+  }
+}
+
+/* media query for ipad */
+@media all and (device-width: 1024px) and (device-height: 768px) and (orientation: landscape) {
+
+  .home-container {
+    height: 90vh;
+  }
+
+  .navigation_container__contain {
+    height: 40rem;
+  }
+
+  footer {
+    margin-top: -5rem;
+  }
+}

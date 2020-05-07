@@ -2,6 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 const loginController = require('../controllers/loginController');
+const patientListController = require('../controllers/patientListController');
 
 // the render has been moved to loginController
 router.get('/', loginController.getLogin);

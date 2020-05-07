@@ -30,9 +30,13 @@ app.set('view engine', 'hbs');
 // create a variable that links to the route
 const loginRoute = require('./routes/loginRoute');
 const homeRoute = require('./routes/homeRoute');
+const exerciseRoute = require('./routes/exerciseRoute');
+const timelineRoute = require('./routes/timelineRoute');
 
 app.use(loginRoute);
 app.use(homeRoute);
+app.use(exerciseRoute);
+app.use(timelineRoute);
 
 app.listen(port, () => {
   console.log(`server is up on port ${port}`);

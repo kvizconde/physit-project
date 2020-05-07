@@ -1,0 +1,46 @@
+html {
+  min-height: 100vh;
+}
+
+body {
+  height: 100%;
+}
+
+#exerciseActive .icon_title {
+  color: var(--primaryYellow);
+  text-shadow: 0 0 1.5rem rgba(var(--yellowGlow), 1);
+}
+
+#exerciseActive .icon--nav {
+  filter: invert(69%) sepia(93%) saturate(1025%) hue-rotate(0deg) brightness(105%) contrast(108%)
+    drop-shadow(0 0 1.5rem rgba(var(--yellowGlow), .6));
+}
+
+.patient_container__exercise {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: var(--primaryGray);
+  display: block;
+}
+
+/* Exercise Area */
+
+.grid-center {
+  margin: 6rem auto;
+  padding: 1rem;
+}
+
+.grid-contain {
+  height: 100%;
+  display: grid;
+  grid-template: repeat(3, minmax(30rem, 2fr)) / repeat(auto-fit, minmax(40rem, 1fr));
+  grid-gap: 1rem;
+  text-align: center;
+}
+
+.grid {
+  background: var(--bg-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
