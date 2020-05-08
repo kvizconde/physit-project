@@ -25,18 +25,21 @@ body {
 }
 
 .human_container__img {
-    height: 865px;
-    /* height: 55em; */
-    /** Doesn't work w/ anchorbox 
-    height: 100%; */
+    height: 100%;
+}
+
+.patient_container__bodypart {
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: var(--primaryGray);
+    display: block;
 }
 
 #anchorbox {
     margin-left: 30%;
     position: relative;
     display: inline-block;
-    /**Add or remove to see where anchorbox is */
-    /* border: 5px solid red; */
+    height: inherit;
 }
 
 
@@ -48,12 +51,10 @@ body {
     height: 12%;
     border-radius: 50%;
     cursor: pointer;
-    /**Add or remove to see where anchorbox is */
-    /* border: 5px solid red; */
 }
 
 #anchorbox a:hover {
-    background-color: #ffce00;
+    background-color: var(--primaryYellow);
 }
 
 
