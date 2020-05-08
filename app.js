@@ -49,12 +49,14 @@ const homeRoute = require('./routes/homeRoute');
 const exerciseRoute = require('./routes/exerciseRoute');
 const timelineRoute = require('./routes/timelineRoute');
 const patientListRoute = require('./routes/patientListRoute');
+const zoomRoute = require('./routes/zoomRoute');
 
 app.use('/', loginRoute);
 app.use('/', homeRoute);
 app.use('/', exerciseRoute);
 app.use('/', timelineRoute);
 app.use('/', patientListRoute);
+app.use('/', zoomRoute);
 
 app.get('/', (req, res) => {
   req.session.destroy()
