@@ -1,15 +1,15 @@
-const db = require('../util/database');
+const db = require("../util/database");
 
 // Selects all physiotherapist accounts in database.
 function getAllPTs() {
-    return db.execute(`SELECT * FROM physiotherapist`);
+  return db.execute(`SELECT * FROM physiotherapist`);
 }
 
 // pulling data to get the physio
 function logIn(physioID, pword) {
-    return db.execute(
-        `SELECT * FROM physiotherapist WHERE (physioID = "${physioID}" AND password = "${pword}")`,
-    );
+  return db.execute(
+    `SELECT * FROM physiotherapist WHERE (physioID = "${physioID}" AND password = "${pword}")`
+  );
 }
 
 // Join appointment and patient table to get related data
@@ -26,9 +26,9 @@ function getPatientAppointmentData(physioID, date) {
 
 // LOCAL VERSION
 function logIn(physioID, pword) {
-    return db.execute(
-        `SELECT * FROM physiotherapist WHERE (physioID = "${physioID}" AND password = "${pword}")`,
-    );
+  return db.execute(
+    `SELECT * FROM physiotherapist WHERE (physioID = "${physioID}" AND password = "${pword}")`
+  );
 }
 
 // // LOCAL VERSION
