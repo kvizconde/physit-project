@@ -1,8 +1,9 @@
 <main class="home-container">
   {{>_patientHeader}}
   <div class="human_container">
+
     <!-- replace this @Ringo -->
-    <div class="sketchfab-embed-wrapper">
+    {{!-- <div class="sketchfab-embed-wrapper">
       <iframe
         title="A 3D model"
         width="640"
@@ -12,8 +13,21 @@
         allow="autoplay; fullscreen; vr"
         mozallowfullscreen="true"
         webkitallowfullscreen="true"
-      ></iframe>
-    </div>
+      ></iframe> --}}
+    {{!-- <iframe id="myWidget"
+            src="https://human.biodigital.com/viewer?id=production/maleAdult/male_system_anatomy_skeletal_09&ui-info=false&ui-menu=false&dk=438f0897e2ee8156d5a7198fb3067553f93e14e2"
+            width="80%"
+            height="100%">
+    </iframe> --}}
+
+    {{!-- <div class="shoulder-container"> --}}
+    <iframe id="myWidget" frameBorder="0" width="91%" height="91%" allowFullScreen="true"
+        src="https://human.biodigital.com/viewer/?be=3V87&ui-info=false&ui-search=true&ui-reset=true&ui-fullscreen=false&ui-nav=true&ui-tools=false&ui-help=false&ui-chapter-list=false&ui-label-list=false&ui-anatomy-descriptions=false&ui-tutorial=false&disable-scroll=false&camera=28.019,141.854,-82.425,17.324,113.553,2.901,-0.018,0.984,0.18&dk=438f0897e2ee8156d5a7198fb3067553f93e14e2">
+      </iframe>
+    {{!-- </div> --}}
+
+    <script src="https://developer.biodigital.com/builds/api/2/human-api.min.js"></script>
+  </div>
   </div>
   {{>_navigation}}
 </main>

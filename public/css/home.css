@@ -12,8 +12,7 @@ body {
 }
 
 #homeActive .icon--nav {
-  filter: invert(69%) sepia(93%) saturate(1025%) hue-rotate(0deg) brightness(105%) contrast(108%)
-    drop-shadow(0 0 1.5rem rgba(var(--yellowGlow), .6));
+  filter: invert(69%) sepia(93%) saturate(1025%) hue-rotate(0deg) brightness(105%) contrast(108%) drop-shadow(0 0 1.5rem rgba(var(--yellowGlow), .6));
 }
 
 .human_container {
@@ -27,6 +26,16 @@ body {
 
 .human_container__img {
   height: 100%;
+}
+
+.shoulder-container {
+  height: 50em;
+  width: 50em;
+  overflow: hidden;
+}
+
+#myWidget {
+  margin-left: 30%;
 }
 
 .patient_container__bodypart {
@@ -43,6 +52,7 @@ body {
   height: inherit;
 }
 
+
 /** All the clickable elements */
 
 #anchorbox a {
@@ -57,12 +67,14 @@ body {
   background-color: var(--primaryYellow);
 }
 
+
 /** Anchor element for the clickable left shoulder */
 
 #leftShoulder {
   top: 13%;
   left: 25%;
 }
+
 
 /** Anchor element for the clickable right shoulder */
 
@@ -71,12 +83,14 @@ body {
   left: 60%;
 }
 
+
 /** Anchor element for the clickable left elbow */
 
 #leftElbow {
   top: 27%;
   left: 20%;
 }
+
 
 /** Anchor element for the clickable left elbow */
 
@@ -85,12 +99,14 @@ body {
   left: 65%;
 }
 
+
 /** Anchor element for the clickable left hip */
 
 #leftHip {
   top: 39%;
   left: 31%;
 }
+
 
 /** Anchor element for the clickable right hip */
 
@@ -99,12 +115,14 @@ body {
   left: 53%;
 }
 
+
 /** Anchor element for the clickable left knee */
 
 #leftKnee {
   top: 62%;
   left: 32%;
 }
+
 
 /** Anchor element for the clickable right knee */
 
