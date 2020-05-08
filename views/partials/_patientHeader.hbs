@@ -1,8 +1,15 @@
 <div class="header-wrapper">
   <!-- patient info  -->
   <div class="patient_container" id="patientDiv">
+    <!-- FOR PHYSIO -->
+    {{# if patientListJSCSS }}
+    <h1 class="patient_container__name patient--color">
+      Welcome {{ physiotherapist.firstName }} {{ physiotherapist.lastName }}
+    </h1>
+    <!-- ./FOR PHYSIO -->
+    {{ else }}
     <h1 class="patient_container__name patient--color">John Hopkins</h1>
-
+    {{/ if }}
     {{# if exerciseJSCSS }}
     <p class="patient_container__exercise">
       <span class="patient--color">Shoulder</span>&nbsp; exercises
@@ -10,7 +17,7 @@
     {{/ if}}
     {{# if zoomJSCSS }}
     <p class="patient_container__bodypart">
-      <span class="patient--color">penis</span>
+      <span class="patient--color">SHOULDER</span>
     </p>
     {{/ if}}
     <p class="patient_container__info"><span class="patient--color">42</span>&nbsp; years old</p>
@@ -20,7 +27,9 @@
   <!-- ./patient info -->
   <!-- logout -->
   <div class="logout_container">
-    <button id="logout" class="logout_container__bttn">Logout</button>
+    <button onclick="location.href='/'" type="button" id="logout" class="logout_container__bttn">
+      Logout
+    </button>
   </div>
   <!-- ./logout -->
 </div>
