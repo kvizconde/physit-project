@@ -33,7 +33,6 @@ function getPatientAppointmentData(physioID, date) {
                 AND a.appointmentDate = "${date}";`,
     );
 }
-
 module.exports = {
     getPhysiotherapist,
     logIn,

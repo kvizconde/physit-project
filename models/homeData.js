@@ -1,4 +1,4 @@
-const db = require('../util/database');
+const db = require("../util/database");
 
 function postAppointmentDetail(appointmentID, bodyPart, symptom, diagnosis, recoveryDate) {
   db.execute(`INSERT INTO appointmentdetail (appointmentID, bodyPart, symptom, diagnosis, recoveryDate) 
