@@ -29,6 +29,13 @@ body {
   height: 100%;
 }
 
+.patient_container__bodypart {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: var(--primaryGray);
+  display: block;
+}
+
 #anchorbox {
   margin-left: 30%;
   position: relative;
