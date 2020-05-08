@@ -33,10 +33,13 @@ const homeRoute = require('./routes/homeRoute');
 const exerciseRoute = require('./routes/exerciseRoute');
 const timelineRoute = require('./routes/timelineRoute');
 
+const zoomRoute = require('./routes/zoomRoute');
+
 app.use(loginRoute);
 app.use(homeRoute);
 app.use(exerciseRoute);
 app.use(timelineRoute);
+app.use(zoomRoute);
 
 app.listen(port, () => {
   console.log(`server is up on port ${port}`);
