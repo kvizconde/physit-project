@@ -34,8 +34,6 @@ body {
   position: relative;
   display: inline-block;
   height: inherit;
-  /** Add or remove to see where anchorbox is */
-  /* border: 5px solid red; */
 }
 
 /** All the clickable elements */
@@ -46,12 +44,10 @@ body {
   height: 12%;
   border-radius: 50%;
   cursor: pointer;
-  /** Add or remove to see where anchorbox is */
-  /* border: 5px solid red; */
 }
 
 #anchorbox a:hover {
-  background-color: #ffce00;
+  background-color: var(--primaryYellow);
 }
 
 /** Anchor element for the clickable left shoulder */
