@@ -1,9 +1,9 @@
-const db = require('../util/database');
+const db = require("../util/database");
 
 function getAllPTs() {
-    return db.execute(`SELECT * FROM physiotherapist`);
-  }
+  return db.execute(`SELECT * FROM physiotherapist`);
+}
 
 exports.module = {
-    getAllPTs,
+  getAllPTs,
 };
