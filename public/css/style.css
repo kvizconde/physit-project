@@ -109,10 +109,13 @@ a {
 .header-wrapper {
   height: 5%;
   width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .patient_container {
-  width: 35rem;
+  flex: 1 0 50%;
+  align-self: flex-start;
 }
 
 .patient_container > * {
@@ -123,8 +126,8 @@ a {
 .patient_container__name {
   letter-spacing: .2rem;
   text-transform: uppercase;
-  display: block;
-  width: 30rem;
+  display: inline-block;
+  width: 100%;
 }
 
 .patient_container__info {
@@ -135,6 +138,19 @@ a {
 
 .patient--color {
   color: var(--textBlue);
+}
+
+.logout_container__bttn {
+  flex: 1 0 50%;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 700;
+  width: 10rem;
+  height: 4rem;
+  text-align: center;
+  color: var(--primaryWhite);
+  background-color: var(--primaryRed);
+  border-radius: .6rem;
 }
 
 /* ./END of Patient Header */
