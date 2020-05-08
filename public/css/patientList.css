@@ -1,269 +1,92 @@
-body {
-    color: white;
-}
-
-#menu {
-    width: 100%;
-    height: 3.5em;
-    overflow: hidden;
-    margin: auto;
-    background-color: var(--midBlue);
-    border-top: solid 2px #29648A;
-    border-bottom: solid 2px #29648A;
-}
-
-
-/** The div containing the log out button for the pages */
-
-#navbar_title {
-    float: left;
-    margin: 0 0 0 2em;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 17pt;
-}
-
-#log_out {
-    float: right;
-    margin: 0 2em 0 0;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-
-/** The log out button for the pages */
-
-#log_out button {
-    font-size: 18pt;
-    width: 6em;
-    border-radius: 0.5em;
-    background-color: #289CCA;
-    cursor: pointer;
-}
-
-
-/** Global div holding the logo for the the pages */
-
-#navBar {
-    position: relative;
-    width: 100%;
-    height: 8em;
-    margin-top: 1em;
-}
-
-
-/** The logo and title of our APP */
-
-#navBar img {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 100%;
-}
-
-
-/** Table including the list of patients */
-
-#patients {
-    width: 100%;
-    /* background-color: #3C414F; */
-    background-color: var(--primaryBlack);
-    border: 1px solid #29648A;
-    padding: 1em;
-}
-
-
-/** Giving the td elements text shadows */
-
-body tr td {
-    text-shadow: black 2px 2px 2px;
-}
-
-
-/** Div containing the "Patient List" header */
-
-#title {
-    margin: 2em 0em 2em 2em;
-}
-
-
-/** Header for "Patient List" */
-
-#title h2 {
-    font-size: 27pt;
-    color: var(--textBlue);
-    text-shadow: black 1px 1px 1px;
-}
-
-
-/**  View buttons in the patient list area */
-
-#patients button {
-    font-size: 15pt;
-    border-radius: 11px;
-    background-color: #289CCA;
-    line-height: 2em;
-    color: black;
-}
-
-
-/** Anchor elements in the page */
-
-a {
-    text-decoration: none;
-    color: black;
-}
-
-
-/** Div containing the list of patients */
-
-#listcontainer {
-    width: 90%;
-    margin: auto;
-}
-
-
-/** Referencing just the categorizing td elements in the table (First Name, Last Name, etc) */
-
-#titles {
-    padding-bottom: 0.618em;
-    font-weight: bold;
-    font-size: 20pt;
-    color: var(--textBlue);
-}
-
-th {
-    padding-bottom: 0.618em;
-    font-weight: bold;
-    font-size: 20pt;
-    color: var(--textBlue);
-    text-align: left;
-}
-
-
-/** Changing the size of the td elements in the table */
-
-td {
-    font-size: 18pt;
-}
-
-
-/** Changing the colour of the button text to black */
-
-td a:visited {
-    color: black;
-}
-
-
-/** ---------------------------------------------------------- */
-
-
-/** ---------------------------------------------------------- */
-
-
-/** -----------------------CARDS CSS-------------------------- */
-
-
-/** ---------------------------------------------------------- */
-
-
-/** ---------------------------------------------------------- */
-
 #card-container {
-    width: 120rem;
-    margin: auto;
-    vertical-align: middle;
+  margin: auto;
+  vertical-align: middle;
+  height: 90%;
+  width: 100%;
 }
 
 .card-wrapper {
-    display: flex;
-    align-items: center;
-    align-content: center;
+  display: flex;
+  align-items: center;
+  align-content: flex-start;
+  height: 100%;
 }
-
 
 /* css for card */
 
 .card {
-    width: 35rem;
-    background-color: #ebeef8;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: left;
-    margin: 2rem 0;
-    box-shadow: .5rem .5rem 3rem rgba(0, 0, 0, 0.5);
-    transition: transform .5s
+  width: 35rem;
+  background-color: #ebeef8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: left;
+  margin: 2rem 0;
+  box-shadow: .5rem .5rem 3rem rgba(0, 0, 0, .5);
+  transition: transform .5s;
 }
 
 .card:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
-
 
 /** Css for Appt Time */
 
 .time {
-    margin: 1.5rem 0;
-    color: #333;
+  margin: 1.5rem 0;
+  color: #333;
 }
-
 
 /* css for name class */
 
 .name {
-    font-size: 29pt;
-    color: #333;
-    margin: 0em 0em 0em 0em;
-    padding: 0pt;
+  font-size: 29pt;
+  color: #333;
+  margin: 0em 0em 0em 0em;
+  padding: 0pt;
 }
-
 
 /* css for about div */
 
 .phone {
-    font-size: 2rem;
-    font-style: none;
-    color: #333;
+  font-size: 2rem;
+  font-style: none;
+  color: #333;
 }
-
 
 /* css for card button classes */
 
 .card .btn {
-    padding: 1rem 2.5rem;
-    background-color: #445ae3;
-    border-radius: 2rem;
-    margin: 1rem 0;
-    text-transform: uppercase;
-    color: #eee;
-    font-size: 1.4rem;
-    transition: all .5s;
+  padding: 1rem 2.5rem;
+  background-color: #445ae3;
+  border-radius: 2rem;
+  margin: 1rem 0;
+  text-transform: uppercase;
+  color: #eee;
+  font-size: 1.4rem;
+  transition: all .5s;
 }
-
 
 /* css for hover effect */
 
 .card .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: .5rem .5rem 2rem rgba(0, 0, 0, .2);
+  transform: translateY(-2px);
+  box-shadow: .5rem .5rem 2rem rgba(0, 0, 0, .2);
 }
-
 
 /* css for btn card class after clicked effect */
 
 .card .btn:active {
-    transform: translateY(0);
-    box-shadow: none;
+  transform: translateY(0);
+  box-shadow: none;
 }
 
 @media screen and (min-width: 700px) {
-    .card-wrapper {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-items: center;
-    }
+
+  .card-wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
 }
