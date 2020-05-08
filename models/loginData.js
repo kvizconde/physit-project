@@ -1,8 +1,8 @@
 const db = require('../util/database');
 
 // Selects all physiotherapist accounts in database.
-function getAllPTs() {
-    return db.execute(`SELECT * FROM physiotherapist`);
+function getPhysiotherapist(physioID) {
+    return db.execute(`SELECT * FROM physiotherapist WHERE physioID = "${physioID}";`);
 }
 
 // pulling data to get the physio
@@ -39,7 +39,7 @@ function logIn(physioID, pword) {
 // }
 
 module.exports = {
-    getAllPTs,
+    getPhysiotherapist,
     logIn,
     getPatientAppointmentData,
 };
