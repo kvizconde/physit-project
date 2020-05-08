@@ -6,10 +6,20 @@ function getPhysiotherapist(physioID) {
 }
 
 // pulling data to get the physio
-function logIn(physioID, pword) {
-    return db.execute(
-        `SELECT * FROM physiotherapist WHERE (physioID = "${physioID}" AND password = "${pword}")`,
-    );
+async function logIn(physioID, pword) {
+    try {
+        const response = await db.execute(
+            `SELECT * FROM physiotherapist WHERE (physioID = "${physioID}" AND password = "${pword}")`,
+        );
+        if (response[0].length === 0) {
+            return undefined;
+        } else {
+            return response;
+        }
+    } catch (error) {
+        throw error;
+    }
+    
 }
 
 // Join appointment and patient table to get related data
@@ -23,20 +33,6 @@ function getPatientAppointmentData(physioID, date) {
                 AND a.appointmentDate = "${date}";`,
     );
 }
-
-// LOCAL VERSION
-function logIn(physioID, pword) {
-    return db.execute(
-        `SELECT * FROM physiotherapist WHERE (physioID = "${physioID}" AND password = "${pword}")`,
-    );
-}
-
-// // LOCAL VERSION
-// function logIn(physioID, pword) {
-//   return db.execute(
-//     `SELECT * FROM physiotherapist WHERE (physioID = "${physioID}" AND password = "${pword}")`,
-//   );
-// }
 
 module.exports = {
     getPhysiotherapist,
