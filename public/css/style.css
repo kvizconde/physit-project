@@ -69,8 +69,6 @@ body {
 }
 
 .home-container {
-  display: flex;
-  flex-wrap: wrap;
   height: 95vh;
   padding: 1rem;
 }
