@@ -23,6 +23,7 @@ body {
   height: 90%;
   width: 100%;
   flex: 1 0 75%;
+  position: relative;
 }
 
 .human_container__img {
@@ -32,9 +33,96 @@ body {
 .patient_container__bodypart {
   font-size: 2rem;
   text-transform: uppercase;
-  color: var(--primaryGray);
   display: block;
 }
+
+/* Input Area for Symptoms/Diagnosis */
+
+.input_container {
+  z-index: 1;
+  left: 0;
+  top: 10%;
+  position: absolute;
+  height: 55rem;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  border: .25rem solid var(--orangeYellow);
+  box-shadow: 0 0 1rem rgba(var(--yellowGlow), .75);
+  border-radius: 1.2rem;
+}
+
+.input_container__form {
+  display: flex;
+  flex-direction: column;
+}
+
+textarea::-webkit-scrollbar {
+  background-color: var(--midBlue);
+  width: .75rem;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background-color: var(--textBlue);
+  box-shadow: 0 0 1rem rgba(var(--blueGlow), 1);
+}
+
+.input_container__form textarea {
+  resize: none;
+  background-color: transparent;
+  padding: 1rem;
+  color: var(--textBlue);
+  font-size: 1.6rem;
+  font-weight: 300;
+  width: 100%;
+  text-shadow: 0 0 1rem rgba(var(--blueGlow), .5);
+  transition: .12s ease-out;
+  overflow: hidden;
+  height: 15rem;
+  border: .1rem solid rgba(0, 0, 0, 0);
+}
+
+textarea::placeholder {
+  font-size: 1.4rem;
+  text-transform: capitalize;
+  text-shadow: none;
+  text-align: center;
+  line-height: 12rem;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: var(--textBlue);
+  box-shadow: 0 0 1rem rgba(var(--blueGlow), .8);
+  transition: .15s ease-out;
+  overflow: visible;
+  border: .1rem solid var(--textBlue);
+}
+
+hr {
+  margin: 3rem auto;
+  color: rgb(255, 255, 255, .35);
+  border-style: none;
+  border-top: solid;
+  border-width: .1rem;
+  width: 75%;
+}
+
+.form__label {
+  font-weight: 300;
+  font-size: 2.5rem;
+  letter-spacing: .14rem;
+  color: var(--primaryYellow);
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+/* ./Input Area for Symptoms/Diagnosis */
+
+/** All the clickable elements */
 
 #anchorbox {
   margin-left: 30%;
@@ -42,8 +130,6 @@ body {
   display: inline-block;
   height: inherit;
 }
-
-/** All the clickable elements */
 
 #anchorbox a {
   position: absolute;
