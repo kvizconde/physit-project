@@ -52,6 +52,7 @@ body {
   border: .25rem solid var(--orangeYellow);
   box-shadow: 0 0 1rem rgba(var(--yellowGlow), .75);
   border-radius: 1.2rem;
+  background: rgba(var(--inputBox), .4);
 }
 
 .input_container__form {
@@ -118,6 +119,7 @@ hr {
   color: var(--primaryYellow);
   text-transform: uppercase;
   margin-bottom: 2rem;
+  text-shadow: 0 0 1rem rgba(var(--yellowGlow), .6);
 }
 
 /* ./Input Area for Symptoms/Diagnosis */
