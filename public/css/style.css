@@ -4,6 +4,7 @@
 /*
 #FFCE00
 #fdc406
+#ffaf00
 #ff4566
 #FF5767
 #2EC5E6
@@ -23,6 +24,7 @@
   --primaryGray: #9b9b9b;
   --primaryYellow: #ffce00;
   --secondaryYellow: #fdc406;
+  --orangeYellow: #ffaf00;
   --primaryRed: #ff4566;
   --redGlow: #ff5767;
   --primaryBlue: #0765af;
@@ -50,6 +52,7 @@
 html {
   font-size: 62.5%;
   min-height: 100%;
+  overflow: hidden;
 }
 
 /* End of Browser Reset */
