@@ -2,7 +2,6 @@
   {{>_patientHeader}}
   <div id="card-container">
     <form class="card-wrapper" method="GET" action="/home">
-      <!-- patient 1 -->
       {{#each patients}}
       <div class="card">
         <h1 class="time">{{ this.appointmentTime }} - {{ this.appointmentEndTime }}</h1>
@@ -37,3 +36,17 @@
     </div>
 </main>
 {{>_footer}}
+
+<!-- OLD -->
+<!-- <div id="card-container">
+  <form class="card-wrapper" method="GET" action="/home">
+    {{#each patients}}
+    <div class="card">
+      <h1 class="time">{{ this.appointmentTime }} - {{ this.appointmentEndTime }}</h1>
+      <h2 class="name">{{ this.firstName }} {{ this.lastName }}</h2>
+      <p class="phone">{{ this.phoneNumber }}</p>
+      <button type="submit" class="btn">View</button>
+    </div>
+    {{/each}}
+  </form>
+</div> -->

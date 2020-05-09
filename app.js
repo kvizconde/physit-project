@@ -27,21 +27,23 @@ app.engine(
 app.set('views', 'views');
 app.set('view engine', 'hbs');
 
-let session = require('express-session')
+const session = require('express-session');
+
+
 app.use(
-	session({
-		secret: 'secret',
-		name: 'session_data',
-		resave: true,
-		saveUninitialized: false,
-		rolling: true,
-		cookie: {
-			httpOnly: true,
-			// maxAge: 600000 //10 minutes
-			maxAge: 365 * 24 * 60 * 60 * 1000 //one year
-		}
-	})
-)
+  session({
+    secret: 'secret',
+    name: 'session_data',
+    resave: true,
+    saveUninitialized: false,
+    rolling: true,
+    cookie: {
+      httpOnly: true,
+      // maxAge: 600000 //10 minutes
+      maxAge: 365 * 24 * 60 * 60 * 1000, // one year
+    },
+  }),
+);
 
 // create a variable that links to the route
 const loginRoute = require('./routes/loginRoute');
@@ -59,12 +61,12 @@ app.use('/', patientListRoute);
 app.use('/', zoomRoute);
 
 app.get('/', (req, res) => {
-  req.session.destroy()
-	res.render("index", {
-		title: "Login Page",
-		indexJSCSS: true,
-	  });
-})
+  req.session.destroy();
+  res.render('index', {
+    title: 'Login Page',
+    indexJSCSS: true,
+  });
+});
 
 app.listen(port, () => {
   console.log(`server is up on port ${port}`);
