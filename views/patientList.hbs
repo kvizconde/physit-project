@@ -4,6 +4,7 @@
     <form class="card-wrapper" method="GET" action="/home">
       {{#each patients}}
       <div class="card">
+        <input name="appointmentID" type="hidden" value="{{this.appointmentID}}">
         <h1 class="time">{{ this.appointmentTime }} - {{ this.appointmentEndTime }}</h1>
         <h2 class="name">{{ this.firstName }} {{ this.lastName }}</h2>
         <p class="phone">{{ this.phoneNumber }}</p>
@@ -24,6 +25,7 @@
             {{#each patients}}
             <form name="patientData" method="GET" action="/home">
                 <tr>
+                    <input name="appointmentID" type="hidden" value="{{this.appointmentID}}">
                     <td>{{this.firstName}}</td>
                     <td>{{this.lastName}}</td>
                     <td>{{this.phoneNumber}}</td>

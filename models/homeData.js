@@ -16,7 +16,26 @@ function postSetInjuryInactive(appointmentID, bodypart) {
                   WHERE (appointmentID = ${appointmentID} AND bodypart = "${bodypart}");`);
 }
 
-exports.module = {
+async function getAppointmentDetail(appointmentID) {
+  try {
+    const response = await db.execute(
+      `SELECT p.firstName, p.lastName, p.dateOfbirth 
+       FROM appointment a
+       INNER JOIN patient p 
+       ON a.patientID = p.patientID
+       WHERE appointmentID = ${appointmentID};`)
+    if (response[0].length === 0) {
+      return undefined;
+    } else {
+      return response;
+    }
+  } catch (error) {
+    throw error
+  }
+}
+
+module.exports = {
+  getAppointmentDetail,
   postAppointmentDetail,
   getAllActiveInjuries,
   postSetInjuryInactive
