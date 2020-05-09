@@ -22,8 +22,8 @@
   align-items: center;
   justify-content: left;
   margin: 2rem 0;
-  box-shadow: .5rem .5rem 3rem rgba(0, 0, 0, .5);
-  transition: transform .5s;
+  box-shadow: 0.5rem 0.5rem 3rem rgba(0, 0, 0, 0.5);
+  transition: transform 0.5s;
 }
 
 .card:hover {
@@ -64,14 +64,14 @@
   text-transform: uppercase;
   color: #eee;
   font-size: 1.4rem;
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
 /* css for hover effect */
 
 .card .btn:hover {
   transform: translateY(-2px);
-  box-shadow: .5rem .5rem 2rem rgba(0, 0, 0, .2);
+  box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.2);
 }
 
 /* css for btn card class after clicked effect */
@@ -82,11 +82,95 @@
 }
 
 @media screen and (min-width: 700px) {
-
   .card-wrapper {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
   }
+}
+
+/* Using the old patient list styling for testing purposes */
+
+/** Table including the list of patients */
+
+#patients {
+  width: 100%;
+  /* background-color: #3C414F; */
+  background-color: var(--primaryBlack);
+  border: 1px solid #29648a;
+  padding: 1em;
+}
+
+/** Giving the td elements text shadows */
+
+body tr td {
+  text-shadow: black 2px 2px 2px;
+}
+
+/** Div containing the "Patient List" header */
+
+#title {
+  margin: 2em 0em 2em 2em;
+}
+
+/** Header for "Patient List" */
+
+#title h2 {
+  font-size: 27pt;
+  color: var(--textBlue);
+  text-shadow: black 1px 1px 1px;
+}
+
+/**  View buttons in the patient list area */
+
+#patients button {
+  font-size: 15pt;
+  border-radius: 11px;
+  background-color: #289cca;
+  line-height: 2em;
+  color: black;
+}
+
+/** Anchor elements in the page */
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/** Div containing the list of patients */
+
+#listcontainer {
+  width: 90%;
+  margin: auto;
+}
+
+/** Referencing just the categorizing td elements in the table (First Name, Last Name, etc) */
+
+#titles {
+  padding-bottom: 0.618em;
+  font-weight: bold;
+  font-size: 20pt;
+  color: var(--textBlue);
+}
+
+th {
+  padding-bottom: 0.618em;
+  font-weight: bold;
+  font-size: 20pt;
+  color: var(--textBlue);
+  text-align: left;
+}
+
+/** Changing the size of the td elements in the table */
+
+td {
+  font-size: 18pt;
+}
+
+/** Changing the colour of the button text to black */
+
+td a:visited {
+  color: black;
 }

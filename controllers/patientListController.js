@@ -19,7 +19,7 @@ const getDate = () => {
     let date = year + "-" + month + "-" + day;
     
     return date;
-  }
+}
 
 exports.renderPatientList = async (req, res) => {
     try {
