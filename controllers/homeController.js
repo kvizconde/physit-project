@@ -1,9 +1,9 @@
-const homeModel = require('../models/homeData');
-const loginController = require('../controllers/loginController');
+const homeModel = require('../models/homeData')
 
 // Get home
 exports.getHome = async (req, res) => {
   try {
+<<<<<<< HEAD
     console.log(req.session.physioID);
     console.log(req.query.appointmentID);
 
@@ -46,3 +46,21 @@ exports.getHome = async (req, res) => {
 //   }
 
 // }
+=======
+    if(req.query.appointmentID) {
+      req.session.appointmentID = req.query.appointmentID
+    }
+    const appID = req.session.appointmentID
+    const patient = await homeModel.getAppointmentDetail(appID)
+
+    res.render('home', {
+      title: 'Patient Home',
+      homepageJSCSS: true,
+      patient: patient[0][0],
+    })
+  } catch (error) {
+    throw error
+  }
+}
+
+>>>>>>> 4aeb3b5014115c6ff0795335b9d75c41838a3baa

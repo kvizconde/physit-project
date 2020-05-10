@@ -1,17 +1,17 @@
 const db = require("../util/database");
 
 function postAppointmentDetail(appointmentID, bodyPart, symptom, diagnosis, recoveryDate) {
-  db.execute(`INSERT INTO appointmentdetail (appointmentID, bodyPart, symptom, diagnosis, recoveryDate) 
+  return db.execute(`INSERT INTO appointmentdetail (appointmentID, bodyPart, symptom, diagnosis, recoveryDate) 
                   VALUES (${appointmentID}, "${bodyPart}", "${symptom}", "${diagnosis}", "${recoveryDate}");`);
 }
 
 function getAllActiveInjuries(patientID) {
-  db.execute(`SELECT * FROM appointmentdetail
+  return db.execute(`SELECT * FROM appointmentdetail
               WHERE patientID = ${patientID} AND active = 1;`);
 }
 
 function postSetInjuryInactive(appointmentID, bodypart) {
-  db.execute(`UPDATE appointmentdetail
+  return db.execute(`UPDATE appointmentdetail
                   SET active = 0
                   WHERE (appointmentID = ${appointmentID} AND bodypart = "${bodypart}");`);
 }
@@ -35,8 +35,12 @@ async function getAppointmentDetail(appointmentID) {
 }
 
 module.exports = {
+<<<<<<< HEAD
   getAppointmentDetail,
   postAppointmentDetail,
   getAllActiveInjuries,
   postSetInjuryInactive
+=======
+  getAppointmentDetail
+>>>>>>> 4aeb3b5014115c6ff0795335b9d75c41838a3baa
 };
