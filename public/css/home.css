@@ -136,11 +136,13 @@ hr {
   color: var(--primaryYellow);
   text-transform: uppercase;
   margin-bottom: 2rem;
+  transition: .45s ease-out;
 }
 
 #labelGlow {
   text-shadow: 0 0 1.5rem rgba(var(--yellowGlow), .9);
   filter: saturate(1.1) brightness(1.05);
+  transition: .15s ease-out;
 }
 
 /* ./Input Area for Symptoms/Diagnosis */
