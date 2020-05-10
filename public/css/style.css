@@ -201,14 +201,13 @@ a {
   text-shadow: 0 0 .5rem var(--primaryWhite), 0 0 1rem var(--primaryWhite),
     0 0 1.5rem var(--primaryYellow), 0 0 2rem var(--primaryYellow), 0 0 2.5rem var(--primaryYellow),
     0 0 3rem var(--primaryYellow), 0 0 3.5rem var(--primaryYellow);
-
-  transition: .2s ease-out;
+  transition: .12s ease-out;
 }
 
 .navigation_container__link:hover .icon--nav {
   filter: invert(69%) sepia(93%) saturate(1025%) hue-rotate(0deg) brightness(105%) contrast(108%)
     drop-shadow(0 0 2.5rem rgba(var(--yellowGlow), 1));
-  transition: .15s ease-out;
+  transition: .12s ease-out;
 }
 
 /* ./END of Navigation Bar */
