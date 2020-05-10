@@ -1,3 +1,8 @@
+.home-container {
+  height: 95vh;
+  padding: 1rem;
+}
+
 #card-container {
   margin: auto;
   width: 100%;
