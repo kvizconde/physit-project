@@ -4,6 +4,7 @@
 /*
 #FFCE00
 #fdc406
+#ffaf00
 #ff4566
 #FF5767
 #2EC5E6
@@ -23,12 +24,14 @@
   --primaryGray: #9b9b9b;
   --primaryYellow: #ffce00;
   --secondaryYellow: #fdc406;
+  --orangeYellow: #ffaf00;
   --primaryRed: #ff4566;
   --redGlow: #ff5767;
   --primaryBlue: #0765af;
   --textBlue: #2ec5e6;
   --midBlue: #0c3867;
   --googleBlue: #518ef8;
+  --inputBox: 24, 45, 64;
   --boxShadows: 51, 51, 51;
   --yellowGlow: 255, 206, 0;
   --blueGlow: 123, 169, 250;
@@ -50,6 +53,7 @@
 html {
   font-size: 62.5%;
   min-height: 100%;
+  overflow: hidden;
 }
 
 /* End of Browser Reset */
