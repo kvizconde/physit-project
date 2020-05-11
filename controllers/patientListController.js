@@ -8,9 +8,6 @@ const getDate = () => {
   let day = d.getDate();
   let month = d.getMonth();
     
-<<<<<<< HEAD
-    return date;
-=======
   if (month < 9) {
     month = month + 1;
     month = "0" + month;
@@ -22,7 +19,6 @@ const getDate = () => {
   let date = year + "-" + month + "-" + day;
   
   return date;
->>>>>>> 4aeb3b5014115c6ff0795335b9d75c41838a3baa
 }
 
 exports.renderPatientList = async (req, res) => {
@@ -31,17 +27,9 @@ exports.renderPatientList = async (req, res) => {
     const physiotherapist = await loginModel.getPhysiotherapist(physioID)
     const patientList = await patientListModel.getPatientAppointmentData(physioID, getDate())
 
-<<<<<<< HEAD
-        res.render('patientList', {title: 'HOME', 
-                                  patientListJSCSS: true, 
-                                  indexJSCSS: false, 
-                                  physiotherapist: physiotherapist[0][0],
-                                  patients : patientList[0]})
-    } catch (error) {
-        throw error
-    }
-}
-=======
+    console.log(patientList[0]);
+    console.log(patientList[0][0].patientID);
+
     res.render('patientList', {title: 'HOME', 
                                patientListJSCSS: true, 
                                indexJSCSS: false, 
@@ -51,4 +39,3 @@ exports.renderPatientList = async (req, res) => {
     throw error
   }
 }
->>>>>>> 4aeb3b5014115c6ff0795335b9d75c41838a3baa

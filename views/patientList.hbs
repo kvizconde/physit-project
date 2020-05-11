@@ -3,13 +3,6 @@
   <div id="card-container">
     {{#each patients}}
       <div class="card">
-<<<<<<< HEAD
-        <input name="appointmentID" type="hidden" value="{{this.appointmentID}}">
-        <h1 class="time">{{ this.appointmentTime }} - {{ this.appointmentEndTime }}</h1>
-        <h2 class="name">{{ this.firstName }} {{ this.lastName }}</h2>
-        <p class="phone">{{ this.phoneNumber }}</p>
-        <button type="submit" class="btn">View</button>
-=======
         <form class="card-content" method="GET" action="/home">
           <input type="hidden" name="appointmentID" value="{{this.appointmentID}}"/>
           <h3 class="time">{{ this.appointmentTime }} - {{ this.appointmentEndTime }}</h3>
@@ -17,7 +10,6 @@
           <p class="phone">{{ this.phoneNumber }}</p>
           <button type="submit" class="btn">View</button>
         </form>
->>>>>>> 4aeb3b5014115c6ff0795335b9d75c41838a3baa
       </div>
     {{/each}}
     
@@ -47,7 +39,8 @@
             {{#each patients}}
             <form name="patientData" method="GET" action="/home">
                 <tr>
-                    <input name="appointmentID" type="hidden" value="{{this.appointmentID}}">
+                    <input name="appointmentID" type="hidden" value="{{this.appointmentID}}"/>
+                    <input name="patientID" type="hidden" value="{{this.patientID}}"/>
                     <td>{{this.firstName}}</td>
                     <td>{{this.lastName}}</td>
                     <td>{{this.phoneNumber}}</td>

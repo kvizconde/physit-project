@@ -35,12 +35,5 @@ async function getAppointmentDetail(appointmentID) {
 }
 
 module.exports = {
-<<<<<<< HEAD
-  getAppointmentDetail,
-  postAppointmentDetail,
-  getAllActiveInjuries,
-  postSetInjuryInactive
-=======
   getAppointmentDetail
->>>>>>> 4aeb3b5014115c6ff0795335b9d75c41838a3baa
 };
