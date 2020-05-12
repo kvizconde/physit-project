@@ -17,6 +17,7 @@
       <div class="card">
         <form class="card-content" method="GET" action="/home">
           <input type="hidden" name="appointmentID" value="{{this.appointmentID}}"/>
+          <input type="hidden" name="patientID" value="{{this.patientID}}"/>
           <h3 class="time">{{ this.appointmentTime }} - {{ this.appointmentEndTime }}</h3>
           <h1 class="name">{{ this.firstName }} {{ this.lastName }}</h1>
           <p class="phone">{{ this.phoneNumber }}</p>

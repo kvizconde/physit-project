@@ -4,5 +4,16 @@ exports.getShoulder = (req, res) => {
     title: 'Shoulder',
     homepageJSCSS: true,
     zoomJSCSS: true,
+    patient: req.session.patientInfo
+  });
+};
+
+// Get zoomed knee
+exports.getKnee = (req, res) => {
+  res.render('knee', {
+    title: 'Knee',
+    homepageJSCSS: true,
+    zoomJSCSS: true,
+    patient: req.session.patientInfo
   });
 };
