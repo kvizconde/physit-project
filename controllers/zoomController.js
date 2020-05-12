@@ -4,6 +4,7 @@ exports.getShoulder = (req, res) => {
     title: 'Shoulder',
     homepageJSCSS: true,
     zoomJSCSS: true,
+    patient: req.session.patientInfo
   });
 };
 
@@ -13,5 +14,6 @@ exports.getKnee = (req, res) => {
     title: 'Knee',
     homepageJSCSS: true,
     zoomJSCSS: true,
+    patient: req.session.patientInfo
   });
 };
