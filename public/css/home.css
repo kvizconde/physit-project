@@ -33,7 +33,6 @@ body {
 .patient_container__bodypart {
   font-size: 2rem;
   text-transform: uppercase;
-  display: block;
 }
 
 .iframe-container__overflow {
@@ -70,6 +69,7 @@ body {
   box-shadow: 0 0 1rem rgba(var(--yellowGlow), .75);
   border-radius: 1.2rem;
   background: rgba(var(--inputBox), .4);
+  transform: translateX(-120%);
 }
 
 .input_container__form {
@@ -143,83 +143,4 @@ hr {
   text-shadow: 0 0 1.5rem rgba(var(--yellowGlow), .9);
   filter: saturate(1.1) brightness(1.05);
   transition: .15s ease-out;
-}
-
-/* ./Input Area for Symptoms/Diagnosis */
-
-/** All the clickable elements */
-
-#anchorbox {
-  margin-left: 30%;
-  position: relative;
-  display: inline-block;
-  height: inherit;
-}
-
-#anchorbox a {
-  position: absolute;
-  width: 20%;
-  height: 12%;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-#anchorbox a:hover {
-  background-color: var(--primaryYellow);
-}
-
-/** Anchor element for the clickable left shoulder */
-
-#leftShoulder {
-  top: 13%;
-  left: 25%;
-}
-
-/** Anchor element for the clickable right shoulder */
-
-#rightShoulder {
-  top: 13%;
-  left: 60%;
-}
-
-/** Anchor element for the clickable left elbow */
-
-#leftElbow {
-  top: 27%;
-  left: 20%;
-}
-
-/** Anchor element for the clickable left elbow */
-
-#rightElbow {
-  top: 27%;
-  left: 65%;
-}
-
-/** Anchor element for the clickable left hip */
-
-#leftHip {
-  top: 39%;
-  left: 31%;
-}
-
-/** Anchor element for the clickable right hip */
-
-#rightHip {
-  top: 39%;
-  left: 53%;
-}
-
-/** Anchor element for the clickable left knee */
-
-#leftKnee {
-  top: 62%;
-  left: 32%;
-}
-
-/** Anchor element for the clickable right knee */
-
-#rightKnee {
-  top: 62%;
-  left: 52%;
 }
