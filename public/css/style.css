@@ -59,7 +59,7 @@ html {
 /* End of Browser Reset */
 
 body {
-  padding: 3rem;
+  padding: 2.5rem;
   height: 100vh;
   width: 100%;
   box-sizing: border-box;
@@ -227,6 +227,32 @@ a {
 
 /* GLOBAL FOOTER */
 
+.backArrow_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 7.5rem;
+  transition: .2s ease-out;
+}
+
+.backArrow--size {
+  filter: invert(61%) sepia(71%) saturate(8%) hue-rotate(356deg) brightness(90%) contrast(81%);
+  width: 2.5rem;
+}
+
+.backArrow_container:hover .backArrow--size {
+  filter: invert(69%) sepia(93%) saturate(1025%) hue-rotate(0deg) brightness(105%) contrast(108%)
+    drop-shadow(0 0 2.5rem rgba(var(--yellowGlow), 1));
+  transition: .12s ease-out;
+}
+
+.backArrow_text {
+  font-size: 1.7rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: var(--primaryGray);
+}
+
 .footer_logo {
   height: 6rem;
 }
@@ -234,9 +260,12 @@ a {
 footer {
   clear: both;
   position: relative;
-  margin-top: -8rem;
+  margin-top: -10rem;
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 10rem;
 }
 
 /* ./END-GLOBAL FOOTER */
@@ -252,6 +281,10 @@ footer {
 /* media query for ipad */
 @media all and (device-width: 1024px) and (device-height: 768px) and (orientation: landscape) {
 
+  body {
+    padding: 1.5rem;
+  }
+
   .home-container {
     height: 90vh;
   }
@@ -260,7 +293,37 @@ footer {
     height: 40rem;
   }
 
+  .patient_container__name {
+    font-size: 2.5rem;
+  }
+
+  .patient_container__info {
+    font-size: 1.5rem;
+  }
+
+  .icon--nav {
+    width: 6rem;
+  }
+
+  .icon_title {
+    font-size: 1.2rem;
+  }
+
+  .logout_container__bttn {
+    font-size: 1.2rem;
+    width: 8rem;
+    height: 3.5rem;
+  }
+
   footer {
-    margin-top: -5rem;
+    margin-top: -6rem;
+  }
+
+  .backArrow--size {
+    width: 2.5rem;
+  }
+
+  .backArrow_text {
+    font-size: 1.5rem;
   }
 }
