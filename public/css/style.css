@@ -260,12 +260,12 @@ a {
 footer {
   clear: both;
   position: relative;
-  margin-top: -10rem;
+  margin-top: -8rem;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   justify-content: space-between;
-  height: 10rem;
+  height: 8rem;
 }
 
 /* ./END-GLOBAL FOOTER */
@@ -315,8 +315,12 @@ footer {
     height: 3.5rem;
   }
 
+  .footer_logo {
+    height: 5rem;
+  }
+
   footer {
-    margin-top: -6rem;
+    margin-top: -1rem;
   }
 
   .backArrow--size {
