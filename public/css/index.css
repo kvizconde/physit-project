@@ -1,5 +1,6 @@
 /** CSS for index login page */
 
+
 /**  Log-in entry */
 
 .login_container {
@@ -141,7 +142,9 @@ select:focus {
   margin: 0 auto;
 }
 
+
 /* ANIMATED BG JUST FOR SIGN UP PAGE */
+
 
 /* body {
   background: linear-gradient(270deg, #0c3867, #020f28);
@@ -150,19 +153,17 @@ select:focus {
   /* background: linear-gradient(270deg, #ffce00, #ff4566); */
 
 @keyframes AnimationName {
-
   0% {
     background-position: 0% 50%;
   }
-
   50% {
     background-position: 100% 50%;
   }
-
   100% {
     background-position: 0% 50%;
   }
 }
+
 
 /* ---- particles ---- */
 
@@ -170,6 +171,7 @@ canvas {
   display: block;
   vertical-align: bottom;
 }
+
 
 /* ---- particles.js container ---- */
 
@@ -193,19 +195,19 @@ body {
   filter: drop-shadow(0 0 3rem rgba(var(--blueGlow), .5));
 }
 
+
 /* media query for smaller monitors */
 
 @media (max-width: 1024px) {
-
   #particles-js {
     background-size: 35rem;
   }
 }
 
+
 /* media query for ipad */
 
 @media all and (device-width: 1024px) and (device-height: 768px) and (orientation: landscape) {
-
   #particles-js {
     background-size: 35rem;
   }
