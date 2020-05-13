@@ -248,7 +248,7 @@ a {
 
 .backArrow--size {
   filter: invert(1);
-  width: 2.5rem;
+  width: 2rem;
 }
 
 .backArrow_text {
@@ -256,6 +256,7 @@ a {
   font-weight: 300;
   text-transform: uppercase;
   color: var(--primaryGray);
+  margin-top: .1rem;
 }
 
 .backArrow_container__link:hover .backArrow--size {
@@ -334,11 +335,16 @@ footer {
     margin-top: -1rem;
   }
 
+  .backArrow_container {
+    margin-top: 3rem;
+    width: 6rem;
+  }
+
   .backArrow--size {
-    width: 2.5rem;
+    width: 1.5rem;
   }
 
   .backArrow_text {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 }
