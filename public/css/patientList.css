@@ -124,11 +124,12 @@
 
 #card-container {
   margin: auto;
-  width: 80%;
+  width: 75%;
   overflow: auto;
   height: 100%;
   position: absolute;
-  left: 10%;
+  padding: 0em 2em 2em 2em;
+  left: 13%;
   top: 20%;
 }
 
@@ -180,7 +181,7 @@
   color: var(--primaryYellow);
   margin-left: 2em;
   padding: 0pt;
-  width: 25%;
+  width: 30%;
 }
 
 /* css for about div */
@@ -260,8 +261,7 @@ td {
 }
 
 #appt-title {
-  padding-left: 1em;
-  left: 0%;
+  left: 12%;
   position: absolute;
   text-decoration: underline;
 
@@ -269,20 +269,20 @@ td {
 #name-title {
   padding-left: 2em;
   position: absolute;
-  left: 20%;
+  left: 25%;
   text-decoration: underline;
 }
 
 #phone-title {
   position: absolute;
   /* left: 48%; */
-  left: 49%;
+  left: 55%;
   width: 30%;
   text-decoration: underline;
 }
 
 #action-title {
   position: absolute;
-  left: 71%;
+  left: 73%;
   text-decoration: underline;
 }
