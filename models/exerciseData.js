@@ -5,8 +5,10 @@ function getAllExercises(patientID) {
 }
 
 function getAppointmentDetail(patientID, appointmentID) {
-  db.execute(`SELECT bodypart FROM WHERE patientID = ${patientID} and
-     appointmentID = ${appointmentID}`);
+  return db.execute(
+    `SELECT bodypart FROM appointmentdetail WHERE patientID = ${patientID} AND
+     appointmentID = ${appointmentID};`,
+  );
 }
 
 function generateExercises(bodypart) {
@@ -16,4 +18,5 @@ function generateExercises(bodypart) {
 module.exports = {
   getAllExercises,
   getAppointmentDetail,
+  generateExercises,
 };

@@ -27,9 +27,6 @@ exports.renderPatientList = async (req, res) => {
     const physiotherapist = await loginModel.getPhysiotherapist(physioID)
     const patientList = await patientListModel.getPatientAppointmentData(physioID, getDate())
 
-    console.log(patientList[0]);
-    console.log(patientList[0][0].patientID);
-
     res.render('patientList', {title: 'HOME', 
                                patientListJSCSS: true, 
                                indexJSCSS: false, 
