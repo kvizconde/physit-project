@@ -36,7 +36,8 @@ body {
 }
 
 .iframe-container__overflow {
-  height: 90%;
+  /* height: 90%; */
+  height: 95vh;
   width: 55%;
   position: relative;
   overflow: hidden;
@@ -143,4 +144,30 @@ hr {
   text-shadow: 0 0 1.5rem rgba(var(--yellowGlow), .9);
   filter: saturate(1.1) brightness(1.05);
   transition: .15s ease-out;
+}
+
+/* media query for ipad */
+@media all and (device-width: 1024px) and (device-height: 768px) and (orientation: landscape) {
+
+  .input_container {
+    height: 45rem;
+  }
+
+  .form__label {
+    font-size: 2rem;
+    margin-bottom: 0;
+  }
+
+  hr {
+    margin: 2rem auto;
+  }
+
+  textarea::placeholder {
+    font-size: 1.1rem;
+  }
+
+  .input_container__form textarea {
+    font-size: 1.4rem;
+    height: 14rem;
+  }
 }
