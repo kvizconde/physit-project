@@ -1,4 +1,5 @@
 <main class="home-container">
+  {{>_patientHeader}}
   <!-- wrapper -->
   <div class="exercise-container">
     <span><i class="shopping-cart"></i></span>
@@ -11,7 +12,7 @@
         />
         <br/>
         <h2>{{this.title}}</h2>
-        <buton class="add-to-cart" type="button">Add Exercise</buton>
+        <button class="add-to-cart" type="button">Add Exercise</button>
       </div>
       {{/each}}
       {{!-- <div class="item">
