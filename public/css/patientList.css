@@ -144,11 +144,11 @@
   justify-content: left;
   margin: 2rem 0;
   /* box-shadow: .5rem .5rem 3rem rgba(0, 0, 0, .5); */
-  transition: transform .5s;
-  border: .25rem solid var(--orangeYellow);
-  box-shadow: 0 0 1rem rgba(var(--yellowGlow), .75);
+  transition: transform 0.5s;
+  border: 0.25rem solid var(--orangeYellow);
+  box-shadow: 0 0 1rem rgba(var(--yellowGlow), 0.75);
   border-radius: 1.2rem;
-  background: rgba(var(--inputBox), .4);
+  background: rgba(var(--inputBox), 0.4);
   /* float: left; */
 }
 
@@ -199,16 +199,16 @@
 .card .btn {
   padding: 1rem 2.5rem;
   /* background-color: #445ae3; */
-  border: .2rem solid var(--textBlue);
+  border: 0.2rem solid var(--textBlue);
   /* border: .1rem solid rgba(0, 0, 0, 0); */
   background-color: var(--midBlue);
-  box-shadow: 0 0 .75rem rgba(var(--blueGlow), .75);
+  box-shadow: 0 0 0.75rem rgba(var(--blueGlow), 0.75);
   border-radius: 1rem;
-  margin: .5rem 0;
+  margin: 0.5rem 0;
   text-transform: uppercase;
   color: var(--primaryWhite);
   font-size: 1.4rem;
-  transition: all .5s;
+  transition: all 0.5s;
   align-self: flex-end;
   width: 12%;
 }
@@ -250,7 +250,7 @@
   padding-bottom: 0.618em;
   font-weight: bold;
   font-size: 20pt;
-  color: #289CCA;
+  color: #289cca;
   margin-right: 20em;
 }
 
@@ -264,7 +264,6 @@ td {
   left: 0%;
   position: absolute;
   text-decoration: underline;
-
 }
 #name-title {
   padding-left: 2em;

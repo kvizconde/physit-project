@@ -21,6 +21,7 @@ exports.getExercise = async (req, res) => {
     res.render('exercise', {
       patient: req.session.patientInfo,
       exercises: exercises[0],
+      bodypart: bodypart[0][0],
       title: 'Exercises',
       exerciseJSCSS: true,
     });
