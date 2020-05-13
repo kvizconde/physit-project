@@ -16,34 +16,7 @@ body {
     drop-shadow(0 0 1.5rem rgba(var(--yellowGlow), .6));
 }
 
-.patient_container__exercise {
-  font-size: 2rem;
-  text-transform: uppercase;
-  color: var(--primaryGray);
-  display: block;
-}
-
 /* Exercise Area */
-
-.grid-center {
-  margin: 6rem auto;
-  padding: 1rem;
-}
-
-.grid-contain {
-  height: 50%;
-  display: grid;
-  grid-template: repeat(3, minmax(30rem, 2fr)) / repeat(auto-fit, minmax(40rem, 1fr));
-  grid-gap: 1rem;
-  text-align: center;
-}
-
-.grid {
-  background: var(--bg-dark);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 /* START OF RINGO'S CSS */
 
@@ -53,14 +26,12 @@ body {
   padding: 20px;
   position: absolute;
   left: 18%;
-  top: 10%; 
+  top: 10%;
 }
 
-      
 .items {
   display: block;
   margin: 20px 0;
-
 }
 
 .item {
@@ -73,8 +44,8 @@ body {
   box-shadow: 0 0 1rem rgba(var(--yellowGlow), .75);
   border-radius: 1.2rem;
   background: rgba(var(--inputBox), .4);
-   
 }
+
 .item img {
   display: block;
   margin: auto;
@@ -94,12 +65,11 @@ button {
   font-weight: 400;
   cursor: pointer;
   border-radius: 50px;
-  
 }
-button:focus{
-   outline: none !important;
-  }
- 
+
+button:focus {
+  outline: none !important;
+}
 
 .shopping-cart {
   display: inline-block;
