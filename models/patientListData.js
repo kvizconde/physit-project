@@ -11,9 +11,9 @@ function getPatientAppointmentData(physioID, date) {
                 ON a.patientID = p.patientID
                 WHERE a.physioID = "${physioID}"
                 AND a.appointmentDate = "${date}";`,
-    );
+  );
 }
 
 module.exports = {
-    getPatientAppointmentData
-}
+  getPatientAppointmentData,
+};

@@ -21,12 +21,13 @@ body {
 /* START OF RINGO'S CSS */
 
 .exercise-container {
-  width: 805px;
+  width: 1200px;
   margin: 20px auto;
   padding: 20px;
   position: absolute;
   left: 18%;
   top: 10%;
+  overflow:auto;
 }
 
 .items {
