@@ -34,7 +34,7 @@ function postSetInjuryInactive(appointmentID, bodypart) {
 async function getAppointmentDetail(appointmentID) {
   try {
     const response = await db.execute(
-      `SELECT p.firstName, p.lastName, p.dateOfbirth 
+      `SELECT p.firstName, p.lastName, TIMESTAMPDIFF(YEAR, p.dateOfBirth, CURDATE())  AS age, p.height, p.weight
        FROM appointment a
        INNER JOIN patient p 
        ON a.patientID = p.patientID
