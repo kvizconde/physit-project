@@ -5,42 +5,51 @@
 
 #card-container {
   margin: auto;
-  width: 100%;
+  width: 80%;
   overflow: auto;
   height: 100%;
+  position: absolute;
+  left: 10%;
+  top: 20%;
 }
 
 /* css for card */
 
 .card {
-  width: 80%;
+  width: 100%;
   height: 150px;
-  background-color: #ebeef8;
+  /* background-color: #ebeef8; */
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: left;
   margin: 2rem 0;
-  box-shadow: .5rem .5rem 3rem rgba(0, 0, 0, .5);
-  transition: transform .5s;
-  float: right;
+  /* box-shadow: .5rem .5rem 3rem rgba(0, 0, 0, .5); */
+  transition: transform 0.5s;
+  border: 0.25rem solid var(--orangeYellow);
+  box-shadow: 0 0 1rem rgba(var(--yellowGlow), 0.75);
+  border-radius: 1.2rem;
+  background: rgba(var(--inputBox), 0.4);
+  /* float: left; */
 }
 
 .card-content {
   display: flex;
   align-items: center;
+  flex-direction: row;
   width: 95%;
 }
 
-/* .card:hover {
-  transform: scale(1.1);
-} */
+.card:hover {
+  /* transform: scale(1.05); */
+  transform: translateY(-5px);
+}
 
 /** Css for Appt Time */
 
 .time {
   margin: 1.5rem 0;
-  color: #333;
+  color: var(--textBlue);
   text-align: center;
   width: 20%;
 }
@@ -49,35 +58,40 @@
 
 .name {
   font-size: 25pt;
-  color: #333;
-  margin: 0em 0em 0em 0.5em;
+  color: var(--primaryYellow);
+  margin-left: 2em;
   padding: 0pt;
-  width: 35%;
+  width: 25%;
 }
 
 /* css for about div */
 
 .phone {
   font-size: 2rem;
-  font-style: none;
-  color: #333;
+  font-weight: bolder;
+  margin-right: 2em;
+  color: var(--textBlue);
   text-align: center;
-  width: 20%;
+  width: 25%;
 }
 
 /* css for card button classes */
 
 .card .btn {
   padding: 1rem 2.5rem;
-  background-color: #445ae3;
-  border-radius: 2rem;
-  margin: 1rem 0;
+  /* background-color: #445ae3; */
+  border: 0.2rem solid var(--textBlue);
+  /* border: .1rem solid rgba(0, 0, 0, 0); */
+  background-color: var(--midBlue);
+  box-shadow: 0 0 0.75rem rgba(var(--blueGlow), 0.75);
+  border-radius: 1rem;
+  margin: 0.5rem 0;
   text-transform: uppercase;
-  color: #eee;
+  color: var(--primaryWhite);
   font-size: 1.4rem;
-  transition: all .5s;
+  transition: all 0.5s;
   align-self: flex-end;
-  width: 25%;
+  width: 12%;
 }
 
 /* css for hover effect */
@@ -95,7 +109,7 @@
 }
 
 @media screen and (min-width: 700px) {
-  .card-wrapper {
+  .card {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -103,87 +117,172 @@
   }
 }
 
-/* Using the old patient list styling for testing purposes */
+.home-container {
+  height: 95vh;
+  padding: 1rem;
+}
 
-/** Table including the list of patients */
+#card-container {
+  margin: auto;
+  width: 80%;
+  overflow: auto;
+  height: 100%;
+  position: absolute;
+  left: 10%;
+  top: 20%;
+}
 
-#patients {
+/* css for card */
+
+.card {
   width: 100%;
-  /* background-color: #3C414F; */
-  background-color: var(--primaryBlack);
-  border: 1px solid #29648a;
-  padding: 1em;
+  height: 150px;
+  /* background-color: #ebeef8; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  margin: 2rem 0;
+  /* box-shadow: .5rem .5rem 3rem rgba(0, 0, 0, .5); */
+  transition: transform .5s;
+  border: .25rem solid var(--orangeYellow);
+  box-shadow: 0 0 1rem rgba(var(--yellowGlow), .75);
+  border-radius: 1.2rem;
+  background: rgba(var(--inputBox), .4);
+  /* float: left; */
 }
 
-/** Giving the td elements text shadows */
-
-body tr td {
-  text-shadow: black 2px 2px 2px;
+.card-content {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 95%;
 }
 
-/** Div containing the "Patient List" header */
-
-#title {
-  margin: 2em 0em 2em 2em;
+.card:hover {
+  /* transform: scale(1.05); */
+  transform: translateY(-5px);
 }
 
-/** Header for "Patient List" */
+/** Css for Appt Time */
 
-#title h2 {
-  font-size: 27pt;
+.time {
+  margin: 1.5rem 0;
   color: var(--textBlue);
-  text-shadow: black 1px 1px 1px;
+  text-align: center;
+  width: 20%;
 }
 
-/**  View buttons in the patient list area */
+/* css for name class */
 
-#patients button {
-  font-size: 15pt;
-  border-radius: 11px;
-  background-color: #289cca;
-  line-height: 2em;
-  color: black;
+.name {
+  font-size: 25pt;
+  color: var(--primaryYellow);
+  margin-left: 2em;
+  padding: 0pt;
+  width: 25%;
 }
 
-/** Anchor elements in the page */
+/* css for about div */
 
-a {
-  text-decoration: none;
-  color: black;
+.phone {
+  font-size: 2rem;
+  font-weight: bolder;
+  margin-right: 2em;
+  color: var(--textBlue);
+  text-align: center;
+  width: 25%;
+}
+
+/* css for card button classes */
+
+.card .btn {
+  padding: 1rem 2.5rem;
+  /* background-color: #445ae3; */
+  border: .2rem solid var(--textBlue);
+  /* border: .1rem solid rgba(0, 0, 0, 0); */
+  background-color: var(--midBlue);
+  box-shadow: 0 0 .75rem rgba(var(--blueGlow), .75);
+  border-radius: 1rem;
+  margin: .5rem 0;
+  text-transform: uppercase;
+  color: var(--primaryWhite);
+  font-size: 1.4rem;
+  transition: all .5s;
+  align-self: flex-end;
+  width: 12%;
+}
+
+/* css for hover effect */
+
+.card .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+/* css for btn card class after clicked effect */
+
+.card .btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+@media screen and (min-width: 700px) {
+  .card {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
 }
 
 /** Div containing the list of patients */
-
 #listcontainer {
   width: 90%;
-  margin: auto;
+  /* margin: auto; */
+  position: absolute;
+  top: 15%;
+  left: 10%;
 }
 
 /** Referencing just the categorizing td elements in the table (First Name, Last Name, etc) */
-
-#titles {
+.titles {
   padding-bottom: 0.618em;
   font-weight: bold;
   font-size: 20pt;
-  color: var(--textBlue);
+  color: #289CCA;
+  margin-right: 20em;
 }
 
-th {
-  padding-bottom: 0.618em;
-  font-weight: bold;
-  font-size: 20pt;
-  color: var(--textBlue);
-  text-align: left;
-}
-
-/** Changing the size of the td elements in the table */
-
+/** Changing the size of the td elements int he table */
 td {
   font-size: 18pt;
 }
 
-/** Changing the colour of the button text to black */
+#appt-title {
+  padding-left: 1em;
+  left: 0%;
+  position: absolute;
+  text-decoration: underline;
 
-td a:visited {
-  color: black;
+}
+#name-title {
+  padding-left: 2em;
+  position: absolute;
+  left: 20%;
+  text-decoration: underline;
+}
+
+#phone-title {
+  position: absolute;
+  /* left: 48%; */
+  left: 49%;
+  width: 30%;
+  text-decoration: underline;
+}
+
+#action-title {
+  position: absolute;
+  left: 71%;
+  text-decoration: underline;
 }

@@ -33,7 +33,24 @@ body {
 .patient_container__bodypart {
   font-size: 2rem;
   text-transform: uppercase;
-  display: block;
+}
+
+.iframe-container__overflow {
+  /* height: 90%; */
+  height: 95vh;
+  width: 55%;
+  position: relative;
+  overflow: hidden;
+  left: 10%;
+  filter: drop-shadow(0 0 3rem rgba(var(--blueGlow), .5));
+}
+
+.iframe-container--size {
+  height: 115%;
+  width: 140%;
+  position: absolute;
+  margin: -8% -20% -20% -10%;
+  filter: invert(1) sepia(10%) saturate(165%) hue-rotate(15deg) brightness(1.1);
 }
 
 /* Input Area for Symptoms/Diagnosis */
@@ -53,6 +70,7 @@ body {
   box-shadow: 0 0 1rem rgba(var(--yellowGlow), .75);
   border-radius: 1.2rem;
   background: rgba(var(--inputBox), .4);
+  transform: translateX(-120%);
 }
 
 .input_container__form {
@@ -119,84 +137,37 @@ hr {
   color: var(--primaryYellow);
   text-transform: uppercase;
   margin-bottom: 2rem;
-  text-shadow: 0 0 1rem rgba(var(--yellowGlow), .6);
+  transition: .45s ease-out;
 }
 
-/* ./Input Area for Symptoms/Diagnosis */
-
-/** All the clickable elements */
-
-#anchorbox {
-  margin-left: 30%;
-  position: relative;
-  display: inline-block;
-  height: inherit;
+#labelGlow {
+  text-shadow: 0 0 1.5rem rgba(var(--yellowGlow), .9);
+  filter: saturate(1.1) brightness(1.05);
+  transition: .15s ease-out;
 }
 
-#anchorbox a {
-  position: absolute;
-  width: 20%;
-  height: 12%;
-  border-radius: 50%;
-  cursor: pointer;
-}
+/* media query for ipad */
+@media all and (device-width: 1024px) and (device-height: 768px) and (orientation: landscape) {
 
-#anchorbox a:hover {
-  background-color: var(--primaryYellow);
-}
+  .input_container {
+    height: 45rem;
+  }
 
-/** Anchor element for the clickable left shoulder */
+  .form__label {
+    font-size: 2rem;
+    margin-bottom: 0;
+  }
 
-#leftShoulder {
-  top: 13%;
-  left: 25%;
-}
+  hr {
+    margin: 2rem auto;
+  }
 
-/** Anchor element for the clickable right shoulder */
+  textarea::placeholder {
+    font-size: 1.1rem;
+  }
 
-#rightShoulder {
-  top: 13%;
-  left: 60%;
-}
-
-/** Anchor element for the clickable left elbow */
-
-#leftElbow {
-  top: 27%;
-  left: 20%;
-}
-
-/** Anchor element for the clickable left elbow */
-
-#rightElbow {
-  top: 27%;
-  left: 65%;
-}
-
-/** Anchor element for the clickable left hip */
-
-#leftHip {
-  top: 39%;
-  left: 31%;
-}
-
-/** Anchor element for the clickable right hip */
-
-#rightHip {
-  top: 39%;
-  left: 53%;
-}
-
-/** Anchor element for the clickable left knee */
-
-#leftKnee {
-  top: 62%;
-  left: 32%;
-}
-
-/** Anchor element for the clickable right knee */
-
-#rightKnee {
-  top: 62%;
-  left: 52%;
+  .input_container__form textarea {
+    font-size: 1.4rem;
+    height: 14rem;
+  }
 }

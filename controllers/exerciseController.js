@@ -6,17 +6,20 @@ exports.getExercise = async (req, res) => {
 
     console.log(req.session.appointmentID);
     console.log(req.session.patientID);
+
     const bodypart = await exerciseModel.getAppointmentDetail(
       req.session.patientID,
       req.session.appointmentID,
     );
     
-    console.log(bodypart);
+    console.log(bodypart[0][0].bodypart);
     const exercises = await exerciseModel.generateExercises(
-      bodypart
+      bodypart[0][0].bodypart
     );
     
+    console.log(exercises[0]);
     res.render('exercise', {
+      exercises: exercises[0],
       title: 'Exercises',
       exerciseJSCSS: true,
     });

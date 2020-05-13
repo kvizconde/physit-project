@@ -12,7 +12,7 @@ function getAppointmentDetail(patientID, appointmentID) {
 }
 
 function generateExercises(bodypart) {
-  db.execute(`SELECT * FROM exercise WHERE bodypart = "${bodypart}" ORDER BY RAND() LIMIT 9`);
+  return db.execute(`SELECT * FROM exercise WHERE bodypart = "${bodypart}" ORDER BY RAND() LIMIT 9`);
 }
 
 module.exports = {

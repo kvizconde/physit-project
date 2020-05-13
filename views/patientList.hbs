@@ -1,5 +1,17 @@
 <main class="home-container">
   {{>_patientHeader}}
+  <div id="listcontainer">
+    <table id="table-headings">
+      <thead>
+        <tr>
+          <td class="titles" id="appt-title">Appointment Time</td>
+          <td class="titles" id="name-title">Patient Name</td>
+          <td class="titles" id="phone-title">Phone Number </td>
+          <td class="titles" id="action-title">Action</td>
+        </tr>
+      </thead>
+    </table>
+  </div>
   <div id="card-container">
     {{#each patients}}
       <div class="card">
@@ -28,30 +40,6 @@
       </form> --}}
     {{!-- {{/each}} --}}
   </div>
-
-  <div id="listcontainer">
-        <table id="patients">
-            <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Phone Number</th>
-                <th>Appointment Time</th>
-            </tr>
-            {{#each patients}}
-            <form name="patientData" method="GET" action="/home">
-                <tr>
-                    <input name="appointmentID" type="hidden" value="{{this.appointmentID}}"/>
-                    <input name="patientID" type="hidden" value="{{this.patientID}}"/>
-                    <td>{{this.firstName}}</td>
-                    <td>{{this.lastName}}</td>
-                    <td>{{this.phoneNumber}}</td>
-                    <td>{{this.appointmentTime}} - {{this.appointmentEndTime}}</td>
-                    <td><button type="submit">View More</button></td>
-                </tr>
-            </form>
-            {{/each}}
-        </table>
-    </div>
 </main>
 {{>_footer}}
 
