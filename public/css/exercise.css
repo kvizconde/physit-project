@@ -16,31 +16,68 @@ body {
     drop-shadow(0 0 1.5rem rgba(var(--yellowGlow), .6));
 }
 
-.patient_container__exercise {
-  font-size: 2rem;
-  text-transform: uppercase;
-  color: var(--primaryGray);
-  display: block;
-}
-
 /* Exercise Area */
 
-.grid-center {
-  margin: 6rem auto;
-  padding: 1rem;
+/* START OF RINGO'S CSS */
+
+.exercise-container {
+  width: 805px;
+  margin: 20px auto;
+  padding: 20px;
+  position: absolute;
+  left: 18%;
+  top: 10%;
 }
 
-.grid-contain {
-  height: 100%;
-  display: grid;
-  grid-template: repeat(3, minmax(30rem, 2fr)) / repeat(auto-fit, minmax(40rem, 1fr));
-  grid-gap: 1rem;
+.items {
+  display: block;
+  margin: 20px 0;
+}
+
+.item {
+  float: left;
+  margin: 2rem 50px 10px 0;
   text-align: center;
+  width: 305px;
+  padding: 10px;
+  border: .25rem solid var(--orangeYellow);
+  box-shadow: 0 0 1rem rgba(var(--yellowGlow), .75);
+  border-radius: 1.2rem;
+  background: rgba(var(--inputBox), .4);
 }
 
-.grid {
-  background: var(--bg-dark);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.item img {
+  display: block;
+  margin: auto;
+  height: 180px;
+  width: 281px;
+  overflow: hidden;
+}
+
+button {
+  border: 1px solid #ef4478;
+  padding: 4px 14px;
+  background-color: #ef4478;
+  color: #fff;
+  text-transform: uppercase;
+  float: none;
+  margin: 1.5rem 0;
+  font-weight: 400;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+button:focus {
+  outline: none !important;
+}
+
+.shopping-cart {
+  display: inline-block;
+  background: url(https://image.flaticon.com/icons/svg/10/10699.svg) no-repeat 0 0;
+  background-color: #fff;
+  width: 15rem;
+  height: 15rem;
+  position: absolute;
+  left: 110%;
+  top: 40%;
 }

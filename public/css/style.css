@@ -59,7 +59,7 @@ html {
 /* End of Browser Reset */
 
 body {
-  padding: 3rem;
+  padding: 2.5rem;
   height: 100vh;
   width: 100%;
   box-sizing: border-box;
@@ -144,6 +144,10 @@ a {
   color: var(--textBlue);
 }
 
+.header_navigation_container {
+  height: 100%;
+}
+
 .logout_container__bttn {
   flex: 1 0 50%;
   text-transform: uppercase;
@@ -155,6 +159,10 @@ a {
   color: var(--primaryWhite);
   background-color: var(--primaryRed);
   border-radius: .6rem;
+}
+
+.logout_container__bttn:hover {
+  cursor: pointer;
 }
 
 /* ./END of Patient Header */
@@ -227,6 +235,36 @@ a {
 
 /* GLOBAL FOOTER */
 
+.backArrow_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4rem;
+  width: 7.5rem;
+  position: absolute;
+  z-index: 1;
+  transition: .2s ease-out;
+}
+
+.backArrow--size {
+  filter: invert(1);
+  width: 2rem;
+}
+
+.backArrow_text {
+  font-size: inherit;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: var(--primaryGray);
+  margin-top: .1rem;
+}
+
+.backArrow_container__link:hover .backArrow--size {
+  filter: invert(69%) sepia(93%) saturate(1025%) hue-rotate(0deg) brightness(105%) contrast(108%)
+    drop-shadow(0 0 2.5rem rgba(var(--yellowGlow), 1));
+  transition: .12s ease-out;
+}
+
 .footer_logo {
   height: 6rem;
 }
@@ -236,7 +274,10 @@ footer {
   position: relative;
   margin-top: -8rem;
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 8rem;
 }
 
 /* ./END-GLOBAL FOOTER */
@@ -252,6 +293,10 @@ footer {
 /* media query for ipad */
 @media all and (device-width: 1024px) and (device-height: 768px) and (orientation: landscape) {
 
+  body {
+    padding: 1.5rem;
+  }
+
   .home-container {
     height: 90vh;
   }
@@ -260,7 +305,46 @@ footer {
     height: 40rem;
   }
 
+  .patient_container__name {
+    font-size: 2.5rem;
+  }
+
+  .patient_container__info {
+    font-size: 1.5rem;
+  }
+
+  .icon--nav {
+    width: 6rem;
+  }
+
+  .icon_title {
+    font-size: 1.2rem;
+  }
+
+  .logout_container__bttn {
+    font-size: 1.2rem;
+    width: 8rem;
+    height: 3.5rem;
+  }
+
+  .footer_logo {
+    height: 5rem;
+  }
+
   footer {
-    margin-top: -5rem;
+    margin-top: -1rem;
+  }
+
+  .backArrow_container {
+    margin-top: 3rem;
+    width: 6rem;
+  }
+
+  .backArrow--size {
+    width: 1.5rem;
+  }
+
+  .backArrow_text {
+    font-size: 1.4rem;
   }
 }

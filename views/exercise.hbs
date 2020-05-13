@@ -1,36 +1,107 @@
 <main class="home-container">
-  {{>_patientHeader}}
-  <div class="grid-center">
-    <div class="grid-contain">
-      <div class="grid content1">
-        <h2 class="exercise">placeholder</h2>
+  <!-- wrapper -->
+  <div class="exercise-container">
+    <span><i class="shopping-cart"></i></span>
+    <div class="items">
+      <div class="item">
+        <img
+          src="https://manofmany.com/wp-content/uploads/2019/03/10-Best-Shoulder-Exercises-for-Men-Front-Raise.jpg"
+          alt="item"
+        />
+        <br />
+        <h2>Shoulder Extensions</h2>
+        <button class="add-to-cart" type="button">Add Exercise</button>
       </div>
-      <div class="grid content2">
-        <h2 class="exercise">placeholder</h2>
+      <div class="item">
+        <img
+          src="https://manofmany.com/wp-content/uploads/2019/03/10-Best-Shoulder-Exercises-for-Men-Dumbbell-Lateral-Raise.jpg"
+          alt="item"
+        />
+        <br />
+        <h2>Shoulder Abduction</h2>
+
+        <button class="add-to-cart" type="button">Add Exercise</button>
       </div>
-      <div class="grid content3">
-        <h2 class="exercise">placeholder</h2>
+      <div class="item">
+        <img
+          src="https://manofmany.com/wp-content/uploads/2019/03/10-Best-Shoulder-Exercises-for-Men-Bent-over-dumbbell-lateral-raise.jpg"
+          alt="item"
+        />
+        <br />
+        <h2>Rear Deltoid Press</h2>
+        <button class="add-to-cart" type="button">Add Exercise</button>
       </div>
-      <div class="grid content4">
-        <h2 class="exercise">placeholder</h2>
-      </div>
-      <div class="grid content5">
-        <h2 class="exercise">placeholder</h2>
-      </div>
-      <div class="grid content6">
-        <h2 class="exercise">placeholder</h2>
-      </div>
-      <div class="grid content7">
-        <h2 class="exercise">placeholder</h2>
-      </div>
-      <div class="grid content8">
-        <h2 class="exercise">placeholder</h2>
-      </div>
-      <div class="grid content9">
-        <h2 class="exercise">placeholder</h2>
+      <div class="item">
+        <img
+          src="https://manofmany.com/wp-content/uploads/2019/03/10-Best-Shoulder-Exercises-for-Men-Barbell-Overhead-Shoulder-Press-1.jpg"
+          alt="item"
+        />
+        <br />
+        <h2>Shoulder Press</h2>
+        <button class="add-to-cart" type="button">Add Exercise</button>
       </div>
     </div>
   </div>
+  <script>
+    //Just testing for fun, will move to JS file or delete//
+
+    $('.add-to-cart').on('click', function() {
+      var cart = $('.shopping-cart');
+      var imgtodrag = $(this)
+        .parent('.item')
+        .find('img')
+        .eq(0);
+      if (imgtodrag) {
+        var imgclone = imgtodrag
+          .clone()
+          .offset({
+            top: imgtodrag.offset().top,
+            left: imgtodrag.offset().left,
+          })
+          .css({
+            opacity: '0.8',
+            position: 'absolute',
+            height: '150px',
+            width: '150px',
+            'z-index': '100',
+          })
+          .appendTo($('body'))
+          .animate(
+            {
+              top: cart.offset().top + 10,
+              left: cart.offset().left + 10,
+              width: 75,
+              height: 75,
+            },
+            1000,
+            'easeInOutExpo',
+          );
+
+        setTimeout(function() {
+          cart.effect(
+            'shake',
+            {
+              times: 2,
+            },
+            200,
+          );
+        }, 1500);
+
+        imgclone.animate(
+          {
+            width: 0,
+            height: 0,
+          },
+          function() {
+            $(this).detach();
+          },
+        );
+      }
+    });
+  </script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <!--/ wrapper -->
   {{>_navigation}}
 </main>
 {{>_footer}}
