@@ -144,6 +144,10 @@ a {
   color: var(--textBlue);
 }
 
+.header_navigation_container {
+  height: 100%;
+}
+
 .logout_container__bttn {
   flex: 1 0 50%;
   text-transform: uppercase;
@@ -155,6 +159,10 @@ a {
   color: var(--primaryWhite);
   background-color: var(--primaryRed);
   border-radius: .6rem;
+}
+
+.logout_container__bttn:hover {
+  cursor: pointer;
 }
 
 /* ./END of Patient Header */
@@ -231,26 +239,29 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 4rem;
   width: 7.5rem;
+  position: absolute;
+  z-index: 1;
   transition: .2s ease-out;
 }
 
 .backArrow--size {
-  filter: invert(61%) sepia(71%) saturate(8%) hue-rotate(356deg) brightness(90%) contrast(81%);
+  filter: invert(1);
   width: 2.5rem;
 }
 
-.backArrow_container:hover .backArrow--size {
-  filter: invert(69%) sepia(93%) saturate(1025%) hue-rotate(0deg) brightness(105%) contrast(108%)
-    drop-shadow(0 0 2.5rem rgba(var(--yellowGlow), 1));
-  transition: .12s ease-out;
-}
-
 .backArrow_text {
-  font-size: 1.7rem;
+  font-size: inherit;
   font-weight: 300;
   text-transform: uppercase;
   color: var(--primaryGray);
+}
+
+.backArrow_container__link:hover .backArrow--size {
+  filter: invert(69%) sepia(93%) saturate(1025%) hue-rotate(0deg) brightness(105%) contrast(108%)
+    drop-shadow(0 0 2.5rem rgba(var(--yellowGlow), 1));
+  transition: .12s ease-out;
 }
 
 .footer_logo {
