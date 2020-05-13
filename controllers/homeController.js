@@ -16,9 +16,8 @@ exports.getHome = async (req, res) => {
     res.render('home', {
       title: 'Patient Home',
       homepageJSCSS: true,
-      patient,
+      patient: req.session.patientInfo,
     });
-    console.log(req.session.patientID);
   } catch (error) {
     throw error;
   }
@@ -30,7 +29,9 @@ const parsePatientInfo = info => {
     const patientInfo = {
       firstName: data.firstName,
       lastName: data.lastName,
-      dateOfBirth: data.dateOfBirth,
+      age: data.age,
+      height: data.height,
+      weight: data.weight
     };
 
     return patientInfo;

@@ -25,9 +25,9 @@
       <span class="patient--color">KNEE</span>
     </p>
     {{ else }}
-    <p class="patient_container__info"><span class="patient--color">42</span>&nbsp; years old</p>
-    <p class="patient_container__info"><span class="patient--color">155</span>&nbsp; lbs</p>
-    <p class="patient_container__info"><span class="patient--color">175</span>&nbsp; cm</p>
+    <p class="patient_container__info"><span class="patient--color">{{patient.age}}</span>&nbsp; years old</p>
+    <p class="patient_container__info"><span class="patient--color">{{patient.weight}}</span>&nbsp; lbs</p>
+    <p class="patient_container__info"><span class="patient--color">{{patient.height}}</span>&nbsp; cm</p>
     {{/ if }}
   </div>
   <!-- ./patient info -->
