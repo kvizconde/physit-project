@@ -1,58 +1,85 @@
+<!--
+----------------------------------------------------------------------------------
+
+README: The Following HBS file Has Been Modified by KEVIN VIZCONDE:
+              • Naming convention was changed to Adhere to BEM Standards
+              • Table container was changed to div containers
+              • Layout model converted to Flexbox
+              • Design was changed
+              • Modified user experience interactions
+
+
+Original Skeleton: Ringo Suen
+Revision 1 and 2: Ringo Suen
+Roles:
+  • Basic skeleton, structure, user interactions etc.
+  • Revision of basic skeleton design
+
+
+Final Revision and Design: Kevin Vizconde
+Roles:
+  • Finalizing structure and design
+  • Finalizing user experience/interactions
+
+----------------------------------------------------------------------------------
+-->
+
 <main class="home-container">
   {{>_patientHeader}}
-  <div id="listcontainer">
-    <table id="table-headings">
-      <thead>
-        <tr>
-          <td class="titles" id="appt-title">Appointment Time</td>
-          <td class="titles" id="name-title">Patient Name</td>
-          <td class="titles" id="phone-title">Phone Number </td>
-          <td class="titles" id="action-title">Action</td>
-        </tr>
-      </thead>
-    </table>
-  </div>
-  <div id="card-container">
-    {{#each patients}}
-      <div class="card">
-        <form class="card-content" method="GET" action="/home">
-          <input type="hidden" name="appointmentID" value="{{this.appointmentID}}"/>
-          <input type="hidden" name="patientID" value="{{this.patientID}}"/>
-          <h3 class="time">{{ this.appointmentTime }} - {{ this.appointmentEndTime }}</h3>
-          <h1 class="name">{{ this.firstName }} {{ this.lastName }}</h1>
-          <p class="phone">{{ this.phoneNumber }}</p>
-          <button type="submit" class="btn">View</button>
-        </form>
-      </div>
-    {{/each}}
-    
-    
-    {{!-- {{#each patients}} --}}
-      {{!-- <form name="patientData" method="GET" action="/home">
-        <tr>
-          <input type="hidden" name="appointmentID" value="{{this.appointmentID}}"/>
-          <td>{{this.firstName}}</td>
-          <td>{{this.lastName}}</td>
-          <td>{{this.phoneNumber}}</td>
-          <td>{{this.appointmentTime}} - {{this.appointmentEndTime}}</td>
-          <td><button type="submit">View More</button></td>
-        </tr>
-      </form> --}}
-    {{!-- {{/each}} --}}
+  <div class="card-container">
+    <!-- {{#each patients}}
+    <div class="card">
+      <form class="card-content" method="GET" action="/home">
+        <input type="hidden" name="appointmentID" value="{{ this.appointmentID }}" />
+        <input type="hidden" name="patientID" value="{{ this.patientID }}" />
+        <h3 class="time">{{ this.appointmentTime }} - {{ this.appointmentEndTime }}</h3>
+        <h1 class="name">{{ this.firstName }} {{ this.lastName }}</h1>
+        <p class="phone">{{ this.phoneNumber }}</p>
+        <button type="submit" class="btn">View</button>
+      </form>
+    </div>
+    {{/each}} -->
+
+    <div class="patient-card">
+      <form class="patient-card__form" method="GET" action="/home">
+        <div class="patient-card__container">
+          <input type="hidden" name="appointmentID" value="{{ this.appointmentID }}" />
+          <input type="hidden" name="patientID" value="{{ this.patientID }}" />
+          <p class="patient-card__time">
+            <span class="patient-card--start">🕒</span>&nbsp; 9:30 - 10:00
+          </p>
+          <h1 class="patient-card__name">
+            <span class="patient-card--start">💆‍♂️</span>&nbsp; John Hopkins
+          </h1>
+          <p class="patient-card__phone">
+            <span class="patient-card--start">☎️</span>&nbsp; 604 444 9999
+          </p>
+          <button class="patient-card__bttn" type="submit">View</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- <div class="card">
+      <form class="card-content" method="GET" action="/home">
+        <input type="hidden" name="appointmentID" value="{{ this.appointmentID }}" />
+        <input type="hidden" name="patientID" value="{{ this.patientID }}" />
+        <h3 class="time">10:30 - 11:30</h3>
+        <h1 class="name">Linda Walker</h1>
+        <p class="phone">778 412 5212</p>
+        <button type="submit" class="btn">View</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <form class="card-content" method="GET" action="/home">
+        <input type="hidden" name="appointmentID" value="{{ this.appointmentID }}" />
+        <input type="hidden" name="patientID" value="{{ this.patientID }}" />
+        <h3 class="time">12:30 - 1:30</h3>
+        <h1 class="name">Jerry Smith</h1>
+        <p class="phone">604 391 2230</p>
+        <button type="submit" class="btn">View</button>
+      </form>
+    </div> -->
   </div>
 </main>
 {{>_footer}}
-
-<!-- OLD -->
-<!-- <div id="card-container">
-  <form class="card-wrapper" method="GET" action="/home">
-    {{#each patients}}
-    <div class="card">
-      <h1 class="time">{{ this.appointmentTime }} - {{ this.appointmentEndTime }}</h1>
-      <h2 class="name">{{ this.firstName }} {{ this.lastName }}</h2>
-      <p class="phone">{{ this.phoneNumber }}</p>
-      <button type="submit" class="btn">View</button>
-    </div>
-    {{/each}}
-  </form>
-</div> -->
