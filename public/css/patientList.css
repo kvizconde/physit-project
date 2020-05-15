@@ -1,287 +1,206 @@
-.home-container {
-  height: 95vh;
-  padding: 1rem;
+/*
+----------------------------------------------------------------------------------
+
+README: The Following CSS file Has Been Modified by KEVIN VIZCONDE:
+              • Naming convention was changed to Adhere to BEM Standards
+              • Table container was changed to div containers
+              • Layout model converted to Flexbox
+              • Design was changed
+              • Modified user experience interactions
+
+Original Skeleton: Ringo Suen
+Revision 1 and 2: Ringo Suen
+
+Final Revision and Design: Kevin Vizconde
+
+----------------------------------------------------------------------------------
+*/
+
+html {
+  min-height: 100vh;
 }
 
-#card-container {
-  margin: auto;
-  width: 80%;
-  overflow: auto;
+body {
   height: 100%;
-  position: absolute;
-  left: 10%;
-  top: 20%;
 }
 
-/* css for card */
-
-.card {
-  width: 100%;
-  height: 150px;
-  /* background-color: #ebeef8; */
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: left;
-  margin: 2rem 0;
-  /* box-shadow: .5rem .5rem 3rem rgba(0, 0, 0, .5); */
-  transition: transform 0.5s;
-  border: 0.25rem solid var(--orangeYellow);
-  box-shadow: 0 0 1rem rgba(var(--yellowGlow), 0.75);
-  border-radius: 1.2rem;
-  background: rgba(var(--inputBox), 0.4);
-  /* float: left; */
-}
-
-.card-content {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  width: 95%;
-}
-
-.card:hover {
-  /* transform: scale(1.05); */
-  transform: translateY(-5px);
-}
-
-/** Css for Appt Time */
-
-.time {
-  margin: 1.5rem 0;
-  color: var(--textBlue);
-  text-align: center;
-  width: 20%;
-}
-
-/* css for name class */
-
-.name {
-  font-size: 25pt;
-  color: var(--primaryYellow);
-  margin-left: 2em;
-  padding: 0pt;
-  width: 25%;
-}
-
-/* css for about div */
-
-.phone {
-  font-size: 2rem;
-  font-weight: bolder;
-  margin-right: 2em;
-  color: var(--textBlue);
-  text-align: center;
-  width: 25%;
-}
-
-/* css for card button classes */
-
-.card .btn {
-  padding: 1rem 2.5rem;
-  /* background-color: #445ae3; */
-  border: 0.2rem solid var(--textBlue);
-  /* border: .1rem solid rgba(0, 0, 0, 0); */
-  background-color: var(--midBlue);
-  box-shadow: 0 0 0.75rem rgba(var(--blueGlow), 0.75);
-  border-radius: 1rem;
-  margin: 0.5rem 0;
-  text-transform: uppercase;
-  color: var(--primaryWhite);
-  font-size: 1.4rem;
-  transition: all 0.5s;
-  align-self: flex-end;
-  width: 12%;
-}
-
-/* css for hover effect */
-
-.card .btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.2);
-}
-
-/* css for btn card class after clicked effect */
-
-.card .btn:active {
-  transform: translateY(0);
-  box-shadow: none;
-}
-
-@media screen and (min-width: 700px) {
-  .card {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-  }
+.patient_container__name {
+  text-shadow: 0 0 1.4rem rgba(var(--blueGlow), .9);
+  filter: brightness(1.5) saturate(1.2) contrast(1.2);
 }
 
 .home-container {
-  height: 95vh;
-  padding: 1rem;
+  justify-content: center;
 }
 
-#card-container {
-  margin: auto;
-  width: 80%;
-  overflow: auto;
-  height: 100%;
-  position: absolute;
-  left: 10%;
-  top: 20%;
-}
-
-/* css for card */
-
-.card {
-  width: 100%;
-  height: 150px;
-  /* background-color: #ebeef8; */
+.card-container {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: left;
-  margin: 2rem 0;
-  /* box-shadow: .5rem .5rem 3rem rgba(0, 0, 0, .5); */
-  transition: transform 0.5s;
-  border: 0.25rem solid var(--orangeYellow);
-  box-shadow: 0 0 1rem rgba(var(--yellowGlow), 0.75);
-  border-radius: 1.2rem;
-  background: rgba(var(--inputBox), 0.4);
-  /* float: left; */
-}
-
-.card-content {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 85%;
   width: 95%;
+  overflow-y: scroll;
+  padding: 2rem;
 }
 
-.card:hover {
-  /* transform: scale(1.05); */
-  transform: translateY(-5px);
+.card-container::-webkit-scrollbar {
+  background-color: transparent;
+  width: .75rem;
 }
 
-/** Css for Appt Time */
-
-.time {
-  margin: 1.5rem 0;
-  color: var(--textBlue);
-  text-align: center;
-  width: 20%;
-}
-
-/* css for name class */
-
-.name {
-  font-size: 25pt;
-  color: var(--primaryYellow);
-  margin-left: 2em;
-  padding: 0pt;
-  width: 25%;
-}
-
-/* css for about div */
-
-.phone {
-  font-size: 2rem;
-  font-weight: bolder;
-  margin-right: 2em;
-  color: var(--textBlue);
-  text-align: center;
-  width: 25%;
-}
-
-/* css for card button classes */
-
-.card .btn {
-  padding: 1rem 2.5rem;
-  /* background-color: #445ae3; */
-  border: 0.2rem solid var(--textBlue);
-  /* border: .1rem solid rgba(0, 0, 0, 0); */
-  background-color: var(--midBlue);
-  box-shadow: 0 0 0.75rem rgba(var(--blueGlow), 0.75);
+.card-container::-webkit-scrollbar-thumb {
   border-radius: 1rem;
-  margin: 0.5rem 0;
+  background-color: transparent;
+}
+
+.card-container:hover {
+  overflow-y: auto;
+}
+
+.card-container:hover::-webkit-scrollbar-thumb {
+  background-color: var(--headingDark);
+}
+
+.patient-card {
+  margin: 2rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45rem;
+  width: 30rem;
+  padding: 2.5rem;
+  border: .25rem solid var(--orangeYellow);
+  box-shadow: 0 0 1rem rgba(var(--yellowGlow), .75);
+  border-radius: 1.2rem;
+  background: var(--headingDark);
+  font-size: 2rem;
+  transition: .4s ease-in-out;
+  flex: 1 0 30rem;
+}
+
+.patient-card:not(:hover) {
+  background: rgba(var(--inputBox), .4);
+}
+
+.patient-card:hover {
+  box-shadow: 0 0 3rem rgba(var(--yellowGlow), 1);
+  transform: translateY(-2%);
+  backface-visibility: hidden;
+  transition: .35s ease-in-out;
+}
+
+.card-container > .patient-card:first-child {
+  flex: 0 1 100%;
+}
+
+/* icon glows */
+
+.patient-card:hover .timeGlow,
+.patient-card:hover .timeGlowIcon,
+.patient-card:hover .nameGlow,
+.patient-card:hover .nameGlowIcon {
+  backface-visibility: hidden;
+  transition: .2s ease-out;
+}
+
+.patient-card:hover .timeGlow {
+  text-shadow: 0 0 1rem rgba(var(--blueGlow), 1);
+}
+
+.patient-card:hover .timeGlowIcon {
+  filter: invert(53%) sepia(94%) saturate(333%) hue-rotate(143deg) brightness(101%) contrast(102%)
+    drop-shadow(0 0 1rem rgba(var(--blueGlow), 1));
+}
+
+.patient-card:hover .nameGlow {
+  text-shadow: 0 0 1.5rem rgba(var(--yellowGlow), .9);
+  filter: saturate(1.1) brightness(1.05);
+}
+
+.patient-card__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--primaryGray);
+  font-weight: 300;
+}
+
+.align-flex {
+  display: flex;
+  align-items: center;
+}
+
+.avatar-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.patient-card--start {
+  vertical-align: middle;
+  font-size: 2rem;
+}
+
+.patient-card--icon {
+  width: 2rem;
+  filter: invert(100%) sepia(2%) saturate(31%) hue-rotate(109deg) brightness(116%) contrast(87%);
+}
+
+.patient-card--avatar {
+  width: 10rem;
+  margin-bottom: 2rem;
+  filter: invert(69%) sepia(93%) saturate(1025%) hue-rotate(0deg) brightness(105%) contrast(108%);
+}
+
+.patient-card__time {
+  font-weight: 400;
+  color: var(--textBlue);
+}
+
+.patient-card--icon.time {
+  filter: invert(53%) sepia(94%) saturate(333%) hue-rotate(143deg) brightness(101%) contrast(102%);
+}
+
+.patient-card__time,
+.patient-card--icon.time,
+.patient-card__name,
+.patient-card--avatar {
+  transition: .35s ease-in-out;
+}
+
+.patient-card__name {
+  margin: 2.5rem 0;
   text-transform: uppercase;
+  font-weight: 400;
+  color: var(--primaryYellow);
+  font-size: 2.2rem;
+}
+
+.patient-card__phone {
+  font-size: 1.6rem;
+}
+
+.patient-card__bttn {
+  margin-top: 3rem;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: .1rem;
+  width: 12rem;
+  height: 4rem;
+  text-align: center;
   color: var(--primaryWhite);
-  font-size: 1.4rem;
-  transition: all 0.5s;
-  align-self: flex-end;
-  width: 12%;
+  text-shadow: rgba(var(--boxShadows), .25) .15rem .3rem .3rem;
+  background-color: var(--orangeYellow);
+  box-shadow: 0 0 1.2rem rgba(var(--yellowGlow), .5);
+  border-radius: .6rem;
+  transition: .2s ease-out;
 }
 
-/* css for hover effect */
-
-.card .btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.2);
-}
-
-/* css for btn card class after clicked effect */
-
-.card .btn:active {
-  transform: translateY(0);
-  box-shadow: none;
-}
-
-@media screen and (min-width: 700px) {
-  .card {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-  }
-}
-
-/** Div containing the list of patients */
-#listcontainer {
-  width: 90%;
-  /* margin: auto; */
-  position: absolute;
-  top: 15%;
-  left: 10%;
-}
-
-/** Referencing just the categorizing td elements in the table (First Name, Last Name, etc) */
-.titles {
-  padding-bottom: 0.618em;
-  font-weight: bold;
-  font-size: 20pt;
-  color: #289cca;
-  margin-right: 20em;
-}
-
-/** Changing the size of the td elements int he table */
-td {
-  font-size: 18pt;
-}
-
-#appt-title {
-  padding-left: 1em;
-  left: 0%;
-  position: absolute;
-  text-decoration: underline;
-}
-#name-title {
-  padding-left: 2em;
-  position: absolute;
-  left: 20%;
-  text-decoration: underline;
-}
-
-#phone-title {
-  position: absolute;
-  /* left: 48%; */
-  left: 49%;
-  width: 30%;
-  text-decoration: underline;
-}
-
-#action-title {
-  position: absolute;
-  left: 71%;
-  text-decoration: underline;
+.patient-card__bttn:hover {
+  cursor: pointer;
+  background-color: var(--primaryYellow);
+  box-shadow: 0 0 1.6rem rgba(var(--yellowGlow), .9);
+  transition: .2s ease-out;
 }
