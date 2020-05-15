@@ -67,10 +67,14 @@ body {
   border: .25rem solid var(--orangeYellow);
   box-shadow: 0 0 1rem rgba(var(--yellowGlow), .75);
   border-radius: 1.2rem;
-  /* background: rgba(var(--inputBox), .4); */
   background: var(--headingDark);
   font-size: 2rem;
   transition: .4s ease-in-out;
+  flex: 1 0 30rem;
+}
+
+.patient-card:not(:hover) {
+  background: rgba(var(--inputBox), .4);
 }
 
 .patient-card:hover {
@@ -78,6 +82,10 @@ body {
   transform: translateY(-2%);
   backface-visibility: hidden;
   transition: .35s ease-in-out;
+}
+
+.card-container > .patient-card:first-child {
+  flex: 0 1 100%;
 }
 
 /* icon glows */
@@ -92,10 +100,6 @@ body {
 
 .patient-card:hover .timeGlow {
   text-shadow: 0 0 1rem rgba(var(--blueGlow), 1);
-}
-
-.patient-card:not(:hover) {
-  background: rgba(var(--inputBox), .4);
 }
 
 .patient-card:hover .timeGlowIcon {
