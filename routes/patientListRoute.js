@@ -6,4 +6,7 @@ const auth = require('../util/auth');
 
 router.route('/patientList').get(auth, patientListController.renderPatientList)
 
+// LOCAL - DON'T TOUCH
+// router.route('/patientList').get(patientListController.renderPatientList);
+
 module.exports = router;

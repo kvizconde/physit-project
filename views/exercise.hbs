@@ -1,6 +1,9 @@
 <main class="home-container">
   {{>_patientHeader}}
   <!-- wrapper -->
+  {{#if appointmentDetailError}}
+  <p>There are no available diagnosis for this patient</p>
+  {{else}}
   <div class="exercise-container">
     <span><i class="shopping-cart"></i></span>
     <div class="items">
@@ -12,6 +15,7 @@
         <button class="add-to-cart" type="button">Add Exercise</button>
       </div>
       {{/each}}
+      {{/if}}
       {{!-- <div class="item">
         <img
           src="https://manofmany.com/wp-content/uploads/2019/03/10-Best-Shoulder-Exercises-for-Men-Front-Raise.jpg"

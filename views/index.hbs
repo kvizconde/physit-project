@@ -7,7 +7,7 @@
   <!--Log-in entry goes here -->
   <section class="login_container">
     <div class="form_wrapper">
-      <form class="login_container__form" method="POST" action="/login">
+      <form class="login_container__form" method="POST" action="/">
         <img class="login_container__logo" src="img/physit_logo.png"
           alt="Phys-it Logo" />
         <table class="login_container__table">
@@ -22,6 +22,10 @@
             </th>
           </tr>
         </table>
+
+        {{#if loginError}}
+        <p id="wrong_account">That is not a valid account!</p>
+        {{/if}}
 
         <input type="text" name="physioID" placeholder="physio ID" required />
         {{#if passwordFailed}}
