@@ -3,12 +3,28 @@
 
   <div class="human_container">
     <div class="input_container" id="inputBox_knee">
-      <form class="input_container__form" action="">
-        <label class="form__label symptoms" for="symptoms">Symptoms</label>
+      <form class="input_container__form" action="/saveData" method="POST">
+        {{#if injury.exists}}
+          <label class="form__label symptoms" for="symptoms">Symptoms</label>
+          <textarea class="form__symptoms" name="symptoms">{{injury.symptom}}</textarea>
+          <hr />
+          <label class="form__label diagnosis" for="symptoms">Diagnosis</label>
+          <textarea class="form__diagnosis" name="diagnosis">{{injury.diagnosis}}</textarea>
+          <button type="submit">submit</button>
+        {{else}}
+          <label class="form__label symptoms" for="symptoms">Symptoms</label>
+          <textarea class="form__symptoms" name="symptoms" placeholder="enter symptoms"></textarea>
+          <hr />
+          <label class="form__label diagnosis" for="symptoms">Diagnosis</label>
+          <textarea class="form__diagnosis" name="diagnosis" placeholder="enter diagnosis"></textarea>
+          <button type="submit">submit</button>
+        {{/if}}
+        {{!-- <label class="form__label symptoms" for="symptoms">Symptoms</label>
         <textarea class="form__symptoms" name="symptoms" placeholder="enter symptoms"></textarea>
         <hr />
         <label class="form__label diagnosis" for="symptoms">Diagnosis</label>
         <textarea class="form__diagnosis" name="diagnosis" placeholder="enter diagnosis"></textarea>
+        <button type="submit">submit</button> --}}
       </form>
     </div>
 
