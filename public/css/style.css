@@ -159,6 +159,7 @@ a {
   text-align: center;
   color: var(--primaryWhite);
   background-color: var(--primaryRed);
+  text-shadow: rgba(var(--boxShadows), .25) .15rem .3rem .3rem;
   border-radius: .6rem;
 }
 
