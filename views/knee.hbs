@@ -5,24 +5,21 @@
     <div class="input_container" id="inputBox_knee">
       <form class="input_container__form" action="">
         <label class="form__label symptoms" for="symptoms">Symptoms</label>
-        <textarea class="form__symptoms" name="symptoms" placeholder="enter symptoms"></textarea>
+        <textarea class="form__symptoms" name="symptoms"
+          placeholder="enter symptoms"></textarea>
         <hr />
         <label class="form__label diagnosis" for="symptoms">Diagnosis</label>
-        <textarea class="form__diagnosis" name="diagnosis" placeholder="enter diagnosis"></textarea>
+        <textarea class="form__diagnosis" name="diagnosis"
+          placeholder="enter diagnosis"></textarea>
       </form>
     </div>
 
     <div class="iframe-container__overflow">
-      <iframe
-        id="knee3d"
-        tabindex="-1"
-        class="iframe-container--size"
+      <iframe id="knee3d" tabindex="-1" class="iframe-container--size"
         frameBorder="0"
-        src="https://human.biodigital.com/viewer/?be=3VNM&ui-info=false&ui-search=false&ui-reset=false&ui-fullscreen=false&ui-nav=false&ui-tools=false&ui-help=false&ui-chapter-list=false&ui-label-list=false&ui-anatomy-descriptions=false&ui-tutorial=false&disable-scroll=false&camera=32.736,45.291,-10.247,9.11,47.751,7.882,0.175,0.976,-0.128&dk=438f0897e2ee8156d5a7198fb3067553f93e14e2"
-      >
+        src="https://human.biodigital.com/viewer/?be=3VNM&ui-info=false&ui-search=false&ui-reset=false&ui-fullscreen=false&ui-nav=false&ui-tools=false&ui-help=false&ui-chapter-list=false&ui-label-list=false&ui-anatomy-descriptions=false&ui-tutorial=false&disable-scroll=false&camera=32.736,45.291,-10.247,9.11,47.751,7.882,0.175,0.976,-0.128&dk=438f0897e2ee8156d5a7198fb3067553f93e14e2">
       </iframe>
 
-      <script src="https://developer.biodigital.com/builds/api/2/human-api.min.js"></script>
     </div>
   </div>
   {{>_navigation}}
