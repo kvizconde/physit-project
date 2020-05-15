@@ -24,6 +24,11 @@ body {
   height: 100%;
 }
 
+.patient_container__name {
+  text-shadow: 0 0 1.4rem rgba(var(--blueGlow), .9);
+  filter: brightness(1.5) saturate(1.2) contrast(1.2);
+}
+
 .home-container {
   justify-content: center;
 }
@@ -53,7 +58,7 @@ body {
 }
 
 .card-container:hover::-webkit-scrollbar-thumb {
-  background-color: var(--midBlue);
+  background-color: var(--headingDark);
 }
 
 .patient-card {
