@@ -73,6 +73,10 @@ body {
   flex: 1 0 30rem;
 }
 
+.patient-card:not(:hover) {
+  background: rgba(var(--inputBox), .4);
+}
+
 .patient-card:hover {
   box-shadow: 0 0 3rem rgba(var(--yellowGlow), 1);
   transform: translateY(-2%);
@@ -96,10 +100,6 @@ body {
 
 .patient-card:hover .timeGlow {
   text-shadow: 0 0 1rem rgba(var(--blueGlow), 1);
-}
-
-.patient-card:not(:hover) {
-  background: rgba(var(--inputBox), .4);
 }
 
 .patient-card:hover .timeGlowIcon {
