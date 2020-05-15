@@ -32,6 +32,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  top: 5%;
   height: 90%;
   width: 95%;
   overflow-y: scroll;
