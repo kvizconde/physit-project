@@ -1,58 +1,60 @@
+<!--
+----------------------------------------------------------------------------------
+
+README: The Following HBS file Has Been Modified by KEVIN VIZCONDE:
+              • Naming convention was changed to Adhere to BEM Standards
+              • Table container was changed to div containers
+              • Layout model converted to Flexbox
+              • Design was changed
+              • Modified user experience interactions
+
+
+Original Skeleton: Ringo Suen
+Revision 1 and 2: Ringo Suen
+Roles:
+  • Basic skeleton, structure, user interactions etc.
+  • Revision of basic skeleton design
+
+
+Final Revision and Design: Kevin Vizconde
+Roles:
+  • Finalizing structure and design
+  • Finalizing user experience/interactions
+
+----------------------------------------------------------------------------------
+-->
+
 <main class="home-container">
   {{>_patientHeader}}
-  <div id="listcontainer">
-    <table id="table-headings">
-      <thead>
-        <tr>
-          <td class="titles" id="appt-title">Appointment Time</td>
-          <td class="titles" id="name-title">Patient Name</td>
-          <td class="titles" id="phone-title">Phone Number </td>
-          <td class="titles" id="action-title">Action</td>
-        </tr>
-      </thead>
-    </table>
-  </div>
-  <div id="card-container">
+  <div class="card-container">
     {{#each patients}}
-    <div class="card">
-      <form class="card-content" method="GET" action="/home">
-        <input type="hidden" name="appointmentID" value="{{this.appointmentID}}" />
-        <input type="hidden" name="patientID" value="{{this.patientID}}" />
-        <h3 class="time">{{ this.appointmentTime }} - {{ this.appointmentEndTime }}</h3>
-        <h1 class="name">{{ this.firstName }} {{ this.lastName }}</h1>
-        <p class="phone">{{ this.phoneNumber }}</p>
-        <button type="submit" class="btn">View</button>
+    <div class="patient-card">
+      <form class="patient-card__form" method="GET" action="/home">
+        <div class="patient-card__container">
+          <input type="hidden" name="appointmentID"
+            value="{{ this.appointmentID }}" />
+          <input type="hidden" name="patientID" value="{{ this.patientID }}" />
+          <p class="patient-card__time align-flex timeGlow">
+            <img class="patient-card--icon time timeGlowIcon"
+              src="img/icon_time.png" alt="" />&nbsp; {{ this.appointmentTime }}
+            -
+            {{ this.appointmentEndTime }}
+          </p>
+          <h1 class="patient-card__name avatar-flex nameGlow">
+            <img class="patient-card--avatar" src="img/icon_avatar.png"
+              alt="" />&nbsp;
+            {{ this.firstName }} {{ this.lastName }}
+          </h1>
+          <p class="patient-card__phone align-flex">
+            <img class="patient-card--icon" src="img/icon_phone.png"
+              alt="" />&nbsp;
+            {{ this.phoneNumber }}
+          </p>
+          <button class="patient-card__bttn" type="submit">View</button>
+        </div>
       </form>
     </div>
     {{/each}}
-
-
-    {{!-- {{#each patients}} --}}
-    {{!-- <form name="patientData" method="GET" action="/home">
-        <tr>
-          <input type="hidden" name="appointmentID" value="{{this.appointmentID}}"/>
-          <td>{{this.firstName}}</td>
-          <td>{{this.lastName}}</td>
-          <td>{{this.phoneNumber}}</td>
-          <td>{{this.appointmentTime}} - {{this.appointmentEndTime}}</td>
-          <td><button type="submit">View More</button></td>
-        </tr>
-      </form> --}}
-    {{!-- {{/each}} --}}
   </div>
 </main>
 {{>_footer}}
-
-<!-- OLD -->
-<!-- <div id="card-container">
-  <form class="card-wrapper" method="GET" action="/home">
-    {{#each patients}}
-    <div class="card">
-      <h1 class="time">{{ this.appointmentTime }} - {{ this.appointmentEndTime }}</h1>
-      <h2 class="name">{{ this.firstName }} {{ this.lastName }}</h2>
-      <p class="phone">{{ this.phoneNumber }}</p>
-      <button type="submit" class="btn">View</button>
-    </div>
-    {{/each}}
-  </form>
-</div> -->

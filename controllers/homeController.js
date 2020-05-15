@@ -31,7 +31,7 @@ const parsePatientInfo = info => {
       lastName: data.lastName,
       age: data.age,
       height: data.height,
-      weight: data.weight
+      weight: data.weight,
     };
 
     return patientInfo;
