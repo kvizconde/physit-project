@@ -32,8 +32,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  top: 5%;
-  height: 90%;
+  height: 85%;
   width: 95%;
   overflow-y: scroll;
   padding: 2rem;
@@ -68,7 +67,8 @@ body {
   border: .25rem solid var(--orangeYellow);
   box-shadow: 0 0 1rem rgba(var(--yellowGlow), .75);
   border-radius: 1.2rem;
-  background: rgba(var(--inputBox), .4);
+  /* background: rgba(var(--inputBox), .4); */
+  background: var(--headingDark);
   font-size: 2rem;
   transition: .4s ease-in-out;
 }
@@ -86,11 +86,16 @@ body {
 .patient-card:hover .timeGlowIcon,
 .patient-card:hover .nameGlow,
 .patient-card:hover .nameGlowIcon {
+  backface-visibility: hidden;
   transition: .2s ease-out;
 }
 
 .patient-card:hover .timeGlow {
   text-shadow: 0 0 1rem rgba(var(--blueGlow), 1);
+}
+
+.patient-card:not(:hover) {
+  background: rgba(var(--inputBox), .4);
 }
 
 .patient-card:hover .timeGlowIcon {
