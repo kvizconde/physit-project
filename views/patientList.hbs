@@ -25,29 +25,30 @@ Roles:
 -->
 
 <main class="home-container">
+  <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   {{>_patientHeader}}
   <div class="card-container">
     {{#each patients}}
     <div class="patient-card">
       <form class="patient-card__form" method="GET" action="/home">
         <div class="patient-card__container">
-          <input type="hidden" name="appointmentID"
-            value="{{ this.appointmentID }}" />
+          <input type="hidden" name="appointmentID" value="{{ this.appointmentID }}" />
           <input type="hidden" name="patientID" value="{{ this.patientID }}" />
           <p class="patient-card__time align-flex timeGlow">
-            <img class="patient-card--icon time timeGlowIcon"
-              src="img/icon_time.png" alt="" />&nbsp; {{ this.appointmentTime }}
+            <img
+              class="patient-card--icon time timeGlowIcon"
+              src="img/icon_time.png"
+              alt=""
+            />&nbsp; {{ this.appointmentTime }}
             -
             {{ this.appointmentEndTime }}
           </p>
           <h1 class="patient-card__name avatar-flex nameGlow">
-            <img class="patient-card--avatar" src="img/icon_avatar.png"
-              alt="" />&nbsp;
+            <img class="patient-card--avatar" src="img/icon_avatar.png" alt="" />&nbsp;
             {{ this.firstName }} {{ this.lastName }}
           </h1>
           <p class="patient-card__phone align-flex">
-            <img class="patient-card--icon" src="img/icon_phone.png"
-              alt="" />&nbsp;
+            <img class="patient-card--icon" src="img/icon_phone.png" alt="" />&nbsp;
             {{ this.phoneNumber }}
           </p>
           <button class="patient-card__bttn" type="submit">View</button>
