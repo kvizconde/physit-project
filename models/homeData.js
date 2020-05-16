@@ -1,26 +1,19 @@
 const db = require("../util/database");
 
-function postAppointmentDetail(appointmentID, bodyPart, symptom, diagnosis, recoveryDate) {
-  db.execute(
-    `INSERT INTO appointmentdetail (appointmentID, bodyPart, symptom, diagnosis, recoveryDate) 
-         VALUES (${appointmentID}, "${bodyPart}", "${symptom}", "${diagnosis}", "${recoveryDate}");`
-  )
-}
-
-async function getAllActiveInjuries(patientID) {
+async function getActiveInjuries(patientID) {
   try {
     const response = await db.execute(
       `SELECT * FROM appointmentdetail 
        WHERE patientID = ${patientID}
        AND active = 1;`
-    )
+    );
     if (response[0].length === 0) {
-      return undefined
+      return undefined;
     } else {
-      return response
+      return response;
     }
   } catch (error) {
-    throw error
+    throw error;
   }
   
 }
@@ -51,5 +44,5 @@ async function getAppointmentDetail(appointmentID) {
 
 module.exports = {
   getAppointmentDetail,
-  getAllActiveInjuries
+  getActiveInjuries
 };

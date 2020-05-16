@@ -36,7 +36,6 @@ body {
 }
 
 .iframe-container__overflow {
-  /* height: 90%; */
   height: 95vh;
   width: 55%;
   position: relative;

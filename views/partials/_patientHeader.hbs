@@ -5,6 +5,8 @@
     {{# if patientListJSCSS }}
     <h1 class="patient_container__name patient--color">
       Welcome {{ physiotherapist.firstName }} {{ physiotherapist.lastName }}
+      <!-- LOCAL NAME DON'T DELETE UNTIL PUBLISHING TO PRODUCTION -->
+      <!-- Welcome Kevin Vizconde -->
     </h1>
     <!-- ./FOR PHYSIO -->
     {{ else }}
@@ -40,11 +42,13 @@
       </button>
     </div>
     <!-- ./logout -->
+    {{# unless patientListJSCSS }}
     <a href="javascript:history.back()" class="backArrow_container__link">
       <div class="backArrow_container">
         <img class="backArrow--size" src="img/icon_back.png" alt="left arrow" />
         <h2 class="backArrow_text">Back</h2>
       </div>
     </a>
+    {{/ unless }}
   </div>
 </div>
