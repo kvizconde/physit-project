@@ -10,6 +10,8 @@
           <hr />
           <label class="form__label diagnosis" for="symptoms">Diagnosis</label>
           <textarea class="form__diagnosis" name="diagnosis">{{injury.diagnosis}}</textarea>
+          <label for="recoveryDate">Estimated Recovery Date</label>
+          <input type="date" name="recoveryDate" value="{{injury.recoveryDate}}" required/>
           <button type="submit">SAVE</button>
         </form>
         <form action="/completeInjury" method="POST">
@@ -25,7 +27,9 @@
           <hr />
           <label class="form__label diagnosis" for="symptoms">Diagnosis</label>
           <textarea class="form__diagnosis" name="diagnosis" placeholder="enter diagnosis"></textarea>
-          <button type="submit">submit</button>
+          <label for="recoveryDate">Estimated Recovery Date</label>
+          <input type="date" name="recoveryDate" required/>
+          <button type="submit">SAVE</button>
         </form>
       {{/if}}
     </div>
