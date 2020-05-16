@@ -21,11 +21,11 @@ body {
 /* START OF RINGO'S CSS */
 
 .exercise-container {
-  width: 1200px;
-  margin: 20px auto;
-  padding: 20px;
+  width: 15em;
+  margin: 200px auto;
+  padding: 200px;
   position: absolute;
-  left: 18%;
+  left: 5%;
   top: 10%;
   overflow:auto;
 }
@@ -33,6 +33,7 @@ body {
 .items {
   display: block;
   margin: 20px 0;
+  width: 2000px;
 }
 
 .item {
@@ -73,14 +74,14 @@ button:focus {
 }
 
 .shopping-cart {
-  display: inline-block;
+  /* display: inline-block; */
   background: url(https://image.flaticon.com/icons/svg/10/10699.svg) no-repeat 0 0;
   background-color: #fff;
-  width: 15rem;
+  width: 1rem;
   height: 15rem;
   position: absolute;
-  left: 110%;
-  top: 40%;
+  left: 0%;
+  top: 10%;
 }
 
 /* START OF RINGO'S CSS */
