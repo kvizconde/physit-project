@@ -10,7 +10,7 @@ async function postAppointmentDetail(patientID, appointmentID, bodypart, symptom
 async function getInjury(patientID, bodypart) {
   try {
     const response = await db.execute(
-      `SELECT *
+      `SELECT symptom, diagnosis, DATE_FORMAT(recoveryDate, "%Y-%m-%d") AS recoveryDate
        FROM appointmentdetail
        WHERE patientID = ${patientID}
            AND bodypart = "${bodypart}"
@@ -27,13 +27,14 @@ async function getInjury(patientID, bodypart) {
   }
 }
 
-async function updateInjury(patientID, bodypart, symptom, diagnosis) {
+async function updateInjury(patientID, bodypart, symptom, diagnosis, recoveryDate) {
   try {
     await db.execute(
       `UPDATE appointmentdetail
-       SET symptom = "${symptom}", diagnosis = "${diagnosis}"
+       SET symptom = "${symptom}", diagnosis = "${diagnosis}", recoveryDate = "${recoveryDate}"
        WHERE patientID = ${patientID}
-           AND bodypart = "${bodypart}";`
+           AND bodypart = "${bodypart}"
+           AND active = 1;`
     );
     return
   } catch (error) {
@@ -61,7 +62,8 @@ async function completeInjury(patientID, bodypart) {
       `UPDATE appointmentdetail
        SET active = 0
        WHERE patientID = ${patientID}
-           AND bodypart = "${bodypart}";`
+           AND bodypart = "${bodypart}"
+           AND active = 1;`
     );
     return
   } catch (error) {
