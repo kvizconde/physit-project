@@ -18,6 +18,11 @@ body {
 
 /* Exercise Area */
 
+#no-exercises {
+  text-align: center;
+  font-size: 30px;
+}
+
 /* START OF RINGO'S CSS */
 
 .exercise-container {

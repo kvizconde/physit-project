@@ -16,7 +16,9 @@
     {{/ if }}
     {{# if exerciseJSCSS }}
     <p class="patient_container__exercise">
+      {{#if bodypart}}
       <span class="patient--color">{{bodypart.bodypart}}</span>&nbsp; exercises
+      {{/if}}
     </p>
     {{/ if}}
     {{# if zoomJSCSS }}
