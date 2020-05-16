@@ -67,18 +67,46 @@ exports.saveData = async (req,res) => {
       const recoveryDate = "2021-09-21";
     
       await zoomModel.postAppointmentDetail(patientID, appointmentID, bodypart, symptom, diagnosis, recoveryDate);
-      res.redirect('/home');
+      res.redirect('/home'); // !!! might want to change this !!!
     } else {
       const symptom = req.body.symptoms;
       const diagnosis = req.body.diagnosis;
 
       await zoomModel.updateInjury(patientID, bodypart, symptom, diagnosis);
-      res.redirect('/home');
+      res.redirect('/home'); // !!! might want to change this !!!
     }
   } catch (error) {
     throw error;
   }
 };
+
+exports.completeInjury = async (req, res) => {
+  try {
+    const patientID = req.session.patientID;
+    const bodypart = req.session.bodypart;
+
+    await zoomModel.completeInjury(patientID, bodypart);
+
+    res.redirect('/home');
+
+  } catch (error) {
+    throw error
+  }
+}
+
+exports.deleteInjury = async (req, res) => {
+  try {
+    const patientID = req.session.patientID;
+    const bodypart = req.session.bodypart;
+
+    await zoomModel.deleteInjury(patientID, bodypart);
+
+    res.redirect('/home');
+
+  } catch (error) {
+    throw error
+  }
+}
 
 const parseInjuryData = info => {
   try {

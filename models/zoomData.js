@@ -1,9 +1,9 @@
 const db = require("../util/database");
 
-async function postAppointmentDetail(patientID, appointmentID, bodyPart, symptom, diagnosis, recoveryDate) {
+async function postAppointmentDetail(patientID, appointmentID, bodypart, symptom, diagnosis, recoveryDate) {
   await db.execute(
-    `INSERT INTO appointmentdetail (patientID, appointmentID, bodyPart, symptom, diagnosis, recoveryDate) 
-         VALUES (${patientID}, ${appointmentID}, "${bodyPart}", "${symptom}", "${diagnosis}", "${recoveryDate}");`
+    `INSERT INTO appointmentdetail (patientID, appointmentID, bodypart, symptom, diagnosis, recoveryDate) 
+         VALUES (${patientID}, ${appointmentID}, "${bodypart}", "${symptom}", "${diagnosis}", "${recoveryDate}");`
   )
 }
 
@@ -13,7 +13,8 @@ async function getInjury(patientID, bodypart) {
       `SELECT *
        FROM appointmentdetail
        WHERE patientID = ${patientID}
-           AND bodypart = "${bodypart}";`
+           AND bodypart = "${bodypart}"
+           AND active = 1;`
     );
     
     if (response[0].length === 0) {
@@ -33,7 +34,36 @@ async function updateInjury(patientID, bodypart, symptom, diagnosis) {
        SET symptom = "${symptom}", diagnosis = "${diagnosis}"
        WHERE patientID = ${patientID}
            AND bodypart = "${bodypart}";`
-    )
+    );
+    return
+  } catch (error) {
+    throw error
+  }
+}
+
+async function deleteInjury(patientID, bodypart) {
+  try {
+    await db.execute(
+      `DELETE FROM appointmentdetail
+       WHERE patientID = ${patientID}
+           AND bodypart = "${bodypart}"
+           AND active = 1;`
+    );
+    return
+  } catch (error) {
+    throw error;
+  }
+}
+
+async function completeInjury(patientID, bodypart) {
+  try {
+    await db.execute(
+      `UPDATE appointmentdetail
+       SET active = 0
+       WHERE patientID = ${patientID}
+           AND bodypart = "${bodypart}";`
+    );
+    return
   } catch (error) {
     throw error
   }
@@ -42,5 +72,7 @@ async function updateInjury(patientID, bodypart, symptom, diagnosis) {
 module.exports = {
   postAppointmentDetail,
   getInjury,
-  updateInjury
+  updateInjury,
+  deleteInjury,
+  completeInjury
 };
