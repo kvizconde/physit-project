@@ -58,27 +58,51 @@ exports.saveData = async (req,res) => {
     const patientID = req.session.patientID;
     const appointmentID = req.session.appointmentID;
     const bodypart = req.session.bodypart;
+    const symptom = req.body.symptoms;
+    const diagnosis = req.body.diagnosis;
+    const recoveryDate = req.body.recoveryDate;
 
     const overwrite = await zoomModel.getInjury(patientID, bodypart);
 
     if (overwrite === undefined) {
-      const symptom = req.body.symptoms;
-      const diagnosis = req.body.diagnosis;
-      const recoveryDate = "2021-09-21";
-    
       await zoomModel.postAppointmentDetail(patientID, appointmentID, bodypart, symptom, diagnosis, recoveryDate);
-      res.redirect('/home');
+      res.redirect('/home'); // !!! might want to change this !!!
     } else {
-      const symptom = req.body.symptoms;
-      const diagnosis = req.body.diagnosis;
-
-      await zoomModel.updateInjury(patientID, bodypart, symptom, diagnosis);
-      res.redirect('/home');
+      await zoomModel.updateInjury(patientID, bodypart, symptom, diagnosis, recoveryDate);
+      res.redirect('/home'); // !!! might want to change this !!!
     }
   } catch (error) {
     throw error;
   }
 };
+
+exports.completeInjury = async (req, res) => {
+  try {
+    const patientID = req.session.patientID;
+    const bodypart = req.session.bodypart;
+
+    await zoomModel.completeInjury(patientID, bodypart);
+
+    res.redirect('/home');
+
+  } catch (error) {
+    throw error
+  }
+}
+
+exports.deleteInjury = async (req, res) => {
+  try {
+    const patientID = req.session.patientID;
+    const bodypart = req.session.bodypart;
+
+    await zoomModel.deleteInjury(patientID, bodypart);
+
+    res.redirect('/home');
+
+  } catch (error) {
+    throw error
+  }
+}
 
 const parseInjuryData = info => {
   try {
@@ -86,7 +110,8 @@ const parseInjuryData = info => {
     const injuryInfo = {
       exists: true,
       symptom: data.symptom,
-      diagnosis: data.diagnosis
+      diagnosis: data.diagnosis,
+      recoveryDate: data.recoveryDate
   };
   return injuryInfo;
   } catch (error) {
