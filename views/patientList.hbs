@@ -1,35 +1,35 @@
+{{!--
+----------------------------------------------------------------------------------
+
+README: The Following HBS file Has Been Modified by KEVIN VIZCONDE:
+              • Naming convention was changed to Adhere to BEM Standards
+              • Table container was changed to div containers
+              • Layout model converted to Flexbox
+              • Design was changed
+              • Modified user experience interactions
+
+
+Original Skeleton: Ringo Suen
+Revision 1 and 2: Ringo Suen
+Roles:
+  • Basic skeleton, structure, user interactions etc.
+  • Revision of basic skeleton design
+
+
+Back-End: Daniel Chu / Benson Wang
+Roles:
+  • Grabbing data from the database and dynamically parsing data into inputs
+
+
+Final Revision and Design: Kevin Vizconde
+Roles:
+  • Code reviewing and updating code structure
+  • Finalizing structure and design
+  • Finalizing user experience/interactions
+
+----------------------------------------------------------------------------------
+--}}
 <main class="home-container">
-  <!--
-  ----------------------------------------------------------------------------------
-
-  README: The Following HBS file Has Been Modified by KEVIN VIZCONDE:
-                • Naming convention was changed to Adhere to BEM Standards
-                • Table container was changed to div containers
-                • Layout model converted to Flexbox
-                • Design was changed
-                • Modified user experience interactions
-
-
-  Original Skeleton: Ringo Suen
-  Revision 1 and 2: Ringo Suen
-  Roles:
-    • Basic skeleton, structure, user interactions etc.
-    • Revision of basic skeleton design
-
-
-  Back-End: Daniel Chu / Benson Wang
-  Roles:
-    • Grabbing data from the database and dynamically parsing data into inputs
-
-
-  Final Revision and Design: Kevin Vizconde
-  Roles:
-    • Code reviewing and updating code structure
-    • Finalizing structure and design
-    • Finalizing user experience/interactions
-
-  ----------------------------------------------------------------------------------
-  -->
   {{>_patientHeader}}
   <div class="card-container">
     {{#each patients}}
