@@ -60,45 +60,32 @@ exports.saveData = async (req, res) => {
     const { patientID } = req.session;
     const { appointmentID } = req.session;
     const { bodypart } = req.session;
-    const symptom = req.body.symptoms;
+    const { symptom } = req.body;
     const { diagnosis } = req.body;
     const recoveryDate = "2069-12-25";
 
-    const overwrite = await zoomModel.getInjury(patientID, bodypart);
+    const { save_clear } = req.body;
 
-    if (overwrite === undefined) {
-      await zoomModel.postAppointmentDetail(patientID, appointmentID, bodypart, symptom, diagnosis, recoveryDate);
-      res.redirect('/' + req.session.bodypart); // !!! might want to change this !!!
+    if (save_clear == "save") {
+      console.log("SAVING...")
+      const overwrite = await zoomModel.getInjury(patientID, bodypart);
+
+      if (overwrite === undefined) {
+        await zoomModel.postAppointmentDetail(patientID, appointmentID, bodypart, symptom, diagnosis, recoveryDate);
+        res.redirect('/' + bodypart);
+      } else {
+        await zoomModel.updateInjury(patientID, bodypart, symptom, diagnosis, recoveryDate);
+        res.redirect('/' + bodypart); 
+      }
     } else {
-      await zoomModel.updateInjury(patientID, bodypart, symptom, diagnosis, recoveryDate);
-      res.redirect('/' + req.session.bodypart); // !!! might want to change this !!!
+      console.log("CLEARING...")
+      const { patientID } = req.session;
+      const { bodypart } = req.session;
+
+      await zoomModel.completeInjury(patientID, bodypart);
+
+      res.redirect('/home');
     }
-  } catch (error) {
-    throw error;
-  }
-};
-
-exports.completeInjury = async (req, res) => {
-  try {
-    const { patientID } = req.session;
-    const { bodypart } = req.session;
-
-    await zoomModel.completeInjury(patientID, bodypart);
-
-    res.redirect('/home');
-  } catch (error) {
-    throw error;
-  }
-};
-
-exports.deleteInjury = async (req, res) => {
-  try {
-    const { patientID } = req.session;
-    const { bodypart } = req.session;
-
-    await zoomModel.deleteInjury(patientID, bodypart);
-
-    res.redirect('/home');
   } catch (error) {
     throw error;
   }
