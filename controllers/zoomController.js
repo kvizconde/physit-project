@@ -62,23 +62,16 @@ exports.saveData = async (req, res) => {
     const { bodypart } = req.session;
     const symptom = req.body.symptoms;
     const { diagnosis } = req.body;
-    const { recoveryDate } = req.body;
+    const recoveryDate = "2069-12-25";
 
     const overwrite = await zoomModel.getInjury(patientID, bodypart);
 
     if (overwrite === undefined) {
-      await zoomModel.postAppointmentDetail(
-        patientID,
-        appointmentID,
-        bodypart,
-        symptom,
-        diagnosis,
-        recoveryDate,
-      );
-      res.redirect('/home'); // !!! might want to change this !!!
+      await zoomModel.postAppointmentDetail(patientID, appointmentID, bodypart, symptom, diagnosis, recoveryDate);
+      res.redirect('/' + req.session.bodypart); // !!! might want to change this !!!
     } else {
       await zoomModel.updateInjury(patientID, bodypart, symptom, diagnosis, recoveryDate);
-      res.redirect('/home'); // !!! might want to change this !!!
+      res.redirect('/' + req.session.bodypart); // !!! might want to change this !!!
     }
   } catch (error) {
     throw error;
@@ -118,9 +111,8 @@ const parseInjuryData = info => {
       exists: true,
       symptom: data.symptom,
       diagnosis: data.diagnosis,
-      recoveryDate: data.recoveryDate,
     };
-
+    
     return injuryInfo;
   } catch (error) {
     throw error;

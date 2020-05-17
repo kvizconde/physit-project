@@ -1,3 +1,17 @@
+/*
+----------------------------------------------------------------------------------
+
+README: The Following JS file Has Been Created by KEVIN VIZCONDE
+
+• Setup function for name hover which displays patient information
+• Added BioDigital functions such as creating hotspots,
+  and loading zoomed in body view when hotspot is clicked
+
+Original and Final Revision/Design: Kevin Vizconde
+
+----------------------------------------------------------------------------------
+*/
+
 function nameHover() {
   const patientName = $('.patient_container__name');
   const patientInfo = $('.patient_container__info');
@@ -19,11 +33,6 @@ function nameHover() {
 }
 
 nameHover();
-
-$('#preloader')
-  .css('visibility', 'visible')
-  .hide()
-  .fadeIn(666);
 
 // BioDigital Stuff - Done by Kevin
 const human = new HumanAPI('bioDigital');
