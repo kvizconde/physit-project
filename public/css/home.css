@@ -36,11 +36,16 @@ body {
   position: relative;
 }
 
-.human_container__img {
+/* .human_container__img {
   height: 100%;
-}
+} */
 
 .patient_container__bodypart {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.patient_container__exercise {
   font-size: 2rem;
   text-transform: uppercase;
 }
