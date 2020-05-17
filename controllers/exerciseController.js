@@ -1,28 +1,36 @@
-const exerciseModel = require('../models/exerciseData');
+// const exerciseModel = require('../models/exerciseData');
 
-// Get exercise
-exports.getExercise = async (req, res) => {
-  try {
-    console.log(req.session.appointmentID);
-    console.log(req.session.patientID);
+// // Get exercise
+// exports.getExercise = async (req, res) => {
+//   try {
+//     console.log(req.session.appointmentID);
+//     console.log(req.session.patientID);
 
-    const bodypart = await exerciseModel.getAppointmentDetail(
-      req.session.patientID,
-      req.session.appointmentID,
-    );
+//     const bodypart = await exerciseModel.getAppointmentDetail(
+//       req.session.patientID,
+//       req.session.appointmentID,
+//     );
 
-    console.log(bodypart[0][0].bodypart);
-    const exercises = await exerciseModel.generateExercises(bodypart[0][0].bodypart);
+//     console.log(bodypart[0][0].bodypart);
+//     const exercises = await exerciseModel.generateExercises(bodypart[0][0].bodypart);
 
-    console.log(exercises[0]);
-    res.render('exercise', {
-      patient: req.session.patientInfo,
-      exercises: exercises[0],
-      bodypart: bodypart[0][0],
-      title: 'Exercises',
-      exerciseJSCSS: true,
-    });
-  } catch (error) {
-    throw error;
-  }
+//     console.log(exercises[0]);
+//     res.render('exercise', {
+//       patient: req.session.patientInfo,
+//       exercises: exercises[0],
+//       bodypart: bodypart[0][0],
+//       title: 'Exercises',
+//       exerciseJSCSS: true,
+//     });
+//   } catch (error) {
+//     throw error;
+//   }
+// };
+
+// LOCAL - DON'T TOUCH
+exports.getExercise = (req, res) => {
+  res.render('exercise', {
+    title: 'Exercise',
+    exerciseJSCSS: true,
+  });
 };

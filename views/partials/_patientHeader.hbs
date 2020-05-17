@@ -1,4 +1,4 @@
-{{!--
+{{!
 ----------------------------------------------------------------------------------
 
 README: The Following HBS partial Has Been Created by KEVIN VIZCONDE
@@ -16,7 +16,7 @@ Roles:
   • Finalizing user experience/interactions
 
 ----------------------------------------------------------------------------------
---}}
+}}
 
 <div class="header-wrapper">
   <!-- patient info  -->
@@ -31,10 +31,6 @@ Roles:
     <h1 class="patient_container__name patient--color">
       {{ patient.firstName }} {{ patient.lastName }}
     </h1>
-    <!-- LOCAL NAME DON'T DELETE UNTIL PUBLISHING TO PRODUCTION -->
-    {{!--
-    <h1 class="patient_container__name patient--color">John Hopkins</h1>
-    --}}
     {{/ if }}
     {{# if exerciseJSCSS }}
     <p class="patient_container__exercise">
