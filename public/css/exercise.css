@@ -19,66 +19,153 @@ body {
 /* Exercise Area */
 
 /* START OF RINGO'S CSS */
-
+ 
 .exercise-container {
-  width: 1200px;
+  width: 805px;
   margin: 20px auto;
   padding: 20px;
   position: absolute;
-  left: 18%;
-  top: 10%;
-  overflow:auto;
+  left: 10%;
+  top: 10%; 
+  overflow: auto;
+  max-width: auto;
+  max-height: 1000px;
 }
 
-.items {
-  display: block;
-  margin: 20px 0;
-}
-
-.item {
-  float: left;
-  margin: 2rem 50px 10px 0;
-  text-align: center;
-  width: 305px;
-  padding: 10px;
-  border: .25rem solid var(--orangeYellow);
-  box-shadow: 0 0 1rem rgba(var(--yellowGlow), .75);
-  border-radius: 1.2rem;
-  background: rgba(var(--inputBox), .4);
-}
-
-.item img {
-  display: block;
-  margin: auto;
-  height: 180px;
-  width: 281px;
-  overflow: hidden;
-}
-
-button {
-  border: 1px solid #ef4478;
-  padding: 4px 14px;
-  background-color: #ef4478;
-  color: #fff;
-  text-transform: uppercase;
-  float: none;
-  margin: 1.5rem 0;
-  font-weight: 400;
-  cursor: pointer;
-  border-radius: 50px;
-}
-
-button:focus {
-  outline: none !important;
-}
-
-.shopping-cart {
-  display: inline-block;
-  background: url(https://image.flaticon.com/icons/svg/10/10699.svg) no-repeat 0 0;
-  background-color: #fff;
-  width: 15rem;
-  height: 15rem;
+.cart-container {
   position: absolute;
-  left: 110%;
-  top: 40%;
+  left: 55%;
+  margin: 10em;
+}
+
+.btn {
+  text-align: center;
+  vertical-align: middle;
+  padding: .67em .67em;
+  cursor: pointer;
+}
+
+.btn-primary {
+  color: white;
+  background-color: #56CCF2;
+  border: none;
+  border-radius: .3em;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: #2D9CDB;
+}
+
+.single-exercise {
+  margin: 30px;
+  width: 40%;
+}
+
+.single-exercise-title {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+.single-exercise-image {
+  height: 200px;
+  width: 300px;
+}
+
+.single-exercise-details {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+.single-exercise-equipment {
+  flex-grow: 1;
+}
+
+.exercise-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.cart-header {
+  font-weight: bold;
+  font-size: 1.25em;
+}
+
+.cart-column {
+  display: flex;
+  align-items: center;
+  margin-right: 1.5em;
+  padding-bottom: 10px;
+  margin-top: 10px;
+}
+
+.cart-row {
+  display: flex;
+}
+
+.cart-item {
+  width: 15%;
+}
+
+.cart-price {
+  width: 20%;
+}
+
+.cart-quantity {
+  width: 6%;
+}
+
+.cart-item-title {
+  margin-left: .5em;
+}
+
+.cart-item-image {
+  width: 75px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.btn-remove {
+  color: white;
+  background-color: #EB5757;
+  border: none;
+  border-radius: .3em;
+  font-weight: bold;
+}
+
+.btn-remove:hover {
+  background-color: #CC4C4C;
+}
+
+.cart-quantity-input {
+  height: 34px;
+  width: 50px;
+  border-radius: 5px;
+  border: 1px solid #56CCF2;
+  background-color: #eee;
+  color: #333;
+  padding: 0;
+  text-align: center;
+  font-size: 1.2em;
+  margin-right: 25px;
+}
+
+.cart-row:last-child {
+  border-bottom: 1px solid black;
+}
+
+.cart-row:last-child .cart-column {
+  border: none;
+}
+
+.btn-send {
+  display: block;
+  margin: 40px auto 80px auto;
+  font-size: 1.75em;
 }
