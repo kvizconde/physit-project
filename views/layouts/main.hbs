@@ -1,45 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Phys-it | {{ title }}</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Nunito:300,400,700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/css/style.css" />
-    {{# if indexJSCSS }}
-    <link href="/css/index.css" rel="stylesheet" />
-    <script type="text/javascript" src="/js/index.js" defer></script>
-    {{/ if }}
-    {{# if patientListJSCSS }}
-    <link href="/css/patientList.css" rel="stylesheet" />
-    {{/ if }}
-    {{# if homepageJSCSS }}
-    <link href="/css/home.css" rel="stylesheet" />
-    <script type="text/javascript" src="/js/home.js" defer></script>
-    {{/ if }}
-    {{# if zoomJSCSS }}
-    <script type="text/javascript" src="/js/zoom.js" defer></script>
-    {{/ if }}
-    {{# if exerciseJSCSS }}
-    <link href="/css/exercise.css" rel="stylesheet" />
-    <script type="text/javascript" src="/js/home.js" defer></script>
-    {{/ if }}
-    {{# if timelineJSCSS }}
-    <link href="/css/timeline.css" rel="stylesheet" />
-    <script type="text/javascript" src="/js/home.js" defer></script>
-    {{/ if }}
-    <script
-      src="https://code.jquery.com/jquery-3.5.0.js"
-      integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc="
-      crossorigin="anonymous"
-    ></script>
-  </head>
 
-  <body>
-    {{{ body }}}
-    <script src="https://developer.biodigital.com/builds/api/2/human-api.min.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phys-it | {{ title }}</title>
+  <!--
+  ----------------------------------------------------------------------------------
+
+  README: The Following HBS file Has Been Created by KEVIN VIZCONDE
+
+  Final Revision and Design: Kevin Vizconde
+  Roles:
+  • Setting up Skeleton and Structure
+  • Finalizing structure and design
+
+  ----------------------------------------------------------------------------------
+  -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:300,400,700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+  {{# if indexJSCSS }}
+  <link href="/css/index.css" rel="stylesheet" />
+  <script type="text/javascript" src="/js/index.js" defer></script>
+  {{/ if }}
+  {{# if patientListJSCSS }}
+  <link href="/css/patientList.css" rel="stylesheet" />
+  {{/ if }}
+  {{# if homepageJSCSS }}
+  <link href="/css/home.css" rel="stylesheet" />
+  <script type="text/javascript" src="/js/home.js" defer></script>
+  {{/ if }}
+  {{# if zoomJSCSS }}
+  <script type="text/javascript" src="/js/zoom.js" defer></script>
+  {{/ if }}
+  {{# if exerciseJSCSS }}
+  <link href="/css/exercise.css" rel="stylesheet" />
+  <script type="text/javascript" src="/js/home.js" defer></script>
+  {{/ if }}
+  {{# if timelineJSCSS }}
+  <link href="/css/timeline.css" rel="stylesheet" />
+  <script type="text/javascript" src="/js/home.js" defer></script>
+  {{/ if }}
+  <script src="https://code.jquery.com/jquery-3.5.0.js"
+    integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  {{{ body }}}
+  <script src="https://developer.biodigital.com/builds/api/2/human-api.min.js">
+  </script>
+</body>
+
 </html>
