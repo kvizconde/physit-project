@@ -34,6 +34,11 @@ function nameHover() {
 
 nameHover();
 
+$('#preloader')
+  .css('visibility', 'visible')
+  .hide()
+  .fadeIn(666);
+
 // BioDigital Stuff - Done by Kevin
 const human = new HumanAPI('bioDigital');
 const shoulders = {
