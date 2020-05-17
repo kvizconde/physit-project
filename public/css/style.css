@@ -97,9 +97,10 @@ button:focus {
   outline: none;
 }
 
-button:active {
+/* remove this at production */
+/* button:active {
   transform: scale(1.06);
-}
+} */
 
 a {
   color: inherit;

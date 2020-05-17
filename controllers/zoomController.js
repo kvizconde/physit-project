@@ -3,69 +3,78 @@ const zoomModel = require('../models/zoomData');
 
 // Get zoomed shoulder
 exports.getShoulder = async (req, res) => {
-  req.session.bodypart = "shoulder";
-  const patientID = req.session.patientID;
+  req.session.bodypart = 'shoulder';
+  const { patientID } = req.session;
 
-  const existingInjury = await zoomModel.getInjury(patientID, "shoulder");
+  const existingInjury = await zoomModel.getInjury(patientID, 'shoulder');
 
   if (existingInjury === undefined) {
     res.render('shoulder', {
       title: 'Shoulder',
       homepageJSCSS: true,
       zoomJSCSS: true,
-      patient: req.session.patientInfo
+      patient: req.session.patientInfo,
     });
   } else {
     const injury = parseInjuryData(existingInjury);
+
     res.render('shoulder', {
       title: 'Shoulder',
       homepageJSCSS: true,
       zoomJSCSS: true,
       patient: req.session.patientInfo,
-      injury: injury
+      injury,
     });
   }
 };
 
 // Get zoomed knee
 exports.getKnee = async (req, res) => {
-  req.session.bodypart = "knee";
-  const patientID = req.session.patientID;
+  req.session.bodypart = 'knee';
+  const { patientID } = req.session;
 
-  const existingInjury = await zoomModel.getInjury(patientID, "knee");
+  const existingInjury = await zoomModel.getInjury(patientID, 'knee');
 
   if (existingInjury === undefined) {
     res.render('knee', {
       title: 'Knee',
       homepageJSCSS: true,
       zoomJSCSS: true,
-      patient: req.session.patientInfo
+      patient: req.session.patientInfo,
     });
   } else {
     const injury = parseInjuryData(existingInjury);
+
     res.render('knee', {
       title: 'Knee',
       homepageJSCSS: true,
       zoomJSCSS: true,
       patient: req.session.patientInfo,
-      injury: injury
+      injury,
     });
   }
 };
 
-exports.saveData = async (req,res) => {
+exports.saveData = async (req, res) => {
   try {
-    const patientID = req.session.patientID;
-    const appointmentID = req.session.appointmentID;
-    const bodypart = req.session.bodypart;
+    const { patientID } = req.session;
+    const { appointmentID } = req.session;
+    const { bodypart } = req.session;
     const symptom = req.body.symptoms;
-    const diagnosis = req.body.diagnosis;
-    const recoveryDate = req.body.recoveryDate;
+    const { diagnosis } = req.body;
+    const { recoveryDate } = req.body;
 
     const overwrite = await zoomModel.getInjury(patientID, bodypart);
 
     if (overwrite === undefined) {
-      await zoomModel.postAppointmentDetail(patientID, appointmentID, bodypart, symptom, diagnosis, recoveryDate);
+      await zoomModel.postAppointmentDetail(
+        patientID,
+        appointmentID,
+        bodypart,
+        symptom,
+        diagnosis,
+        recoveryDate,
+      );
       res.redirect('/home'); // !!! might want to change this !!!
     } else {
       await zoomModel.updateInjury(patientID, bodypart, symptom, diagnosis, recoveryDate);
@@ -78,31 +87,29 @@ exports.saveData = async (req,res) => {
 
 exports.completeInjury = async (req, res) => {
   try {
-    const patientID = req.session.patientID;
-    const bodypart = req.session.bodypart;
+    const { patientID } = req.session;
+    const { bodypart } = req.session;
 
     await zoomModel.completeInjury(patientID, bodypart);
 
     res.redirect('/home');
-
   } catch (error) {
-    throw error
+    throw error;
   }
-}
+};
 
 exports.deleteInjury = async (req, res) => {
   try {
-    const patientID = req.session.patientID;
-    const bodypart = req.session.bodypart;
+    const { patientID } = req.session;
+    const { bodypart } = req.session;
 
     await zoomModel.deleteInjury(patientID, bodypart);
 
     res.redirect('/home');
-
   } catch (error) {
-    throw error
+    throw error;
   }
-}
+};
 
 const parseInjuryData = info => {
   try {
@@ -111,10 +118,20 @@ const parseInjuryData = info => {
       exists: true,
       symptom: data.symptom,
       diagnosis: data.diagnosis,
-      recoveryDate: data.recoveryDate
-  };
-  return injuryInfo;
+      recoveryDate: data.recoveryDate,
+    };
+
+    return injuryInfo;
   } catch (error) {
     throw error;
   }
 };
+
+// LOCAL - DON'T TOUCH
+// exports.getShoulder = (req, res) => {
+//   res.render('shoulder', {
+//     title: 'Shoulder',
+//     homepageJSCSS: true,
+//     zoomJSCSS: true,
+//   });
+// };
