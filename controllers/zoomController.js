@@ -82,7 +82,7 @@ exports.saveData = async (req, res) => {
       const { patientID } = req.session;
       const { bodypart } = req.session;
 
-      await zoomModel.completeInjury(patientID, bodypart);
+      await zoomModel.deleteInjury(patientID, bodypart);
 
       res.redirect('/home');
     }
