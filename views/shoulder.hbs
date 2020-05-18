@@ -41,9 +41,6 @@ Roles:
         <textarea required class="form__diagnosis" name="diagnosis">{{
           injury.diagnosis
         }}</textarea>
-        <button class="form__bttn" type="submit" action="/deleteInjury" method="POST">
-          Clear
-        </button>
         {{else}}
         <textarea
           required
@@ -56,8 +53,8 @@ Roles:
           Save
         </button>
         {{#if injury.exists}}
-        <button type="submit" name="save_clear" value="clear">
-          Clear
+        <button class="form__bttn bttn--clear" type="submit" name="save_clear" value="clear">
+          X
         </button>
         {{/if}}
       </form>

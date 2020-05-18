@@ -36,10 +36,6 @@ body {
   position: relative;
 }
 
-/* .human_container__img {
-  height: 100%;
-} */
-
 .patient_container__bodypart {
   font-size: 2rem;
   text-transform: uppercase;
@@ -189,6 +185,23 @@ hr {
   background-color: var(--primaryYellow);
   box-shadow: 0 0 1.6rem rgba(var(--yellowGlow), .9);
   transition: .2s ease-out;
+}
+
+.bttn--clear {
+  z-index: -1;
+  background-color: var(--primaryGray);
+  box-shadow: none;
+  width: 8rem;
+  text-align: left;
+  padding-left: 2rem;
+  height: 4rem;
+  left: 30%;
+}
+
+.bttn--clear:hover {
+  background-color: var(--primaryRed);
+  box-shadow: 0 0 1.6rem var(--redGlow);
+  left: 20%;
 }
 
 /* media query for ipad */
