@@ -25,6 +25,8 @@ exports.getExercise = async (req, res) => {
       console.log(exercises[0]);
       res.render('exercise', {
         patient: req.session.patientInfo,
+        appointmentID: req.session.appointmentID,
+        patientID: req.session.patientID,
         exercises: exercises[0],
         bodypart: bodypart[0][0],
         title: 'Exercises',
@@ -35,3 +37,18 @@ exports.getExercise = async (req, res) => {
     throw error;
   }
 };
+
+// Adds
+exports.addExercisesForPatient = async (req, res) => {
+  try {
+    
+    console.log(req.session.appointmentID);
+    console.log(req.session.patientInfo);
+    console.log(req.body.title);
+    req.session.title = req.body.title;
+
+  } catch(error) {
+    throw error;
+  }
+
+}
