@@ -12,21 +12,22 @@
       <div class="single-exercise-details">
         <h2 class="single-exercise-equipment">{{ this.equipment }}</h2>
         <br />
-        <button class="btn btn-primary add-exercise-btn" type="button">ADD EXERCISE</button>
+        <button class="btn add-exercise-btn" type="button">EXERCISE +</button>
       </div>
     </div>
     {{/each}}
   </section>
   <section class="cart-container">
     <div class="cart-row">
-      <span class="cart-item cart-header cart-column">EXERCISE</span>
-      <span class="cart-equipment cart-header cart-column">EQUIPMENT</span>
-      <span class="cart-quantity cart-header cart-column">REPS</span>
-      <span class="cart-quantity cart-header cart-column">SETS</span>
-      <span class="cart-quantity cart-header cart-column"></span>
+      <div id="cart-item-header">EXERCISES</div>
+      {{!-- <span class="cart-equipment cart-header cart-column">EQUIPMENT</span> --}}
+      <div id="cart-quantity-header">Reps</div>
+      <div id="cart-quantity-header">Sets</div>
+      <div id="cart-quantity-header"></div>
+      {{!-- <span class="cart-quantity cart-header cart-column"></span> --}}
     </div>
     <div class="cart-items"></div>
-    <button class="btn btn-primary btn-send" type="button">SEND TO PATIENT</button>
+    {{!-- <button class="btn btn-primary btn-send" type="button">SEND TO PATIENT</button> --}}
   </section>
 
   {{>_navigation}}
