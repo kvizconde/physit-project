@@ -24,19 +24,19 @@ Roles:
   <div class="human_container">
     <div class="input_container" id="inputBox_shoulder">
       <form class="input_container__form" action="/saveData" method="POST">
-        <label class="form__label symptoms" for="symptoms">Symptoms</label>
+        <label class="form__label symptoms" for="symptom">Symptoms</label>
         {{#if injury.exists}}
-        <textarea required class="form__symptoms" name="symptoms">{{ injury.symptom }}</textarea>
+        <textarea required class="form__symptoms" name="symptom">{{ injury.symptom }}</textarea>
         {{else}}
         <textarea
           required
           class="form__symptoms"
-          name="symptoms"
+          name="symptom"
           placeholder="enter symptoms"
         ></textarea>
         {{/if}}
         <hr />
-        <label class="form__label diagnosis" for="symptoms">Diagnosis</label>
+        <label class="form__label diagnosis" for="diagnosis">Diagnosis</label>
         {{#if injury.exists}}
         <textarea required class="form__diagnosis" name="diagnosis">{{
           injury.diagnosis
@@ -52,9 +52,14 @@ Roles:
           placeholder="enter diagnosis"
         ></textarea>
         {{/if}}
-        <button class="form__bttn" type="submit">
+        <button class="form__bttn" type="submit" name="save_clear" value="save">
           Save
         </button>
+        {{#if injury.exists}}
+        <button type="submit" name="save_clear" value="clear">
+          Clear
+        </button>
+        {{/if}}
       </form>
     </div>
 
