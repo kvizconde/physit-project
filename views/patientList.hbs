@@ -1,4 +1,4 @@
-<!--
+{{!
 ----------------------------------------------------------------------------------
 
 README: The Following HBS file Has Been Modified by KEVIN VIZCONDE:
@@ -16,16 +16,20 @@ Roles:
   • Revision of basic skeleton design
 
 
+Back-End: Daniel Chu / Benson Wang
+Roles:
+  • Grabbing data from the database and dynamically parsing data into inputs
+
+
 Final Revision and Design: Kevin Vizconde
 Roles:
+  • Code reviewing and updating code structure
   • Finalizing structure and design
   • Finalizing user experience/interactions
 
 ----------------------------------------------------------------------------------
--->
-
+}}
 <main class="home-container">
-  <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   {{>_patientHeader}}
   <div class="card-container">
     {{#each patients}}
@@ -38,17 +42,22 @@ Roles:
             <img
               class="patient-card--icon time timeGlowIcon"
               src="img/icon_time.png"
-              alt=""
-            />&nbsp; {{ this.appointmentTime }}
+              alt="time icon"
+            />&nbsp;
+            {{ this.appointmentTime }}
             -
             {{ this.appointmentEndTime }}
           </p>
           <h1 class="patient-card__name avatar-flex nameGlow">
-            <img class="patient-card--avatar" src="img/icon_avatar.png" alt="" />&nbsp;
-            {{ this.firstName }} {{ this.lastName }}
+            <img
+              class="patient-card--avatar"
+              src="img/icon_avatar.png"
+              alt="patient avatar"
+            />&nbsp; {{ this.firstName }}
+            {{ this.lastName }}
           </h1>
           <p class="patient-card__phone align-flex">
-            <img class="patient-card--icon" src="img/icon_phone.png" alt="" />&nbsp;
+            <img class="patient-card--icon" src="img/icon_phone.png" alt="phone icon" />&nbsp;
             {{ this.phoneNumber }}
           </p>
           <button class="patient-card__bttn" type="submit">View</button>
@@ -58,4 +67,3 @@ Roles:
     {{/each}}
   </div>
 </main>
-<!-- {{>_footer}} -->

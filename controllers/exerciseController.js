@@ -52,3 +52,10 @@ exports.addExercisesForPatient = async (req, res) => {
   }
 
 }
+// LOCAL - DON'T TOUCH
+// exports.getExercise = (req, res) => {
+//   res.render('exercise', {
+//     title: 'Exercise',
+//     exerciseJSCSS: true,
+//   });
+// };

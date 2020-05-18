@@ -1,3 +1,18 @@
+/*
+----------------------------------------------------------------------------------
+
+README: The Following CSS file Has Been Created by KEVIN VIZCONDE
+
+• Setup Color Scheme / Variables
+• Setup Browser Border Box Reset
+• Setup Global Font-Size so that 10px = 1rem instead of (16px = 1rem)
+• Setup entire structure for this stylesheet
+
+Original and Final Revision/Design: Kevin Vizconde
+
+----------------------------------------------------------------------------------
+*/
+
 /* MASTER CSS FILE */
 
 /* COLOURS */
@@ -95,10 +110,6 @@ button {
 
 button:focus {
   outline: none;
-}
-
-button:active {
-  transform: scale(1.06);
 }
 
 a {
