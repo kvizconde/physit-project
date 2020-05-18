@@ -1,7 +1,7 @@
 {{!
 ----------------------------------------------------------------------------------
 
-  README: The Following HBS file Has Been Created by KEVIN VIZCONDE
+README: The Following HBS file Has Been Created by KEVIN VIZCONDE
 
 
 Back-End: Daniel Chu
@@ -39,9 +39,6 @@ Roles:
         <label class="form__label diagnosis" for="diagnosis">Diagnosis</label>
         {{#if injury.exists}}
         <textarea class="form__diagnosis" name="diagnosis">{{ injury.diagnosis }}</textarea>
-        <button class="form__bttn" type="submit" action="/deleteInjury" method="POST">
-          Clear
-        </button>
         {{else}}
         <textarea
           required
@@ -54,8 +51,8 @@ Roles:
           Save
         </button>
         {{#if injury.exists}}
-        <button type="submit" name="save_clear" value="clear">
-          Clear
+        <button class="form__bttn bttn--clear" type="submit" name="save_clear" value="clear">
+          X
         </button>
         {{/if}}
       </form>

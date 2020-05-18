@@ -86,7 +86,7 @@ function addExerciseToCart(title, equipment, imageSrc) {
             <input class="cart-quantity-input" type="number" value="1">
         </div>
         <div class="cart-quantity cart-column">
-        <button class="btn btn-remove" type="button">REMOVE</button>
+        <button class="btn btn-remove" type="button">x</button>
     </div>`
 
   cartRow.innerHTML = cartRowContents;

@@ -1,3 +1,39 @@
+/*
+--------------------------------------------------------------------------------------
+
+README:
+
+The Following CSS file Has Been created by KEVIN VIZCONDE at the start of the project.
+
+This file has been worked on and modified by the following people:
+
+Original Exercise Skeleton/Layout/Design: Ringo Suen
+Roles:
+  • Setting up the code structure for exercise view - naming conventions, etc.
+  • Setting up the layout for exercise view
+  • Setting up basic spacing, colors etc.
+
+
+Revision 1: Kevin Vizconde
+Roles:
+  • Color scheme updated to make it look more futuristic
+  • Worked on single exercise card (spacing, colors, borders, etc)
+  • Moved right scroll-bar to the left for the exercise container area
+  • Modified exercise container area to be more responsive
+  • Adjusted layout/sizes for iPad media query
+
+
+Final Revision/Structure Design: Ringo Suen
+Roles:
+  • Final css naming conventions/structure
+  • Final exercise design/layout
+  • Final revision for file
+
+--------------------------------------------------------------------------------------
+*/
+
+/* Basic View Template/Structure - Kevin Vizconde */
+
 html {
   min-height: 100vh;
 }
@@ -29,6 +65,8 @@ body {
   flex: 1 0 10%;
 }
 
+/* ./END Basic View Template/Structure */
+
 /* Exercise Area */
 
 #no-exercises {
@@ -37,7 +75,7 @@ body {
 }
 
 /* START OF RINGO'S CSS */
- 
+
 .exercise-container {
   display: flex;
   height: 75%;
@@ -166,9 +204,9 @@ body {
 .cart-container {
   display: flex;
   flex-direction: column;
-  height: 75%;
+  height: 80%;
   width: 100%;
-  margin-top: 6%;
+  margin-top: 3%;
   padding: 2rem;
   flex: 1 0 30%;
   overflow-x: hidden;
@@ -182,7 +220,6 @@ body {
 .cart-column {
   display: flex;
   align-items: center;
-  /* justify-content: center; */
   margin: 0 auto;
   padding: 2rem;
   width: 100%;
@@ -192,49 +229,15 @@ body {
   font-size: 2rem;
   font-weight: 700;
   color: var(--orangeYellow);
-  margin-left: 5em; 
-  width:100%;
+  margin-left: 5em;
+  width: 100%;
 }
 
 .cart-row {
   display: flex;
   justify-content: space-around;
-  margin: 1rem 0;
+  margin: 2rem 0;
   width: 100%;
-}
-
-/* .cart-items {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.4rem;
-} */
-
-.cart-quantity {
-  padding: 1rem;
-}
-
-.cart-quantity-input {
-  height: 4rem;
-  width: 4rem;
-  border-radius: .5rem;
-  border: none;
-  background-color: var(--bgLight);
-  color: var(--headingDark);
-  text-align: center;
-  font-size: 1.2em;
-}
-
-.btn-remove {
-  text-transform: uppercase;
-  font-size: 1rem;
-  width: 6rem;
-  height: 3rem;
-  text-align: center;
-  color: var(--primaryWhite);
-  background-color: var(--primaryRed);
-  text-shadow: rgba(var(--boxShadows), .25) .15rem .3rem .3rem;
-  border-radius: .6rem;
 }
 
 .btn-send {
@@ -243,27 +246,9 @@ body {
   font-size: 1.75em;
 }
 
-/* media query for ipad */
-@media all and (device-width: 1024px) and (device-height: 768px) and (orientation: landscape) {
-
-  .exercise-container {
-    height: 80%;
-    margin-top: 5rem;
-  }
-
-  .single-exercise {
-    width: 20rem;
-    height: 20rem;
-  }
-}
-
 .cart-item {
-  width: 80%;
+  flex: 1 0 50%;
 }
-
-/* .cart-equipment{
-  width: 20%;
-} */
 
 #cart-item-header {
   letter-spacing: .15rem;
@@ -282,56 +267,104 @@ body {
   color: var(--textBlue);
 }
 
+.btn-remove {
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  text-align: center;
+  color: var(--primaryWhite);
+  background-color: var(--primaryRed);
+  text-shadow: rgba(var(--boxShadows), .25) .15rem .3rem .3rem;
+  border-radius: 100%;
+  padding: .2rem;
+}
+
 .cart-quantity {
   width: 15%;
-}
-
-.cart-item-title {
-  margin-left: .5em;
-}
-
-.cart-item-image {
-  width: 75px;
-  height: auto;
-  border-radius: 10px;
-}
-
-.btn-remove {
-  color: white;
-  background-color: #EB5757;
-  border: none;
-  border-radius: .3em;
-  font-weight: bold;
-  padding: 2pt;
-}
-
-.btn-remove:hover {
-  background-color: #CC4C4C;
+  padding: 1rem;
 }
 
 .cart-quantity-input {
-  height: 34px;
-  width: 50px;
-  border-radius: 5px;
-  border: 1px solid #56CCF2;
-  background-color: #eee;
-  color: #333;
-  padding: 0;
+  height: 4rem;
+  width: 4rem;
+  border-radius: .5rem;
+  border: none;
+  background-color: var(--bgLight);
+  color: var(--headingDark);
   text-align: center;
   font-size: 1.2em;
-  margin-right: 25px;
 }
 
-.cart-row:last-child {
-  border-bottom: 1px solid black;
-}
+/* media query for ipad */
+@media all and (device-width: 1024px) and (device-height: 768px) and (orientation: landscape) {
 
-.cart-row:last-child .cart-column {
-  border: none;
-}
+  .exercise-container {
+    height: 85%;
+    margin-top: 5rem;
+    padding: .5rem;
+  }
 
-.btn-send {
-  display: block;
-  margin: 40px auto 80px auto;
-  font-size: 1.75em;
+  .single-exercise {
+    width: 20rem;
+    height: 30rem;
+    position: relative;
+  }
+
+  .single-exercise-title {
+    font-size: 1.4rem;
+    margin-bottom: 0;
+    margin-top: .5rem;
+  }
+
+  .single-exercise-details {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    bottom: 2rem;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .add-exercise-btn {
+    height: 3rem;
+    width: 10rem;
+    font-size: 1rem;
+  }
+
+  .cart-container {
+    margin-top: 8%;
+    padding: 1rem;
+  }
+
+  .cart-column {
+    padding: 1rem;
+  }
+
+  .cart-item-title {
+    font-size: 1.2rem;
+  }
+
+  #cart-item-header {
+    font-size: 1.5rem;
+    margin-left: 1rem;
+  }
+
+  #cart-quantity-header {
+    font-size: 1.5rem;
+  }
+
+  .cart-quantity-input {
+    height: 3rem;
+    width: 3rem;
+    font-size: 1.2rem;
+  }
+
+  .btn-remove {
+    font-size: 1.2rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
 }
