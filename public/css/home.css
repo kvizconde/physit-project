@@ -191,14 +191,17 @@ hr {
   z-index: -1;
   background-color: var(--primaryGray);
   box-shadow: none;
-  width: 6rem;
+  width: 8rem;
+  text-align: left;
+  padding-left: 2rem;
   height: 4rem;
-  left: 25%;
+  left: 30%;
 }
 
 .bttn--clear:hover {
   background-color: var(--primaryRed);
   box-shadow: 0 0 1.6rem var(--redGlow);
+  left: 20%;
 }
 
 /* media query for ipad */
