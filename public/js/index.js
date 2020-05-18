@@ -1,4 +1,19 @@
-// Start of index.js
+/*
+----------------------------------------------------------------------------------
+
+README: The Following JS file Has Been Created by KEVIN VIZCONDE
+
+• Setup function for sign up button.
+  Displays first name and last name if sign up button was clicked.
+  Also animations were added to the name fields.
+
+• Particle JS was added and modified/tweaked
+
+Original and Final Revision/Design: Kevin Vizconde
+
+----------------------------------------------------------------------------------
+*/
+
 let counter = 0;
 
 function setAttributes(el, options) {

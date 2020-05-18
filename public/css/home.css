@@ -1,3 +1,13 @@
+/*
+----------------------------------------------------------------------------------
+
+README: The Following CSS file Has Been Created by KEVIN VIZCONDE
+
+Original and Final Revision/Design: Kevin Vizconde
+
+----------------------------------------------------------------------------------
+*/
+
 html {
   min-height: 100vh;
 }
@@ -26,11 +36,16 @@ body {
   position: relative;
 }
 
-.human_container__img {
+/* .human_container__img {
   height: 100%;
-}
+} */
 
 .patient_container__bodypart {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.patient_container__exercise {
   font-size: 2rem;
   text-transform: uppercase;
 }
@@ -75,6 +90,7 @@ body {
 .input_container__form {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 textarea::-webkit-scrollbar {
@@ -145,6 +161,36 @@ hr {
   transition: .15s ease-out;
 }
 
+/* Form Buttons */
+
+.form__bttn {
+  top: 116%;
+  left: 50%;
+  transform: translate(-50%, -116%);
+  z-index: 1;
+  position: absolute;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: .1rem;
+  width: 12rem;
+  height: 4rem;
+  text-align: center;
+  color: var(--primaryWhite);
+  text-shadow: rgba(var(--boxShadows), .25) .15rem .3rem .3rem;
+  background-color: var(--orangeYellow);
+  box-shadow: 0 0 1.2rem rgba(var(--yellowGlow), .5);
+  border-radius: .6rem;
+  transition: .2s ease-out;
+}
+
+.form__bttn:hover {
+  cursor: pointer;
+  background-color: var(--primaryYellow);
+  box-shadow: 0 0 1.6rem rgba(var(--yellowGlow), .9);
+  transition: .2s ease-out;
+}
+
 /* media query for ipad */
 @media all and (device-width: 1024px) and (device-height: 768px) and (orientation: landscape) {
 
@@ -168,5 +214,14 @@ hr {
   .input_container__form textarea {
     font-size: 1.4rem;
     height: 14rem;
+  }
+
+  .form__bttn {
+    font-size: 1.4rem;
+    width: 10rem;
+    height: 3rem;
+    top: 117%;
+    left: 50%;
+    transform: translate(-50%, -117%);
   }
 }

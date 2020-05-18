@@ -1,31 +1,71 @@
+{{!
+----------------------------------------------------------------------------------
+
+README: The Following HBS file Has Been Created by KEVIN VIZCONDE
+
+
+Back-End: Daniel Chu
+Roles:
+• Grabbing data from the database and dynamically parsing data into inputs
+• POST symptoms/diagnosis into database
+
+
+Final Revision and Design: Kevin Vizconde
+Roles:
+• Setting up Skeleton and Structure
+• Finalizing structure and design
+• Finalizing user experience/interactions
+
+----------------------------------------------------------------------------------
+}}
 <main class="home-container">
   {{>_patientHeader}}
 
   <div class="human_container">
     <div class="input_container" id="inputBox_shoulder">
       <form class="input_container__form" action="/saveData" method="POST">
+        <label class="form__label symptoms" for="symptoms">Symptoms</label>
         {{#if injury.exists}}
-          <label class="form__label symptoms" for="symptoms">Symptoms</label>
-          <textarea class="form__symptoms" name="symptoms">{{injury.symptom}}</textarea>
-          <hr />
-          <label class="form__label diagnosis" for="symptoms">Diagnosis</label>
-          <textarea class="form__diagnosis" name="diagnosis">{{injury.diagnosis}}</textarea>
-          <button type="submit">submit</button>
+        <textarea required class="form__symptoms" name="symptoms">{{ injury.symptom }}</textarea>
         {{else}}
-          <label class="form__label symptoms" for="symptoms">Symptoms</label>
-          <textarea class="form__symptoms" name="symptoms" placeholder="enter symptoms"></textarea>
-          <hr />
-          <label class="form__label diagnosis" for="symptoms">Diagnosis</label>
-          <textarea class="form__diagnosis" name="diagnosis" placeholder="enter diagnosis"></textarea>
-          <button type="submit">submit</button>
+        <textarea
+          required
+          class="form__symptoms"
+          name="symptoms"
+          placeholder="enter symptoms"
+        ></textarea>
         {{/if}}
+        <hr />
+        <label class="form__label diagnosis" for="symptoms">Diagnosis</label>
+        {{#if injury.exists}}
+        <textarea required class="form__diagnosis" name="diagnosis">{{
+          injury.diagnosis
+        }}</textarea>
+        <button class="form__bttn" type="submit" action="/deleteInjury" method="POST">
+          Clear
+        </button>
+        {{else}}
+        <textarea
+          required
+          class="form__diagnosis"
+          name="diagnosis"
+          placeholder="enter diagnosis"
+        ></textarea>
+        {{/if}}
+        <button class="form__bttn" type="submit">
+          Save
+        </button>
       </form>
     </div>
 
     <div class="iframe-container__overflow">
-      <iframe id="shoulder3d" tabindex="-1" class="iframe-container--size"
+      <iframe
+        id="shoulder3d"
+        tabindex="-1"
+        class="iframe-container--size"
         frameBorder="0"
-        src="https://human.biodigital.com/viewer/?be=3V87&ui-info=false&ui-search=false&ui-reset=false&ui-fullscreen=false&ui-nav=false&ui-tools=false&ui-help=false&ui-chapter-list=false&ui-label-list=false&ui-anatomy-descriptions=false&ui-tutorial=false&disable-scroll=false&camera=79.102,193.193,70.58,10.39,115.353,8.936,-0.402,0.845,-0.353&dk=438f0897e2ee8156d5a7198fb3067553f93e14e2">
+        src="https://human.biodigital.com/viewer/?be=3V87&ui-info=false&ui-search=false&ui-reset=false&ui-fullscreen=false&ui-nav=false&ui-tools=false&ui-help=false&ui-chapter-list=false&ui-label-list=false&ui-anatomy-descriptions=false&ui-tutorial=false&disable-scroll=false&camera=79.102,193.193,70.58,10.39,115.353,8.936,-0.402,0.845,-0.353&dk=438f0897e2ee8156d5a7198fb3067553f93e14e2"
+      >
       </iframe>
     </div>
   </div>

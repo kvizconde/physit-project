@@ -1,15 +1,32 @@
+{{!
+----------------------------------------------------------------------------------
+
+README: The Following HBS file Has Been Created by KEVIN VIZCONDE
+
+
+Back-End: Daniel Chu / Benson Wang
+Roles:
+  • Handling login authentication
+
+
+Final Revision and Design: Kevin Vizconde
+Roles:
+  • Setting up skeleton and structure
+  • Finalizing structure and design
+  • Finalizing user experience/interactions
+
+----------------------------------------------------------------------------------
+}}
 <main class="main-container">
   <!-- particles.js container -->
   <div id="particles-js"></div>
-  <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js">
-  </script>
+  <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
   <!--Log-in entry goes here -->
   <section class="login_container">
     <div class="form_wrapper">
       <form class="login_container__form" method="POST" action="/login">
-        <img class="login_container__logo" src="img/physit_logo.png"
-          alt="Phys-it Logo" />
+        <img class="login_container__logo" src="img/physit_logo.png" alt="Phys-it Logo" />
         <table class="login_container__table">
           <tr>
             <th>
@@ -25,14 +42,16 @@
 
         <input type="text" name="physioID" placeholder="physio ID" required />
         {{#if passwordFailed}}
-        <input id="wrong_password" type="password" name="password"
-          placeholder="wrong password, try again!" />
+        <input
+          id="wrong_password"
+          type="password"
+          name="password"
+          placeholder="wrong password, try again!"
+        />
         {{else}}
-        <input id="password" type="password" name="password"
-          placeholder="password" required />
+        <input id="password" type="password" name="password" placeholder="password" required />
         {{/if}}
-        <button id="signBttn" class="login_container__bttn signin"
-          type="submit">sign in</button>
+        <button id="signBttn" class="login_container__bttn signin" type="submit">sign in</button>
         <button class="login_container__bttn google" type="button">
           <img class="googleIcon" src="img/google.png" />
           <span class="google_signIn">sign in with google </span>

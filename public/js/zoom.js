@@ -1,3 +1,16 @@
+/*
+----------------------------------------------------------------------------------
+
+README: The Following JS file Has Been Created by KEVIN VIZCONDE
+
+• Animating/displaying symptoms/diagnosis box
+• Styling input labels when corresponding text area is in focus
+
+Original and Final Revision/Design: Kevin Vizconde
+
+----------------------------------------------------------------------------------
+*/
+
 // load shoulder symptoms/diagnosis and header
 $('#shoulder3d').on('load', () => {
   $('#inputBox_shoulder').css({
