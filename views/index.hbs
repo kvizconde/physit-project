@@ -41,16 +41,18 @@ Roles:
         </table>
 
         {{#if loginError}}
-        <input id="wrong_account" type="text" name="physioID" placeholder="invalid account!" />
+        <input id="wrong_account" type="text" name="physioID" placeholder="invalid account!" required />
+        {{else}}
+        <input type="text" name="physioID" placeholder="physio ID" required />
         {{/if}}
 
-        <input type="text" name="physioID" placeholder="physio ID" required />
         {{#if passwordFailed}}
         <input
           id="wrong_password"
           type="password"
           name="password"
           placeholder="wrong password, try again!"
+          required
         />
         {{else}}
         <input id="password" type="password" name="password" placeholder="password" required />
