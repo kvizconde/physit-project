@@ -4,6 +4,6 @@ const router = express.Router();
 const loginController = require('../controllers/loginController');
 
 // Route that runs log in authentication.
-router.route('/login').post(loginController.login);
+router.route('/').post(loginController.login);
 
 module.exports = router;

@@ -74,6 +74,10 @@ textarea {
   text-transform: capitalize;
 }
 
+#wrong_account {
+  color:red;
+}
+
 #wrong_password::placeholder {
   color: var(--primaryRed);
 }
