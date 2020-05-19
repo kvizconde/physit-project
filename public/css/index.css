@@ -74,14 +74,12 @@ textarea {
   text-transform: capitalize;
 }
 
-#wrong_account {
-  color:red;
-}
-
+#wrong_account::placeholder,
 #wrong_password::placeholder {
   color: var(--primaryRed);
 }
 
+#wrong_account,
 #wrong_password,
 input:focus,
 textarea:focus {
