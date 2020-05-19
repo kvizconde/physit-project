@@ -56,25 +56,9 @@ async function deleteInjury(patientID, bodypart) {
   }
 }
 
-async function completeInjury(patientID, bodypart) {
-  try {
-    await db.execute(
-      `UPDATE appointmentdetail
-       SET active = 0
-       WHERE patientID = ${patientID}
-           AND bodypart = "${bodypart}"
-           AND active = 1;`
-    );
-    return
-  } catch (error) {
-    throw error
-  }
-}
-
 module.exports = {
   postAppointmentDetail,
   getInjury,
   updateInjury,
-  deleteInjury,
-  completeInjury
+  deleteInjury
 };
