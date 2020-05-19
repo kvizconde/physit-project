@@ -1,3 +1,17 @@
+/*
+----------------------------------------------------------------------------------
+
+README: The Following JS file Has Been Created by RINGO SUEN
+
+• Appending exercises to the cart container
+• Removing exercises to the cart container
+• Handling duplicates of exercises added to the cart container
+
+Original and Final Revision/Design: Ringo Suen
+
+----------------------------------------------------------------------------------
+*/
+
 $('#preloader')
   .css('visibility', 'visible')
   .hide()
@@ -87,7 +101,7 @@ function addExerciseToCart(title, equipment, imageSrc) {
         </div>
         <div class="cart-quantity cart-column">
         <button class="btn btn-remove" type="button">x</button>
-    </div>`
+    </div>`;
 
   cartRow.innerHTML = cartRowContents;
   cartItems.append(cartRow);
