@@ -250,7 +250,7 @@ body {
   flex: 1 0 50%;
 }
 
-#cart-item-header {
+.cart-item-header {
   letter-spacing: .15rem;
   width: 80%;
   margin-left: 2.2rem;
@@ -259,7 +259,7 @@ body {
   color: var(--textBlue);
 }
 
-#cart-quantity-header {
+.cart-quantity-header {
   letter-spacing: .05rem;
   width: 21%;
   font-weight: 500;
@@ -347,12 +347,12 @@ body {
     font-size: 1.2rem;
   }
 
-  #cart-item-header {
+  .cart-item-header {
     font-size: 1.5rem;
     margin-left: 1rem;
   }
 
-  #cart-quantity-header {
+  .cart-quantity-header {
     font-size: 1.5rem;
   }
 
