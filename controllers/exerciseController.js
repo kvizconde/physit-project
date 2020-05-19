@@ -41,17 +41,33 @@ exports.getExercise = async (req, res) => {
 // Adds
 exports.addExercisesForPatient = async (req, res) => {
   try {
-    
-    console.log(req.session.appointmentID);
-    console.log(req.session.patientInfo);
-    console.log(req.body.title);
-    req.session.title = req.body.title;
 
-  } catch(error) {
+    console.log(req.session.patientID);
+    console.log(req.session.patientInfo);
+    console.log(req.body);
+
+    const addToList = await exerciseModel.addPatientExerciseList(
+      req.session.patientID,
+      req.session.exerciseID,
+      req.body.repetitions,
+      req.body.sets,
+    );
+
+    res.render('exercise', {
+      patient: req.session.patientInfo,
+      appointmentID: req.session.appointmentID,
+      patientID: req.session.patientID,
+      exercises: exercises[0],
+      bodypart: bodypart[0][0],
+      title: 'Exercises',
+      exerciseJSCSS: true,
+      currentExerciseList: addToList,
+      assignedExercises: true
+    });
+  } catch (error) {
     throw error;
   }
-
-}
+};
 // LOCAL - DON'T TOUCH
 // exports.getExercise = (req, res) => {
 //   res.render('exercise', {

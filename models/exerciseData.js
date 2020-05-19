@@ -29,19 +29,17 @@ function generateExercises(bodypart) {
     );
 }
 
-function addPatientExerciseList(patientID, exerciseID, title, equipment, reps, set) {
+function addPatientExerciseList(patientID, exerciseID, reps, sets) {
   db.execute(`INSERT INTO patientexerciselist() VALUES(
-    "${patientAppointmentDetail.patientID}",
-    "${patientAppointmentDetail.appointmentID}",
-    "${patientAppointmentDetail.bodypart}",
-    "${patientAppointmentDetail.symptom}",
-    "${patientAppointmentDetail.diagnosis}",
-    "${patientAppointmentDetail.active}",
-    "${patientAppointmentDetail.recoveryDate}"
+    "${patientID}",
+    "${exerciseID}",
+    "${reps}",
+    "${sets}",
   )`);
 }
 
 module.exports = {
+  addPatientExerciseList,
   getAllExercises,
   getAppointmentDetail,
   generateExercises,
