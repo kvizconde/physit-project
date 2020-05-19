@@ -29,7 +29,17 @@ function generateExercises(bodypart) {
     );
 }
 
+function addPatientExerciseList(patientID, exerciseID, reps, sets) {
+  db.execute(`INSERT INTO patientexerciselist() VALUES(
+    "${patientID}",
+    "${exerciseID}",
+    "${reps}",
+    "${sets}",
+  )`);
+}
+
 module.exports = {
+  addPatientExerciseList,
   getAllExercises,
   getAppointmentDetail,
   generateExercises,

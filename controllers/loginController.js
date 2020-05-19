@@ -9,8 +9,12 @@ exports.login = async (req, res) => {
 
     // if user is not found. Needs to be fixed.
     if (user === undefined) {
-      console.log('Invalid log in credentials')
-      res.redirect('/')
+      res.render('index', {
+        title: 'Login Page',
+        indexJSCSS: true,
+        loginError: true,
+        homepageJSCSS: false,
+      });
     } else {
       req.session.physioID = email
       res.redirect('/patientList')
