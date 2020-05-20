@@ -2,6 +2,7 @@ const loginModel = require("../models/loginData");
 
 exports.login = async (req, res) => {
   try {
+    console.log(req.body.physioID);
     const email = req.body.physioID
     const pword = req.body.password
 

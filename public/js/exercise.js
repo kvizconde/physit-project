@@ -1,7 +1,4 @@
-$('#preloader')
-  .css('visibility', 'visible')
-  .hide()
-  .fadeIn(666);
+$('#preloader').css('visibility', 'visible').hide().fadeIn(666);
 
 if (document.readyState == 'loading') {
   document.addEventListener('DOMContentLoaded', ready);
@@ -55,14 +52,16 @@ function quantityChanged(event) {
 function addExerciseClicked(event) {
   const button = event.target;
   const shopItem = button.parentElement.parentElement;
+
+  const exerciseID = shopItem.getElementsByClassName('single-exerciseID')[0].value;
   const title = shopItem.getElementsByClassName('single-exercise-title')[0].innerText;
   const equipment = shopItem.getElementsByClassName('single-exercise-equipment')[0].innerText;
   const imageSrc = shopItem.getElementsByClassName('single-exercise-image')[0].src;
 
-  addExerciseToCart(title, equipment, imageSrc);
+  addExerciseToCart(exerciseID, title, equipment, imageSrc);
 }
 
-function addExerciseToCart(title, equipment, imageSrc) {
+function addExerciseToCart(exerciseID, title, equipment, imageSrc) {
   const cartRow = document.createElement('div');
 
   cartRow.classList.add('cart-row');
@@ -76,18 +75,21 @@ function addExerciseToCart(title, equipment, imageSrc) {
     }
   }
   const cartRowContents = `
-        <div class="cart-item cart-column">
+      <div class="cart-item cart-column">
         <span class="cart-item-title">${title}</span>
+        <input type="hidden" value="${title}" name="title"/>
+        <input type="hidden" value="${exerciseID}" name="exerciseID"/>
         </div>
         <div class="cart-quantity cart-column">
-        <input class="cart-quantity-input" type="number" value="6">
+        <input class="cart-quantity-input" name="reps" type="number" value="10">
         </div>
         <div class="cart-quantity cart-column">
-            <input class="cart-quantity-input" type="number" value="1">
+        <input class="cart-quantity-input" name="sets" type="number" value="3">
         </div>
         <div class="cart-quantity cart-column">
         <button class="btn btn-remove" type="button">x</button>
-    </div>`
+      </div>
+    `;
 
   cartRow.innerHTML = cartRowContents;
   cartItems.append(cartRow);
