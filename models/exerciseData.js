@@ -42,7 +42,7 @@ async function addPatientExerciseList(patientID, exerciseID, reps, sets, title) 
 async function getPatientExerciseList(patientID) {
   try {
     const response = await db.execute(
-      `SELECT * FROM patientexerciselist WHERE patientID = ${patientID}`
+      `SELECT * FROM patientexerciselist WHERE patientID = ${patientID} ORDER BY title`
     );
     return response;
   } catch (error) {
