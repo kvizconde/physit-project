@@ -42,7 +42,7 @@ async function addPatientExerciseList(patientID, exerciseID, reps, sets, title) 
 async function getPatientExerciseList(patientID) {
   try {
     const response = await db.execute(
-      `SELECT * FROM patientexerciselist WHERE patientID = ${patientID} ORDER BY title`
+      `SELECT * FROM patientexerciselist WHERE patientID = ${patientID} ORDER BY title`,
     );
     return response;
   } catch (error) {
@@ -53,7 +53,7 @@ async function getPatientExerciseList(patientID) {
 async function deletePatientExerciseList(patientID) {
   try {
     const response = await db.execute(
-      `DELETE FROM patientexerciselist WHERE patientID = ${patientID}`
+      `DELETE FROM patientexerciselist WHERE patientID = ${patientID}`,
     );
     return response;
   } catch (error) {

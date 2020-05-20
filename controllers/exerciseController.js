@@ -107,7 +107,6 @@ exports.addExercisesForPatient = async (req, res) => {
         assignedExercises: true,
       });
     } else {
-
       await exerciseModel.deletePatientExerciseList(req.session.patientID);
       // Chooses all the exercises in the list and appends them to the db
       for (let i = 0; req.body.exerciseID[i] !== undefined; i++) {
