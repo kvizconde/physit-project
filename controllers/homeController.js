@@ -39,12 +39,3 @@ const parsePatientInfo = info => {
     throw error;
   }
 };
-
-// LOCAL - DON'T TOUCH
-// Get Home
-// exports.getHome = (req, res) => {
-//   res.render('home', {
-//     title: 'Home',
-//     homepageJSCSS: true,
-//   });
-// };

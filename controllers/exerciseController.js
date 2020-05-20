@@ -83,11 +83,8 @@ exports.addExercisesForPatient = async (req, res) => {
   try {
     if (req.body === undefined) {
       var addToList = await exerciseModel.getPatientExerciseList(req.session.patientID);
-      console.log(addToList[0]);
 
       req.session.exerciseList = addToList[0];
-
-      console.log(req.session.exerciseList);
 
       res.render('exercise', {
         patient: req.session.patientInfo,
@@ -134,10 +131,3 @@ exports.addExercisesForPatient = async (req, res) => {
     throw error;
   }
 };
-// LOCAL - DON'T TOUCH
-// exports.getExercise = (req, res) => {
-//   res.render('exercise', {
-//     title: 'Exercise',
-//     exerciseJSCSS: true,
-//   });
-// };

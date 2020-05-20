@@ -37,12 +37,3 @@ exports.renderPatientList = async (req, res) => {
     throw error;
   }
 };
-
-// LOCAL - DON'T TOUCH
-// exports.renderPatientList = (req, res) => {
-//   res.render('patientList', {
-//     title: 'HOME',
-//     patientListJSCSS: true,
-//     indexJSCSS: false,
-//   });
-// };

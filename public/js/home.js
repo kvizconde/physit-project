@@ -4,8 +4,13 @@
 README: The Following JS file Has Been Created by KEVIN VIZCONDE
 
 • Setup function for name hover which displays patient information
+
+• Created a preloader script to fade right side navigation
+  in order to avoid icon 'pop'.
+
 • Added BioDigital functions such as creating hotspots,
-  and loading zoomed in body view when hotspot is clicked
+  and loading zoomed in body view when hotspot is clicked.
+  The zoom-in body parts clickable are shoulders/knee.
 
 Original and Final Revision/Design: Kevin Vizconde
 
