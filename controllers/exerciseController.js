@@ -3,8 +3,10 @@ const exerciseModel = require('../models/exerciseData');
 // Get exercise
 exports.getExercise = async (req, res) => {
   try {
+    // Checks if the patient currently has exercises assigned
     const exerciseList = await exerciseModel.getPatientExerciseList(req.session.patientID);
 
+    // If there are current exercises, load them
     if (exerciseList) {
       req.session.exerciseList = exerciseList[0];
 
@@ -12,7 +14,7 @@ exports.getExercise = async (req, res) => {
         req.session.patientID,
         req.session.appointmentID,
       );
-
+      // Check which bodypart has a preexisting injury throw an error if there is no record
       if (bodypart[0][0] === undefined) {
         res.render('exercise', {
           appointmentDetailError: true,
@@ -20,11 +22,11 @@ exports.getExercise = async (req, res) => {
           exerciseJSCSS: true,
           patient: req.session.patientInfo,
         });
-      } else {
+      } // Load the exercises available to assign to patient
+      else {
         const exercises = await exerciseModel.generateExercises(bodypart[0][0].bodypart);
 
         req.session.bodypart = bodypart[0][0];
-
         req.session.exercises = exercises[0];
 
         res.render('exercise', {
@@ -39,12 +41,13 @@ exports.getExercise = async (req, res) => {
           assignedExercises: true,
         });
       }
-    } else {
+    } // If there are no current exercises for the patient
+    else {
       const bodypart = await exerciseModel.getAppointmentDetail(
         req.session.patientID,
         req.session.appointmentID,
       );
-
+      // Throw error if no appointmentdetail assigned
       if (bodypart[0][0] === undefined) {
         res.render('exercise', {
           appointmentDetailError: true,
@@ -52,11 +55,11 @@ exports.getExercise = async (req, res) => {
           exerciseJSCSS: true,
           patient: req.session.patientInfo,
         });
-      } else {
+      } // Loads exercises for the patient
+      else {
         const exercises = await exerciseModel.generateExercises(bodypart[0][0].bodypart);
 
         req.session.bodypart = bodypart[0][0];
-
         req.session.exercises = exercises[0];
         res.render('exercise', {
           patient: req.session.patientInfo,
@@ -75,7 +78,7 @@ exports.getExercise = async (req, res) => {
   }
 };
 
-// Adds
+// Adds Exercises for the patient
 exports.addExercisesForPatient = async (req, res) => {
   try {
     if (req.body === undefined) {
@@ -95,7 +98,9 @@ exports.addExercisesForPatient = async (req, res) => {
         assignedExercises: true,
       });
     } else {
+      // Whenever user saves exercises it will delete first then reenter the exercises
       await exerciseModel.deletePatientExerciseList(req.session.patientID);
+
       // Chooses all the exercises in the list and appends them to the db
       for (let i = 0; req.body.exerciseID[i] !== undefined; i++) {
         await exerciseModel.addPatientExerciseList(
@@ -106,8 +111,8 @@ exports.addExercisesForPatient = async (req, res) => {
           req.body.title[i],
         );
       }
+      // Adds the exercises in the list to the db
       var addToList = await exerciseModel.getPatientExerciseList(req.session.patientID);
-
       req.session.exerciseList = addToList[0];
 
       res.render('exercise', {
