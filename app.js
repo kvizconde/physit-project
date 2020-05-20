@@ -1,3 +1,31 @@
+/*
+----------------------------------------------------------------------------------
+
+------
+README
+------
+
+The following app.js file was created by KEVIN VIZCONDE at the start of project.
+This file has been worked on and modified by the following people:
+
+
+Lead Software Architect: Kevin Vizconde
+Roles:
+  • Installing the initial dependencies in package.json
+  • Setting up the basic skeleton/structure/folders for MVC
+  • Setting up the basic routes
+  • Setting up development and production environments
+
+
+Lead Back-End Developer: Daniel Chu
+Roles:
+  • Installing new dependencies as needed
+  • Cleaning up the routes and improving route efficiency
+  • Improving the overall workflow on the controllers/models side
+
+----------------------------------------------------------------------------------
+*/
+
 const path = require('path');
 const express = require('express');
 const expressHbs = require('express-handlebars');
@@ -28,7 +56,6 @@ app.set('views', 'views');
 app.set('view engine', 'hbs');
 
 const session = require('express-session');
-
 
 app.use(
   session({
