@@ -21,6 +21,8 @@ Roles:
   • Moved right scroll-bar to the left for the exercise container area
   • Modified exercise container area to be more responsive
   • Adjusted layout/sizes for iPad media query
+  • Fixed spacing in cart-container area, created a cart-wrapper
+    for more responsive design.
 
 
 Final Revision/Structure Design: Ringo Suen
@@ -70,8 +72,13 @@ body {
 /* Exercise Area */
 
 #no-exercises {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
-  font-size: 30px;
+  font-size: 3rem;
+  font-weight: 300;
 }
 
 /* START OF RINGO'S CSS */
@@ -194,6 +201,12 @@ body {
   padding: 0 3pt 0 3pt;
 }
 
+.btn-assign:hover {
+  background-color: var(--primaryYellow);
+  box-shadow: 0 0 1.6rem rgba(var(--yellowGlow), .9);
+  transition: .2s ease-out;
+}
+
 .assign-btn-div {
   display: flex;
   align-items: center;
@@ -219,17 +232,21 @@ body {
 .cart-container {
   display: flex;
   flex-direction: column;
-  height: 80%;
-  width: 100%;
   margin-top: 3%;
-  padding: 2rem;
+  height: 75%;
+  width: 100%;
+  padding: 4rem 0;
   flex: 1 0 30%;
   overflow-x: hidden;
+}
+
+.cart-wrapper {
   border: .25rem solid var(--orangeYellow);
   box-shadow: 0 0 1rem rgba(var(--yellowGlow), .75);
   border-radius: 1.2rem;
   background: rgba(var(--inputBox), .4);
-  transition: .25s ease-in-out;
+  height: 100%;
+  width: 100%;
 }
 
 .cart-column {

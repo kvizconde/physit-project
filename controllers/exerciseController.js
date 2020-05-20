@@ -6,8 +6,6 @@ exports.getExercise = async (req, res) => {
     // Checks if the patient currently has exercises assigned
     const exerciseList = await exerciseModel.getPatientExerciseList(req.session.patientID);
 
-    console.log(exerciseList[0][0]);
-
     // If there are current exercises, load them
     if (exerciseList[0][0] !== undefined) {
       req.session.exerciseList = exerciseList[0];
@@ -35,7 +33,7 @@ exports.getExercise = async (req, res) => {
           patient: req.session.patientInfo,
           appointmentID: req.session.appointmentID,
           patientID: req.session.patientID,
-          exercises: exercises[0],
+          exercises: req.session.exercises,
           bodypart: req.session.bodypart,
           title: 'Exercises',
           exerciseJSCSS: true,
@@ -67,7 +65,7 @@ exports.getExercise = async (req, res) => {
           patient: req.session.patientInfo,
           appointmentID: req.session.appointmentID,
           patientID: req.session.patientID,
-          exercises: exercises[0],
+          exercises: req.session.exercises,
           bodypart: bodypart[0][0],
           title: 'Exercises',
           exerciseJSCSS: true,
@@ -83,22 +81,42 @@ exports.getExercise = async (req, res) => {
 // Adds Exercises for the patient
 exports.addExercisesForPatient = async (req, res) => {
   try {
-    if (req.body === undefined) {
+    // Checks if there are any exercises currently in the list
+    if (Object.keys(req.body).length === 0 || req.body === undefined) {
+
+      if(req.session.exercises.length >= 1) {
+        await exerciseModel.deletePatientExerciseList(req.session.patientID);
+      }
+
       var addToList = await exerciseModel.getPatientExerciseList(req.session.patientID);
 
-      req.session.exerciseList = addToList[0];
+      if (addToList[0][0] === undefined) {
+        res.render('exercise', {
+          patient: req.session.patientInfo,
+          appointmentID: req.session.appointmentID,
+          patientID: req.session.patientID,
+          exercises: req.session.exercises,
+          bodypart: req.session.bodypart,
+          title: 'Exercises',
+          exerciseJSCSS: true,
+          currentExerciseList: req.session.exerciseList,
+          assignedExercises: false,
+        });
+      } else {
+        req.session.exerciseList = addToList[0];
 
-      res.render('exercise', {
-        patient: req.session.patientInfo,
-        appointmentID: req.session.appointmentID,
-        patientID: req.session.patientID,
-        exercises: req.session.exercises,
-        bodypart: req.session.bodypart,
-        title: 'Exercises',
-        exerciseJSCSS: true,
-        currentExerciseList: req.session.exerciseList,
-        assignedExercises: true,
-      });
+        res.render('exercise', {
+          patient: req.session.patientInfo,
+          appointmentID: req.session.appointmentID,
+          patientID: req.session.patientID,
+          exercises: req.session.exercises,
+          bodypart: req.session.bodypart,
+          title: 'Exercises',
+          exerciseJSCSS: true,
+          currentExerciseList: req.session.exerciseList,
+          assignedExercises: true,
+        });
+      }
     } else {
       // Whenever user saves exercises it will delete first then reenter the exercises
       await exerciseModel.deletePatientExerciseList(req.session.patientID);
