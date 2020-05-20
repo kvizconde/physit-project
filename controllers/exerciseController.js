@@ -3,9 +3,6 @@ const exerciseModel = require('../models/exerciseData');
 // Get exercise
 exports.getExercise = async (req, res) => {
   try {
-    // console.log(req.session.appointmentID);
-    // console.log(req.session.patientID);
-
     const exerciseList = await exerciseModel.getPatientExerciseList(req.session.patientID);
 
     if (exerciseList) {
@@ -15,7 +12,7 @@ exports.getExercise = async (req, res) => {
         req.session.patientID,
         req.session.appointmentID,
       );
-      console.log(bodypart[0]);
+
       if (bodypart[0][0] === undefined) {
         res.render('exercise', {
           appointmentDetailError: true,
@@ -24,12 +21,10 @@ exports.getExercise = async (req, res) => {
           patient: req.session.patientInfo,
         });
       } else {
-        console.log(bodypart[0][0].bodypart);
         const exercises = await exerciseModel.generateExercises(bodypart[0][0].bodypart);
 
         req.session.bodypart = bodypart[0][0];
 
-        console.log(exercises[0]);
         req.session.exercises = exercises[0];
 
         res.render('exercise', {
@@ -49,7 +44,7 @@ exports.getExercise = async (req, res) => {
         req.session.patientID,
         req.session.appointmentID,
       );
-      console.log(bodypart[0]);
+
       if (bodypart[0][0] === undefined) {
         res.render('exercise', {
           appointmentDetailError: true,
@@ -58,12 +53,10 @@ exports.getExercise = async (req, res) => {
           patient: req.session.patientInfo,
         });
       } else {
-        console.log(bodypart[0][0].bodypart);
         const exercises = await exerciseModel.generateExercises(bodypart[0][0].bodypart);
 
         req.session.bodypart = bodypart[0][0];
 
-        console.log(exercises[0]);
         req.session.exercises = exercises[0];
         res.render('exercise', {
           patient: req.session.patientInfo,
@@ -85,15 +78,10 @@ exports.getExercise = async (req, res) => {
 // Adds
 exports.addExercisesForPatient = async (req, res) => {
   try {
-    // var patientExerciseList = [];
-
     if (req.body === undefined) {
       var addToList = await exerciseModel.getPatientExerciseList(req.session.patientID);
-      console.log(addToList[0]);
 
       req.session.exerciseList = addToList[0];
-
-      console.log(req.session.exerciseList);
 
       res.render('exercise', {
         patient: req.session.patientInfo,
@@ -107,6 +95,7 @@ exports.addExercisesForPatient = async (req, res) => {
         assignedExercises: true,
       });
     } else {
+      await exerciseModel.deletePatientExerciseList(req.session.patientID);
       // Chooses all the exercises in the list and appends them to the db
       for (let i = 0; req.body.exerciseID[i] !== undefined; i++) {
         await exerciseModel.addPatientExerciseList(
@@ -118,11 +107,8 @@ exports.addExercisesForPatient = async (req, res) => {
         );
       }
       var addToList = await exerciseModel.getPatientExerciseList(req.session.patientID);
-      console.log(addToList[0]);
 
       req.session.exerciseList = addToList[0];
-
-      console.log(req.session.exerciseList);
 
       res.render('exercise', {
         patient: req.session.patientInfo,
@@ -140,10 +126,3 @@ exports.addExercisesForPatient = async (req, res) => {
     throw error;
   }
 };
-// LOCAL - DON'T TOUCH
-// exports.getExercise = (req, res) => {
-//   res.render('exercise', {
-//     title: 'Exercise',
-//     exerciseJSCSS: true,
-//   });
-// };

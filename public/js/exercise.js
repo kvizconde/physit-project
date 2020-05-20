@@ -1,4 +1,21 @@
-$('#preloader').css('visibility', 'visible').hide().fadeIn(666);
+/*
+----------------------------------------------------------------------------------
+
+README: The Following JS file Has Been Created by RINGO SUEN
+
+• Appending exercises to the cart container
+• Removing exercises to the cart container
+• Handling duplicates of exercises added to the cart container
+
+Original and Final Revision/Design: Ringo Suen
+
+----------------------------------------------------------------------------------
+*/
+
+$('#preloader')
+  .css('visibility', 'visible')
+  .hide()
+  .fadeIn(666);
 
 if (document.readyState == 'loading') {
   document.addEventListener('DOMContentLoaded', ready);

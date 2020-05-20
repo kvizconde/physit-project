@@ -29,8 +29,8 @@ function generateExercises(bodypart) {
   );
 }
 
-function addPatientExerciseList(patientID, exerciseID, reps, sets, title) {
-  db.execute(`INSERT INTO patientexerciselist(patientID, exerciseID, repetitions, sets, title) VALUES(
+async function addPatientExerciseList(patientID, exerciseID, reps, sets, title) {
+  await db.execute(`INSERT INTO patientexerciselist(patientID, exerciseID, repetitions, sets, title) VALUES(
     ${patientID},
     ${exerciseID},
     ${reps},
@@ -39,13 +39,30 @@ function addPatientExerciseList(patientID, exerciseID, reps, sets, title) {
   );`);
 }
 
-function getPatientExerciseList(patientID, exerciseID) {
-  return db.execute(
-    `SELECT * FROM patientexerciselist WHERE patientID = ${patientID}`,
-  );
+async function getPatientExerciseList(patientID) {
+  try {
+    const response = await db.execute(
+      `SELECT * FROM patientexerciselist WHERE patientID = ${patientID} ORDER BY title`,
+    );
+    return response;
+  } catch (error) {
+    throw error;
+  }
+}
+
+async function deletePatientExerciseList(patientID) {
+  try {
+    const response = await db.execute(
+      `DELETE FROM patientexerciselist WHERE patientID = ${patientID}`,
+    );
+    return response;
+  } catch (error) {
+    throw error;
+  }
 }
 
 module.exports = {
+  deletePatientExerciseList,
   getPatientExerciseList,
   addPatientExerciseList,
   getAllExercises,

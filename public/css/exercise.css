@@ -148,7 +148,6 @@ body {
 
 .single-exercise-image {
   width: 100%;
-  /* filter: sepia(1) saturate(1.5) invert(1) brightness(1.4); */
   transition: .2s ease-in-out;
 }
 
@@ -240,14 +239,6 @@ body {
   padding: 2rem;
   width: 100%;
 }
-
-/* .cart-column1 {
-  display: flex;
-  align-items: center;
-  margin: 0 auto;
-  padding: 2rem;
-  width: 100%;
-} */
 
 .cart-header {
   font-size: 2rem;

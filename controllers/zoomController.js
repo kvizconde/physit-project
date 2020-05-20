@@ -1,4 +1,3 @@
-const homeModel = require('../models/homeData');
 const zoomModel = require('../models/zoomData');
 
 // Get zoomed shoulder
@@ -62,23 +61,28 @@ exports.saveData = async (req, res) => {
     const { bodypart } = req.session;
     const { symptom } = req.body;
     const { diagnosis } = req.body;
-    const recoveryDate = "2069-12-25";
+    const recoveryDate = '2069-12-25';
 
     const { save_clear } = req.body;
 
-    if (save_clear == "save") {
-      console.log("SAVING...")
+    if (save_clear === 'save') {
       const overwrite = await zoomModel.getInjury(patientID, bodypart);
 
       if (overwrite === undefined) {
-        await zoomModel.postAppointmentDetail(patientID, appointmentID, bodypart, symptom, diagnosis, recoveryDate);
-        res.redirect('/' + bodypart);
+        await zoomModel.postAppointmentDetail(
+          patientID,
+          appointmentID,
+          bodypart,
+          symptom,
+          diagnosis,
+          recoveryDate,
+        );
+        res.redirect(`/${bodypart}`);
       } else {
         await zoomModel.updateInjury(patientID, bodypart, symptom, diagnosis, recoveryDate);
-        res.redirect('/' + bodypart); 
+        res.redirect(`/${bodypart}`);
       }
     } else {
-      console.log("CLEARING...")
       const { patientID } = req.session;
       const { bodypart } = req.session;
 
@@ -99,7 +103,7 @@ const parseInjuryData = info => {
       symptom: data.symptom,
       diagnosis: data.diagnosis,
     };
-    
+
     return injuryInfo;
   } catch (error) {
     throw error;
