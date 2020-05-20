@@ -48,7 +48,7 @@ Roles:
   <section class="exercise-container">
     {{#each exercises}}
     <div class="single-exercise">
-      <input type="hidden" class="single-exerciseID" value="{{this.exerciseID}}" />
+      <input type="hidden" class="single-exerciseID" value="{{ this.exerciseID }}" />
 
       <img class="single-exercise-image" src="{{ this.thumbnail }}" />
       <h1 class="single-exercise-title">{{ this.title }}</h1>
@@ -61,35 +61,47 @@ Roles:
     {{/each}}
   </section>
   <section class="cart-container">
-    <form method="POST" action="/exercise">
-      {{#if assignedExercises}}
-      <div class="cart-items">
-        {{#each currentExerciseList}}
-        <div class="cart-row">
-          <div class="cart-item cart-column">
-            <span class="cart-item-title">{{this.title}}</span>
-            <input type="hidden" value="{{this.title}}" name="title" />
-            <input type="hidden" value="{{this.exerciseID}}" name="exerciseID" />
+    <div class="cart-wrapper">
+      <form method="POST" action="/exercise">
+        {{#if assignedExercises}}
+        <div class="cart-items">
+          {{#each currentExerciseList}}
+          <div class="cart-row">
+            <div class="cart-item cart-column">
+              <span class="cart-item-title">{{ this.title }}</span>
+              <input type="hidden" value="{{ this.title }}" name="title" />
+              <input type="hidden" value="{{ this.exerciseID }}" name="exerciseID" />
+            </div>
+            <div class="cart-quantity cart-column">
+              <input
+                class="cart-quantity-input"
+                name="reps"
+                type="number"
+                value="{{ this.repetitions }}"
+              />
+            </div>
+            <div class="cart-quantity cart-column">
+              <input
+                class="cart-quantity-input"
+                name="sets"
+                type="number"
+                value="{{ this.sets }}"
+              />
+            </div>
+            <div class="cart-quantity cart-column">
+              <button class="btn btn-remove" type="button">x</button>
+            </div>
           </div>
-          <div class="cart-quantity cart-column">
-            <input class="cart-quantity-input" name="reps" type="number" value="{{this.repetitions}}">
-          </div>
-          <div class="cart-quantity cart-column">
-            <input class="cart-quantity-input" name="sets" type="number" value="{{this.sets}}">
-          </div>
-          <div class="cart-quantity cart-column">
-            <button class="btn btn-remove" type="button">x</button>
-          </div>
+          {{/each}}
         </div>
-        {{/each}}
-      </div>
-      {{else}}
-      <div class="cart-items"></div>
-      {{/if}}
-      <div class="assign-btn-div">
-        <button type="submit" class="btn btn-assign">SAVE</button>
-      </div>
-    </form>
+        {{else}}
+        <div class="cart-items"></div>
+        {{/if}}
+        <div class="assign-btn-div">
+          <button type="submit" class="btn btn-assign">SAVE</button>
+        </div>
+      </form>
+    </div>
   </section>
   {{/if}}
 
