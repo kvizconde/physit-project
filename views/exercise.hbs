@@ -39,13 +39,17 @@ Roles:
 
 <main class="home-container">
   {{>_patientHeader}}
-  <!-- wrapper -->
+
+  {{#if appointmentDetailError}}
+  <p id="no-exercises">There are no available diagnosis for this patient</p>
+  {{else}}
 
   <!-- Ringo new basic functionality added -->
-
   <section class="exercise-container">
     {{#each exercises}}
     <div class="single-exercise">
+      <input type="hidden" class="single-exerciseID" value="{{this.exerciseID}}" />
+
       <img class="single-exercise-image" src="{{ this.thumbnail }}" />
       <h1 class="single-exercise-title">{{ this.title }}</h1>
       <div class="single-exercise-details">
@@ -58,16 +62,44 @@ Roles:
   </section>
   <section class="cart-container">
     <div class="cart-row">
-      <div id="cart-item-header">EXERCISES</div>
+      <div class="cart-item-header">EXERCISES</div>
       {{!-- <span class="cart-equipment cart-header cart-column">EQUIPMENT</span> --}}
-      <div id="cart-quantity-header">Reps</div>
-      <div id="cart-quantity-header">Sets</div>
-      <div id="cart-quantity-header"></div>
+      <div class="cart-quantity-header">Reps</div>
+      <div class="cart-quantity-header">Sets</div>
+      <div class="cart-quantity-header"></div>
       {{!-- <span class="cart-quantity cart-header cart-column"></span> --}}
     </div>
-    <div class="cart-items"></div>
-    {{!-- <button class="btn btn-primary btn-send" type="button">SEND TO PATIENT</button> --}}
+    <form method="POST" action="/exercise">
+      {{#if assignedExercises}}
+      <div class="cart-items">
+        {{#each currentExerciseList}}
+        <div class="cart-row">
+        <div class="cart-item cart-column">
+          <span class="cart-item-title">{{this.title}}</span>
+          <input type="hidden" value="{{this.title}}" name="title" />
+          <input type="hidden" value="{{this.exerciseID}}" name="exerciseID" />
+        </div>
+        <div class="cart-quantity cart-column">
+          <input class="cart-quantity-input" name="reps" type="number" value="{{this.repetitions}}">
+        </div>
+        <div class="cart-quantity cart-column">
+          <input class="cart-quantity-input" name="sets" type="number" value="{{this.sets}}">
+        </div>
+        <div class="cart-quantity cart-column">
+          <button class="btn btn-remove" type="button">x</button>
+        </div>
+        </div>
+        {{/each}}
+      </div>
+      {{else}}
+      <div class="cart-items"></div>
+      {{/if}}
+      <div class="assign-btn-div">
+      <button type="submit" class="btn btn-assign">ASSIGN TO PATIENT</button>
+      </div>
+    </form>
   </section>
+  {{/if}}
 
   {{>_navigation}}
 </main>

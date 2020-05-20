@@ -69,6 +69,11 @@ body {
 
 /* Exercise Area */
 
+#no-exercises {
+  text-align: center;
+  font-size: 30px;
+}
+
 /* START OF RINGO'S CSS */
 
 .exercise-container {
@@ -143,7 +148,7 @@ body {
 
 .single-exercise-image {
   width: 100%;
-  filter: sepia(1) saturate(1.5) invert(1) brightness(1.4);
+  /* filter: sepia(1) saturate(1.5) invert(1) brightness(1.4); */
   transition: .2s ease-in-out;
 }
 
@@ -178,6 +183,22 @@ body {
 
 .btn:hover {
   cursor: pointer;
+}
+
+.btn-assign {
+  height: 4rem;
+  width: 20rem;
+  background-color: var(--orangeYellow);
+  box-shadow: 0 0 1.2rem rgba(var(--yellowGlow), .5);
+  border-radius: .6rem;
+  transition: .2s ease-out;
+  padding: 0 3pt 0 3pt;
+}
+
+.assign-btn-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .add-exercise-btn {
@@ -220,6 +241,14 @@ body {
   width: 100%;
 }
 
+/* .cart-column1 {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  padding: 2rem;
+  width: 100%;
+} */
+
 .cart-header {
   font-size: 2rem;
   font-weight: 700;
@@ -245,7 +274,7 @@ body {
   flex: 1 0 50%;
 }
 
-#cart-item-header {
+.cart-item-header {
   letter-spacing: .15rem;
   width: 80%;
   margin-left: 2.2rem;
@@ -254,7 +283,7 @@ body {
   color: var(--textBlue);
 }
 
-#cart-quantity-header {
+.cart-quantity-header {
   letter-spacing: .05rem;
   width: 21%;
   font-weight: 500;
@@ -276,6 +305,11 @@ body {
 }
 
 .cart-quantity {
+  width: 15%;
+  padding: 1rem;
+}
+
+.cart-quantity1 {
   width: 15%;
   padding: 1rem;
 }
@@ -342,12 +376,12 @@ body {
     font-size: 1.2rem;
   }
 
-  #cart-item-header {
+  .cart-item-header {
     font-size: 1.5rem;
     margin-left: 1rem;
   }
 
-  #cart-quantity-header {
+  .cart-quantity-header {
     font-size: 1.5rem;
   }
 

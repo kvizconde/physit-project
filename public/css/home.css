@@ -191,14 +191,24 @@ hr {
   z-index: -1;
   background-color: var(--primaryGray);
   box-shadow: none;
-  width: 6rem;
-  height: 4rem;
-  left: 25%;
+  text-align: left;
+  width: 10rem;
+  padding-left: 1.5rem;
+  margin-left: -5rem;
 }
 
 .bttn--clear:hover {
   background-color: var(--primaryRed);
   box-shadow: 0 0 1.6rem var(--redGlow);
+  margin-left: -9rem;
+}
+
+.bttn--clear:hover span {
+  display: none;
+}
+
+.bttn--clear:hover::before {
+  content: "clear";
 }
 
 /* media query for ipad */
@@ -206,6 +216,7 @@ hr {
 
   .input_container {
     height: 45rem;
+    width: 35%;
   }
 
   .form__label {
@@ -227,11 +238,68 @@ hr {
   }
 
   .form__bttn {
+    font-size: 1.2rem;
+    width: 8rem;
+    top: 120%;
+    transform: translate(-50%, -120%);
+  }
+
+  .bttn--clear {
+    width: 8rem;
+    margin-left: -4rem;
+  }
+
+  .bttn--clear:hover {
+    margin-left: -5rem;
+  }
+
+  .bttn--clear:hover span {
+    display: inline;
+  }
+
+  .bttn--clear:hover::before {
+    content: "";
+  }
+
+  .iframe-container__overflow {
+    width: 60%;
+    left: 15%;
+  }
+}
+
+/* iPad Pro Landscape media query */
+@media only screen and (min-device-width: 1366px) and (max-device-height: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+
+  .input_container {
+    width: 35%;
+  }
+
+  .form__bttn {
     font-size: 1.4rem;
     width: 10rem;
-    height: 3rem;
-    top: 117%;
-    left: 50%;
-    transform: translate(-50%, -117%);
+  }
+
+  .bttn--clear {
+    width: 9rem;
+    margin-left: -5rem;
+    padding-left: 2rem;
+  }
+
+  .bttn--clear:hover {
+    margin-left: -8rem;
+    padding-left: 1.5rem;
+  }
+
+  .bttn--clear:hover span {
+    display: hidden;
+  }
+
+  .bttn--clear:hover::before {
+    content: "clear";
+  }
+
+  .iframe-container__overflow {
+    width: 60%;
+    left: 15%;
   }
 }

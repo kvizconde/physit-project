@@ -1,3 +1,21 @@
+/*
+----------------------------------------------------------------------------------
+
+README: The Following CSS file Has Been Created by KEVIN VIZCONDE
+
+Original and Final Revision/Design: Kevin Vizconde
+
+----------------------------------------------------------------------------------
+*/
+
+html {
+  min-height: 100vh;
+}
+
+body {
+  height: 100%;
+}
+
 #timelineActive .icon_title {
   color: var(--primaryYellow);
   text-shadow: 0 0 1.5rem rgba(var(--yellowGlow), 1);
@@ -6,4 +24,21 @@
 #timelineActive .icon--nav {
   filter: invert(69%) sepia(93%) saturate(1025%) hue-rotate(0deg) brightness(105%) contrast(108%)
     drop-shadow(0 0 1.5rem rgba(var(--yellowGlow), .6));
+}
+
+.timeline_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90%;
+  width: 100%;
+  flex: 1 0 80%;
+  position: relative;
+  background: url(../img/progress_ring.png) no-repeat center fixed;
+  background-size: 45%;
+  filter: drop-shadow(0 0 2rem rgba(var(--blueGlow), .6));
+}
+
+.navigation_container {
+  flex: 1 0 10%;
 }
