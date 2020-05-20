@@ -22,7 +22,7 @@ Roles:
   • Worked on single exercise card layout, modifying spacing etc.
 
 
-Back-End: Daniel Chu / Benson Wang
+Back-End: Benson Wang
 Roles:
   • Grabbing data from the database and dynamically parsing data into inputs
   • Saving exercises to the database
@@ -61,6 +61,14 @@ Roles:
     {{/each}}
   </section>
   <section class="cart-container">
+    <div class="cart-row">
+      <div class="cart-item-header">EXERCISES</div>
+      {{!-- <span class="cart-equipment cart-header cart-column">EQUIPMENT</span> --}}
+      <div class="cart-quantity-header">Reps</div>
+      <div class="cart-quantity-header">Sets</div>
+      <div class="cart-quantity-header"></div>
+      {{!-- <span class="cart-quantity cart-header cart-column"></span> --}}
+    </div>
     <form method="POST" action="/exercise">
       {{#if assignedExercises}}
       <div class="cart-items">

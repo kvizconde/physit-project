@@ -16,14 +16,14 @@ function getAllExercises(patientID) {
   db.execute(`SELECT * FROM patientexerciseslist WHERE patientID = ${patientID};`);
 }
 
-function getAppointmentDetail(patientID, appointmentID) {
+async function getAppointmentDetail(patientID, appointmentID) {
   return db.execute(
     `SELECT bodypart FROM appointmentdetail WHERE patientID = ${patientID} AND
      appointmentID = ${appointmentID};`,
   );
 }
 
-function generateExercises(bodypart) {
+async function generateExercises(bodypart) {
   return db.execute(
     `SELECT * FROM exercise WHERE bodypart = "${bodypart}" ORDER BY RAND() LIMIT 9`,
   );

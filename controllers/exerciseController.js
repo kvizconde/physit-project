@@ -6,8 +6,10 @@ exports.getExercise = async (req, res) => {
     // Checks if the patient currently has exercises assigned
     const exerciseList = await exerciseModel.getPatientExerciseList(req.session.patientID);
 
+    console.log(exerciseList[0][0]);
+
     // If there are current exercises, load them
-    if (exerciseList) {
+    if (exerciseList[0][0] !== undefined) {
       req.session.exerciseList = exerciseList[0];
 
       const bodypart = await exerciseModel.getAppointmentDetail(
@@ -33,7 +35,7 @@ exports.getExercise = async (req, res) => {
           patient: req.session.patientInfo,
           appointmentID: req.session.appointmentID,
           patientID: req.session.patientID,
-          exercises: req.session.exercises,
+          exercises: exercises[0],
           bodypart: req.session.bodypart,
           title: 'Exercises',
           exerciseJSCSS: true,
