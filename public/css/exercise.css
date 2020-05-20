@@ -148,7 +148,7 @@ body {
 
 .single-exercise-image {
   width: 100%;
-  filter: sepia(1) saturate(1.5) invert(1) brightness(1.4);
+  /* filter: sepia(1) saturate(1.5) invert(1) brightness(1.4); */
   transition: .2s ease-in-out;
 }
 
@@ -183,6 +183,22 @@ body {
 
 .btn:hover {
   cursor: pointer;
+}
+
+.btn-assign {
+  height: 4rem;
+  width: 20rem;
+  background-color: var(--orangeYellow);
+  box-shadow: 0 0 1.2rem rgba(var(--yellowGlow), .5);
+  border-radius: .6rem;
+  transition: .2s ease-out;
+  padding: 0 3pt 0 3pt;
+}
+
+.assign-btn-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .add-exercise-btn {
@@ -224,6 +240,14 @@ body {
   padding: 2rem;
   width: 100%;
 }
+
+/* .cart-column1 {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  padding: 2rem;
+  width: 100%;
+} */
 
 .cart-header {
   font-size: 2rem;
@@ -281,6 +305,11 @@ body {
 }
 
 .cart-quantity {
+  width: 15%;
+  padding: 1rem;
+}
+
+.cart-quantity1 {
   width: 15%;
   padding: 1rem;
 }

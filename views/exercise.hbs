@@ -22,7 +22,7 @@ Roles:
   • Worked on single exercise card layout, modifying spacing etc.
 
 
-Back-End: Benson Wang
+Back-End: Daniel Chu, Benson Wang
 Roles:
   • Grabbing data from the database and dynamically parsing data into inputs
   • Saving exercises to the database
@@ -48,7 +48,8 @@ Roles:
   <section class="exercise-container">
     {{#each exercises}}
     <div class="single-exercise">
-      <input value="{{ this.exerciseID }}" type="hidden" name="exerciseID" />
+      <input type="hidden" class="single-exerciseID" value="{{this.exerciseID}}" />
+
       <img class="single-exercise-image" src="{{ this.thumbnail }}" />
       <h1 class="single-exercise-title">{{ this.title }}</h1>
       <div class="single-exercise-details">
@@ -61,15 +62,33 @@ Roles:
   </section>
   <section class="cart-container">
     <form method="POST" action="/exercise">
-      <div class="cart-row">
-        <div class="cart-item-header">EXERCISES</div>
-        <div class="cart-quantity-header">Reps</div>
-        <div class="cart-quantity-header">Sets</div>
-        <div class="cart-quantity-header"></div>
+      {{#if assignedExercises}}
+      <div class="cart-items">
+        {{#each currentExerciseList}}
+        <div class="cart-row">
+        <div class="cart-item cart-column">
+          <span class="cart-item-title">{{this.title}}</span>
+          <input type="hidden" value="{{this.title}}" name="title" />
+          <input type="hidden" value="{{this.exerciseID}}" name="exerciseID" />
+        </div>
+        <div class="cart-quantity cart-column">
+          <input class="cart-quantity-input" name="reps" type="number" value="{{this.repetitions}}">
+        </div>
+        <div class="cart-quantity cart-column">
+          <input class="cart-quantity-input" name="sets" type="number" value="{{this.sets}}">
+        </div>
+        <div class="cart-quantity cart-column">
+          <button class="btn btn-remove" type="button">x</button>
+        </div>
+        </div>
+        {{/each}}
       </div>
-
+      {{else}}
       <div class="cart-items"></div>
-      <button type="submit" onclick="getExercises(this)">ASSIGN TO PATIENT</button>
+      {{/if}}
+      <div class="assign-btn-div">
+      <button type="submit" class="btn btn-assign">ASSIGN TO PATIENT</button>
+      </div>
     </form>
   </section>
   {{/if}}
