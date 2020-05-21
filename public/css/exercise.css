@@ -235,7 +235,7 @@ body {
   margin-top: 3%;
   height: 75%;
   width: 100%;
-  padding: 4rem 0;
+  padding: 4rem 2rem;
   flex: 1 0 30%;
   overflow-x: hidden;
 }
@@ -372,8 +372,9 @@ body {
   }
 
   .cart-container {
-    margin-top: 8%;
-    padding: 1rem;
+    margin-top: 5rem;
+    padding: 2.5rem 1.5rem;
+    height: 85%;
   }
 
   .cart-column {
