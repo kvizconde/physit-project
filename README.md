@@ -7,9 +7,13 @@
 # The Future of Physio
 Phys-it provides physiotherapy clinics a visual way to handle patient profiles. At its core, Phys-it features an intuitive and accurate **3D human model** to enter diagnostics for patients.
 
-Phys-it’s goal is to innovate and improve how physiotherapists communicate with patients. By having 3D visuals, physiotherapists have the ability to show patients their injury visually and help them understand the scope of their injury.
+Phys-it’s goal is to innovate and improve how physiotherapists communicate with patients. By having 3D visuals, physiotherapists can help their patients understand the scope of their injury.
 
 Additionally, when symptoms and diagnosis are saved, a list of exercises will be auto-generated based on the entered diagnosis.
+
+<br/>
+
+**Visit: http://www.physit.tech**
 
 <br/>
 
