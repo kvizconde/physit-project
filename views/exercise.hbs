@@ -19,6 +19,7 @@ Revision 1: Kevin Vizconde
 Roles:
   • Updated color scheme on cards, buttons etc.
   • Added card hover effects, glows etc.
+  • Made design more responsive with flexbox and media queries for ipad
   • Worked on single exercise card layout, modifying spacing etc.
 
 
@@ -61,6 +62,13 @@ Roles:
     {{/each}}
   </section>
   <section class="cart-container">
+    <div class="cart-row">
+      <div class="cart-item-header">EXERCISES</div>
+      <div class="cart-quantity-header">Reps</div>
+      <div class="cart-quantity-header">Sets</div>
+      <div class="cart-quantity-header"></div>
+      {{!-- <span class="cart-quantity cart-header cart-column"></span> --}}
+    </div>
     <div class="cart-wrapper">
       <form method="POST" action="/exercise">
         {{#if assignedExercises}}
