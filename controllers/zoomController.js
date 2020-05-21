@@ -109,12 +109,3 @@ const parseInjuryData = info => {
     throw error;
   }
 };
-
-// LOCAL - DON'T TOUCH
-// exports.getShoulder = (req, res) => {
-//   res.render('shoulder', {
-//     title: 'Shoulder',
-//     homepageJSCSS: true,
-//     zoomJSCSS: true,
-//   });
-// };
