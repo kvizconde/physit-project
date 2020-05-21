@@ -1,0 +1,84 @@
+{{!
+----------------------------------------------------------------------------------
+
+README: The Following HBS partial Has Been Created by KEVIN VIZCONDE
+
+Front-End: Kevin Vizconde
+
+Back-End: Daniel Chu / Benson Wang
+Roles:
+  • Grabbing data from the database and dynamically parsing data into inputs
+
+
+Final Revision and Design: Kevin Vizconde
+Roles:
+  • Setting up skeleton and structure
+  • Setting up if/else/unless statements for css/js files to be used
+  • Finalizing structure and design
+  • Finalizing user experience/interactions
+
+----------------------------------------------------------------------------------
+}}
+
+<div class="header-wrapper">
+  <!-- patient info  -->
+  <div class="patient_container" id="patientDiv">
+    <!-- FOR PHYSIO -->
+    {{# if patientListJSCSS }}
+    <h1 class="patient_container__name patient--color">
+      Welcome {{ physiotherapist.firstName }} {{ physiotherapist.lastName }}
+    </h1>
+    <!-- ./FOR PHYSIO -->
+    {{ else }}
+    <h1 class="patient_container__name patient--color">
+      {{ patient.firstName }} {{ patient.lastName }}
+    </h1>
+    {{/ if }}
+    {{# if exerciseJSCSS }}
+    <p class="patient_container__exercise">
+      <span class="patient--color">{{ bodypart.bodypart }}</span
+      >&nbsp; exercises
+    </p>
+    {{/ if}}
+    {{# if zoomJSCSS }}
+    <p class="patient_container__bodypart" id="shoulderView">
+      <span class="patient--color">SHOULDER</span>
+    </p>
+    <p class="patient_container__bodypart" id="kneeView">
+      <span class="patient--color">KNEE</span>
+    </p>
+    {{ else }}
+    <p class="patient_container__info">
+      <span class="patient--color">{{ patient.age }}</span
+      >&nbsp; years old
+    </p>
+    <p class="patient_container__info">
+      <span class="patient--color">{{ patient.weight }}</span
+      >&nbsp; lbs
+    </p>
+    <p class="patient_container__info">
+      <span class="patient--color">{{ patient.height }}</span
+      >&nbsp; cm
+    </p>
+    {{/ if }}
+  </div>
+  <!-- ./patient info -->
+
+  <div class="header_navigation_container">
+    <!-- logout -->
+    <div class="logout_container">
+      <button onclick="location.href='/'" type="button" id="logout" class="logout_container__bttn">
+        Logout
+      </button>
+    </div>
+    <!-- ./logout -->
+    {{# unless patientListJSCSS }}
+    <a href="javascript:history.back()" class="backArrow_container__link">
+      <div class="backArrow_container">
+        <img class="backArrow--size" src="img/icon_back.png" alt="left arrow" />
+        <h2 class="backArrow_text">Back</h2>
+      </div>
+    </a>
+    {{/ unless }}
+  </div>
+</div>

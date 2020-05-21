@@ -1,0 +1,305 @@
+/*
+----------------------------------------------------------------------------------
+
+README: The Following CSS file Has Been Created by KEVIN VIZCONDE
+
+Original and Final Revision/Design: Kevin Vizconde
+
+----------------------------------------------------------------------------------
+*/
+
+html {
+  min-height: 100vh;
+}
+
+body {
+  height: 100%;
+}
+
+#homeActive .icon_title {
+  color: var(--primaryYellow);
+  text-shadow: 0 0 1.5rem rgba(var(--yellowGlow), 1);
+}
+
+#homeActive .icon--nav {
+  filter: invert(69%) sepia(93%) saturate(1025%) hue-rotate(0deg) brightness(105%) contrast(108%)
+    drop-shadow(0 0 1.5rem rgba(var(--yellowGlow), .6));
+}
+
+.human_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90%;
+  width: 100%;
+  flex: 1 0 75%;
+  position: relative;
+}
+
+.patient_container__bodypart {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.patient_container__exercise {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.iframe-container__overflow {
+  height: 95vh;
+  width: 55%;
+  position: relative;
+  overflow: hidden;
+  left: 10%;
+  filter: drop-shadow(0 0 3rem rgba(var(--blueGlow), .5));
+}
+
+.iframe-container--size {
+  height: 115%;
+  width: 140%;
+  position: absolute;
+  margin: -8% -20% -20% -10%;
+  filter: invert(1) sepia(10%) saturate(165%) hue-rotate(15deg) brightness(1.1);
+}
+
+/* Input Area for Symptoms/Diagnosis */
+
+.input_container {
+  z-index: 1;
+  left: 0;
+  top: 10%;
+  position: absolute;
+  height: 55rem;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  border: .25rem solid var(--orangeYellow);
+  box-shadow: 0 0 1rem rgba(var(--yellowGlow), .75);
+  border-radius: 1.2rem;
+  background: rgba(var(--inputBox), .4);
+  transform: translateX(-120%);
+}
+
+.input_container__form {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+textarea::-webkit-scrollbar {
+  background-color: var(--midBlue);
+  width: .75rem;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background-color: var(--textBlue);
+  box-shadow: 0 0 1rem rgba(var(--blueGlow), 1);
+}
+
+.input_container__form textarea {
+  resize: none;
+  background-color: transparent;
+  padding: 1rem;
+  color: var(--textBlue);
+  font-size: 1.6rem;
+  font-weight: 300;
+  width: 100%;
+  text-shadow: 0 0 1rem rgba(var(--blueGlow), .5);
+  transition: .12s ease-out;
+  overflow: hidden;
+  height: 15rem;
+  border: .1rem solid rgba(0, 0, 0, 0);
+}
+
+textarea::placeholder {
+  font-size: 1.4rem;
+  text-transform: capitalize;
+  text-shadow: none;
+  text-align: center;
+  line-height: 12rem;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: var(--textBlue);
+  box-shadow: 0 0 1rem rgba(var(--blueGlow), .8);
+  transition: .15s ease-out;
+  overflow: visible;
+  border: .1rem solid var(--textBlue);
+}
+
+hr {
+  margin: 3rem auto;
+  color: rgb(255, 255, 255, .35);
+  border-style: none;
+  border-top: solid;
+  border-width: .1rem;
+  width: 75%;
+}
+
+.form__label {
+  font-weight: 300;
+  font-size: 2.5rem;
+  letter-spacing: .14rem;
+  color: var(--primaryYellow);
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  transition: .45s ease-out;
+}
+
+#labelGlow {
+  text-shadow: 0 0 1.5rem rgba(var(--yellowGlow), .9);
+  filter: saturate(1.1) brightness(1.05);
+  transition: .15s ease-out;
+}
+
+/* Form Buttons */
+
+.form__bttn {
+  top: 116%;
+  left: 50%;
+  transform: translate(-50%, -116%);
+  z-index: 1;
+  position: absolute;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: .1rem;
+  width: 12rem;
+  height: 4rem;
+  text-align: center;
+  color: var(--primaryWhite);
+  text-shadow: rgba(var(--boxShadows), .25) .15rem .3rem .3rem;
+  background-color: var(--orangeYellow);
+  box-shadow: 0 0 1.2rem rgba(var(--yellowGlow), .5);
+  border-radius: .6rem;
+  transition: .2s ease-out;
+}
+
+.form__bttn:hover {
+  cursor: pointer;
+  background-color: var(--primaryYellow);
+  box-shadow: 0 0 1.6rem rgba(var(--yellowGlow), .9);
+  transition: .2s ease-out;
+}
+
+.bttn--clear {
+  z-index: -1;
+  background-color: var(--primaryGray);
+  box-shadow: none;
+  text-align: left;
+  width: 10rem;
+  padding-left: 1.5rem;
+  margin-left: -5rem;
+}
+
+.bttn--clear:hover {
+  background-color: var(--primaryRed);
+  box-shadow: 0 0 1.6rem var(--redGlow);
+  margin-left: -9rem;
+}
+
+.bttn--clear:hover span {
+  display: none;
+}
+
+.bttn--clear:hover::before {
+  content: "clear";
+}
+
+/* media query for ipad */
+@media all and (device-width: 1024px) and (device-height: 768px) and (orientation: landscape) {
+
+  .input_container {
+    height: 45rem;
+    width: 35%;
+  }
+
+  .form__label {
+    font-size: 2rem;
+    margin-bottom: 0;
+  }
+
+  hr {
+    margin: 2rem auto;
+  }
+
+  textarea::placeholder {
+    font-size: 1.1rem;
+  }
+
+  .input_container__form textarea {
+    font-size: 1.4rem;
+    height: 14rem;
+  }
+
+  .form__bttn {
+    font-size: 1.2rem;
+    width: 8rem;
+    top: 120%;
+    transform: translate(-50%, -120%);
+  }
+
+  .bttn--clear {
+    width: 8rem;
+    margin-left: -4rem;
+  }
+
+  .bttn--clear:hover {
+    margin-left: -5rem;
+  }
+
+  .bttn--clear:hover span {
+    display: inline;
+  }
+
+  .bttn--clear:hover::before {
+    content: "";
+  }
+
+  .iframe-container__overflow {
+    width: 60%;
+    left: 15%;
+  }
+}
+
+/* iPad Pro Landscape media query */
+@media only screen and (min-device-width: 1366px) and (max-device-height: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+
+  .input_container {
+    width: 35%;
+  }
+
+  .form__bttn {
+    font-size: 1.4rem;
+    width: 10rem;
+  }
+
+  .bttn--clear {
+    width: 9rem;
+    margin-left: -5rem;
+    padding-left: 2rem;
+  }
+
+  .bttn--clear:hover {
+    margin-left: -8rem;
+    padding-left: 1.5rem;
+  }
+
+  .bttn--clear:hover span {
+    display: hidden;
+  }
+
+  .bttn--clear:hover::before {
+    content: "clear";
+  }
+
+  .iframe-container__overflow {
+    width: 60%;
+    left: 15%;
+  }
+}

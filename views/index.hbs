@@ -1,1 +1,63 @@
-<h1>💪 PHYS-IT! 👩‍⚕️</h1>
+{{!
+----------------------------------------------------------------------------------
+
+README: The Following HBS file Has Been Created by KEVIN VIZCONDE
+
+Front-End: Kevin Vizconde
+
+Back-End: Daniel Chu / Benson Wang
+Roles:
+  • Handling login authentication
+
+
+Final Revision and Design: Kevin Vizconde
+Roles:
+  • Setting up skeleton and structure
+  • Finalizing structure and design
+  • Finalizing user experience/interactions
+
+----------------------------------------------------------------------------------
+}}
+<main class="main-container">
+  <!-- particles.js container -->
+  <div id="particles-js"></div>
+  <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+  <!--Log-in entry goes here -->
+  <section class="login_container">
+    <div class="form_wrapper">
+      <form class="login_container__form" method="POST" action="/">
+        <img class="login_container__logo" src="img/physit_logo.png" alt="Phys-it Logo" />
+        <table class="login_container__table">
+          <tr>
+            <th>
+              <h2 id="signin" class="table--active" onclick="onSignIn()">
+                <a href="#">sign in</a>
+              </h2>
+            </th>
+            <th>
+              <h2 id="signup"><a onclick="onSignUp()" href="#">sign up</a></h2>
+            </th>
+          </tr>
+        </table>
+
+        {{#if userError}}
+        <input id="wrong_account" type="text" name="physioID" placeholder="invalid account!" required />
+        {{else}}
+        <input type="text" name="physioID" placeholder="physio ID" required />
+        {{/if}}
+
+        {{#if passwordError}}
+        <input id="wrong_password" type="password" name="password" placeholder="wrong password, try again!" required />
+        {{else}}
+        <input id="password" type="password" name="password" placeholder="password" required />
+        {{/if}}
+        <button id="signBttn" class="login_container__bttn signin" type="submit">sign in</button>
+        <button class="login_container__bttn google" type="button">
+          <img class="googleIcon" src="img/google.png" />
+          <span class="google_signIn">sign in with google </span>
+        </button>
+      </form>
+    </div>
+  </section>
+</main>

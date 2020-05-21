@@ -1,1 +1,363 @@
-/* test */
+/*
+----------------------------------------------------------------------------------
+
+README: The Following CSS file Has Been Created by KEVIN VIZCONDE
+
+• Setup Color Scheme / Variables
+• Setup Browser Border Box Reset
+• Setup Global Font-Size so that 10px = 1rem instead of (16px = 1rem)
+• Setup entire structure for this stylesheet
+
+Original and Final Revision/Design: Kevin Vizconde
+
+----------------------------------------------------------------------------------
+*/
+
+/* MASTER CSS FILE */
+
+/* COLOURS */
+/*
+#FFCE00
+#fdc406
+#ffaf00
+#ff4566
+#FF5767
+#2EC5E6
+#0765af
+#0c3867
+#020f28
+*/
+/* ./COLOURS */
+
+/* VARIABLES */
+
+:root {
+  /* Text Variables */
+  --bgLight: #eee;
+  --primaryWhite: #fff;
+  --primaryBlack: #111;
+  --primaryGray: #9b9b9b;
+  --primaryYellow: #ffce00;
+  --secondaryYellow: #fdc406;
+  --orangeYellow: #ffaf00;
+  --primaryRed: #ff4566;
+  --redGlow: #ff5767;
+  --primaryBlue: #0765af;
+  --textBlue: #2ec5e6;
+  --midBlue: #0c3867;
+  --googleBlue: #518ef8;
+  --inputBox: 24, 45, 64;
+  --boxShadows: 51, 51, 51;
+  --yellowGlow: 255, 206, 0;
+  --blueGlow: 123, 169, 250;
+  --headingDark: #020f28;
+}
+
+/* ./VARIABLES */
+
+/* Browser Reset added by Kevin Vizconde */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+/* End of Browser Reset */
+
+body {
+  padding: 2.5rem;
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+  background: radial-gradient(110vw 100vh at bottom, #0765af 5%, #0c3867 25%, #020f28 60%) center /
+    cover;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: var(--primaryWhite);
+}
+
+.home-container {
+  display: flex;
+  flex-wrap: wrap;
+  height: 95vh;
+  padding: 1rem;
+}
+
+/* Reset Elements */
+
+select {
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background-image: none;
+}
+
+button {
+  border: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ./END-Reset Elements */
+
+/* Patient Header */
+
+.header-wrapper {
+  height: 5%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.patient_container {
+  flex: 1 0 50%;
+  align-self: flex-start;
+}
+
+.patient_container > * {
+  font-weight: 300;
+  height: auto;
+}
+
+.patient_container__name {
+  letter-spacing: .2rem;
+  text-transform: uppercase;
+  display: inline-block;
+  width: 100%;
+}
+
+.patient_container__info {
+  font-size: 2rem;
+  color: var(--primaryGray);
+  display: none;
+}
+
+.patient--color {
+  color: var(--textBlue);
+}
+
+.header_navigation_container {
+  margin-top: 1rem;
+  height: 100%;
+}
+
+.logout_container__bttn {
+  flex: 1 0 50%;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 700;
+  width: 10rem;
+  height: 4rem;
+  text-align: center;
+  color: var(--primaryWhite);
+  background-color: var(--primaryRed);
+  text-shadow: rgba(var(--boxShadows), .25) .15rem .3rem .3rem;
+  border-radius: .6rem;
+}
+
+.logout_container__bttn:hover {
+  cursor: pointer;
+}
+
+/* ./END of Patient Header */
+
+/* Navigation Bar */
+
+.navigation_container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 90%;
+  flex: 1 0 25%;
+  width: 50%;
+}
+
+.navigation_container__contain {
+  height: 50rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation_container__icon {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem 0;
+}
+
+#shoulderView {
+  display: none;
+}
+
+#kneeView {
+  display: none;
+}
+
+#preloader {
+  visibility: hidden;
+}
+
+.icon--nav {
+  width: 8rem;
+  filter: invert(1);
+}
+
+.icon_title {
+  margin-top: 1.5rem;
+  font-weight: 300;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: .15rem;
+}
+
+.navigation_container__link:hover .icon_title {
+  text-shadow: 0 0 .5rem var(--primaryWhite), 0 0 1rem var(--primaryWhite),
+    0 0 1.5rem var(--primaryYellow), 0 0 2rem var(--primaryYellow), 0 0 2.5rem var(--primaryYellow),
+    0 0 3rem var(--primaryYellow), 0 0 3.5rem var(--primaryYellow);
+  transition: .12s ease-out;
+}
+
+.navigation_container__link:hover .icon--nav {
+  filter: invert(69%) sepia(93%) saturate(1025%) hue-rotate(0deg) brightness(105%) contrast(108%)
+    drop-shadow(0 0 2.5rem rgba(var(--yellowGlow), 1));
+  transition: .12s ease-out;
+}
+
+/* ./END of Navigation Bar */
+
+/* GLOBAL FOOTER */
+
+.backArrow_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4rem;
+  width: 7.5rem;
+  position: absolute;
+  z-index: 1;
+  transition: .2s ease-out;
+}
+
+.backArrow--size {
+  filter: invert(1);
+  width: 2rem;
+}
+
+.backArrow_text {
+  font-size: inherit;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: var(--primaryGray);
+  margin-top: .1rem;
+}
+
+.backArrow_container__link:hover .backArrow--size {
+  filter: invert(69%) sepia(93%) saturate(1025%) hue-rotate(0deg) brightness(105%) contrast(108%)
+    drop-shadow(0 0 2.5rem rgba(var(--yellowGlow), 1));
+  transition: .12s ease-out;
+}
+
+.footer_logo {
+  height: 6rem;
+}
+
+footer {
+  clear: both;
+  position: relative;
+  margin-top: -8rem;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 8rem;
+}
+
+/* ./END-GLOBAL FOOTER */
+
+/* media query for smaller monitors */
+@media (max-width: 1024px) {
+
+  .home-container {
+    height: 95vh;
+  }
+}
+
+/* media query for ipad */
+@media all and (device-width: 1024px) and (device-height: 768px) and (orientation: landscape) {
+
+  body {
+    padding: 1.5rem;
+  }
+
+  .home-container {
+    height: 90vh;
+  }
+
+  .navigation_container__contain {
+    height: 40rem;
+  }
+
+  .patient_container__name {
+    font-size: 2.5rem;
+  }
+
+  .patient_container__info {
+    font-size: 1.5rem;
+  }
+
+  .icon--nav {
+    width: 6rem;
+  }
+
+  .icon_title {
+    font-size: 1.2rem;
+  }
+
+  .logout_container__bttn {
+    font-size: 1.2rem;
+    width: 8rem;
+    height: 3.5rem;
+  }
+
+  .footer_logo {
+    height: 5rem;
+  }
+
+  footer {
+    margin-top: -1rem;
+  }
+
+  .backArrow_container {
+    margin-top: 3rem;
+    width: 6rem;
+  }
+
+  .backArrow--size {
+    width: 1.5rem;
+  }
+
+  .backArrow_text {
+    font-size: 1.4rem;
+  }
+}

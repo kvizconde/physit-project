@@ -1,0 +1,408 @@
+/*
+--------------------------------------------------------------------------------------
+
+README:
+
+The Following CSS file Has Been created by KEVIN VIZCONDE at the start of the project.
+
+This file has been worked on and modified by the following people:
+
+Original Exercise Skeleton/Layout/Design: Ringo Suen
+Roles:
+  • Setting up the code structure for exercise view - naming conventions, etc.
+  • Setting up the layout for exercise view
+  • Setting up basic spacing, colors etc.
+
+
+Revision 1: Kevin Vizconde
+Roles:
+  • Color scheme updated to make it look more futuristic
+  • Worked on single exercise card (spacing, colors, borders, etc)
+  • Moved right scroll-bar to the left for the exercise container area
+  • Modified exercise container area to be more responsive
+  • Adjusted layout/sizes for iPad media query
+  • Fixed spacing in cart-container area, created a cart-wrapper
+    for more responsive design.
+
+
+Final Revision/Structure Design: Ringo Suen
+Roles:
+  • Final css naming conventions/structure
+  • Final exercise design/layout
+  • Final revision for file
+
+--------------------------------------------------------------------------------------
+*/
+
+/* Basic View Template/Structure - Kevin Vizconde */
+
+html {
+  min-height: 100vh;
+}
+
+body {
+  height: 100%;
+}
+
+#exerciseActive .icon_title {
+  color: var(--primaryYellow);
+  text-shadow: 0 0 1.5rem rgba(var(--yellowGlow), 1);
+}
+
+#exerciseActive .icon--nav {
+  filter: invert(69%) sepia(93%) saturate(1025%) hue-rotate(0deg) brightness(105%) contrast(108%)
+    drop-shadow(0 0 1.5rem rgba(var(--yellowGlow), .6));
+}
+
+.patient_container__exercise {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.home-container {
+  justify-content: center;
+}
+
+.navigation_container {
+  flex: 1 0 10%;
+}
+
+/* ./END Basic View Template/Structure */
+
+/* Exercise Area */
+
+#no-exercises {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+/* START OF RINGO'S CSS */
+
+.exercise-container {
+  display: flex;
+  height: 75%;
+  width: 100%;
+  flex: 1 0 50%;
+  margin-top: 3%;
+  margin-right: .5%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  direction: rtl;
+  padding: 2rem;
+}
+
+.exercise-container::-webkit-scrollbar {
+  background-color: transparent;
+  width: .75rem;
+}
+
+.exercise-container::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background-color: transparent;
+}
+
+.exercise-container:hover {
+  overflow-y: auto;
+}
+
+.exercise-container:hover::-webkit-scrollbar-thumb {
+  background-color: var(--midBlue);
+}
+
+.single-exercise {
+  margin: 2rem 1rem;
+  padding: 1.4rem;
+  letter-spacing: .15rem;
+  border: .25rem solid var(--orangeYellow);
+  box-shadow: 0 0 1rem rgba(var(--yellowGlow), .75);
+  border-radius: 1.2rem;
+  background: rgba(var(--inputBox), .4);
+  transition: .25s ease-in-out;
+  width: 30rem;
+  height: 35rem;
+}
+
+.single-exercise:hover {
+  background: var(--headingDark);
+  box-shadow: 0 0 3rem rgba(var(--yellowGlow), 1);
+  backface-visibility: hidden;
+  transition: .25s ease-in-out;
+}
+
+.single-exercise-title {
+  font-weight: 400;
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  text-transform: capitalize;
+  margin: 1.5rem 0 2.5rem;
+  color: var(--textBlue);
+  transition: .25s ease-in-out;
+}
+
+.single-exercise:hover .single-exercise-title {
+  text-shadow: 0 0 1rem rgba(var(--blueGlow), 1);
+  backface-visibility: hidden;
+  transition: .25s ease-out;
+}
+
+.single-exercise-image {
+  width: 100%;
+  transition: .2s ease-in-out;
+}
+
+.single-exercise-image:hover {
+  transform: scale(1.4) translateY(-8%);
+  cursor: zoom-in;
+  transition: .25s ease-out;
+}
+
+.single-exercise-details {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.single-exercise-equipment {
+  font-size: 1.2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  flex-grow: 1;
+}
+
+.btn {
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-shadow: rgba(var(--boxShadows), .25) .15rem .3rem .3rem;
+  color: var(--primaryWhite);
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn-assign {
+  height: 4rem;
+  width: 20rem;
+  background-color: var(--orangeYellow);
+  box-shadow: 0 0 1.2rem rgba(var(--yellowGlow), .5);
+  border-radius: .6rem;
+  transition: .2s ease-out;
+  padding: 0 3pt 0 3pt;
+}
+
+.btn-assign:hover {
+  background-color: var(--primaryYellow);
+  box-shadow: 0 0 1.6rem rgba(var(--yellowGlow), .9);
+  transition: .2s ease-out;
+}
+
+.assign-btn-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-exercise-btn {
+  height: 4rem;
+  width: 10rem;
+  background-color: var(--orangeYellow);
+  box-shadow: 0 0 1.2rem rgba(var(--yellowGlow), .5);
+  border-radius: .6rem;
+  transition: .2s ease-out;
+  padding: 0 3pt 0 3pt;
+}
+
+.add-exercise-btn:hover {
+  background-color: var(--primaryYellow);
+  box-shadow: 0 0 1.6rem rgba(var(--yellowGlow), .9);
+  transition: .2s ease-out;
+}
+
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3%;
+  height: 75%;
+  width: 100%;
+  padding: 4rem 2rem;
+  flex: 1 0 30%;
+  overflow-x: hidden;
+}
+
+.cart-wrapper {
+  border: .25rem solid var(--orangeYellow);
+  box-shadow: 0 0 1rem rgba(var(--yellowGlow), .75);
+  border-radius: 1.2rem;
+  background: rgba(var(--inputBox), .4);
+  height: 100%;
+  width: 100%;
+}
+
+.cart-column {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  padding: 2rem;
+  width: 100%;
+}
+
+.cart-header {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--orangeYellow);
+  margin-left: 5em;
+  width: 100%;
+}
+
+.cart-row {
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.btn-send {
+  display: none;
+  margin: 40px auto 80px auto;
+  font-size: 1.75em;
+}
+
+.cart-item {
+  flex: 1 0 50%;
+}
+
+.cart-item-header {
+  letter-spacing: .15rem;
+  width: 80%;
+  margin-left: 2.2rem;
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--textBlue);
+}
+
+.cart-quantity-header {
+  letter-spacing: .05rem;
+  width: 21%;
+  font-weight: 500;
+  font-size: 2rem;
+  color: var(--textBlue);
+}
+
+.btn-remove {
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  text-align: center;
+  color: var(--primaryWhite);
+  background-color: var(--primaryRed);
+  text-shadow: rgba(var(--boxShadows), .25) .15rem .3rem .3rem;
+  border-radius: 100%;
+  padding: .2rem;
+}
+
+.cart-quantity {
+  width: 15%;
+  padding: 1rem;
+}
+
+.cart-quantity1 {
+  width: 15%;
+  padding: 1rem;
+}
+
+.cart-quantity-input {
+  height: 4rem;
+  width: 4rem;
+  border-radius: .5rem;
+  border: none;
+  background-color: var(--bgLight);
+  color: var(--headingDark);
+  text-align: center;
+  font-size: 1.2em;
+}
+
+/* media query for ipad */
+@media all and (device-width: 1024px) and (device-height: 768px) and (orientation: landscape) {
+
+  .exercise-container {
+    height: 85%;
+    margin-top: 5rem;
+    padding: .5rem;
+  }
+
+  .single-exercise {
+    width: 20rem;
+    height: 30rem;
+    position: relative;
+  }
+
+  .single-exercise-title {
+    font-size: 1.4rem;
+    margin-bottom: 0;
+    margin-top: .5rem;
+  }
+
+  .single-exercise-details {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    bottom: 2rem;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .add-exercise-btn {
+    height: 3rem;
+    width: 10rem;
+    font-size: 1rem;
+  }
+
+  .cart-container {
+    margin-top: 5rem;
+    padding: 2.5rem 1.5rem;
+    height: 85%;
+  }
+
+  .cart-column {
+    padding: 1rem;
+  }
+
+  .cart-item-title {
+    font-size: 1.2rem;
+  }
+
+  .cart-item-header {
+    font-size: 1.5rem;
+    margin-left: 1rem;
+  }
+
+  .cart-quantity-header {
+    font-size: 1.5rem;
+  }
+
+  .cart-quantity-input {
+    height: 3rem;
+    width: 3rem;
+    font-size: 1.2rem;
+  }
+
+  .btn-remove {
+    font-size: 1.2rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}

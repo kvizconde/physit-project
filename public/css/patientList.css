@@ -1,0 +1,206 @@
+/*
+----------------------------------------------------------------------------------
+
+README: The Following CSS file Has Been Modified by KEVIN VIZCONDE:
+              • Naming convention was changed to Adhere to BEM Standards
+              • Table container was changed to div containers
+              • Layout model converted to Flexbox
+              • Design was changed
+              • Modified user experience interactions
+
+Original Skeleton: Ringo Suen
+Revision 1 and 2: Ringo Suen
+
+Final Revision and Design: Kevin Vizconde
+
+----------------------------------------------------------------------------------
+*/
+
+html {
+  min-height: 100vh;
+}
+
+body {
+  height: 100%;
+}
+
+.patient_container__name {
+  text-shadow: 0 0 1.4rem rgba(var(--blueGlow), .9);
+  filter: brightness(1.5) saturate(1.2) contrast(1.2);
+}
+
+.home-container {
+  justify-content: center;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 85%;
+  width: 95%;
+  overflow-y: scroll;
+  padding: 2rem;
+}
+
+.card-container::-webkit-scrollbar {
+  background-color: transparent;
+  width: .75rem;
+}
+
+.card-container::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background-color: transparent;
+}
+
+.card-container:hover {
+  overflow-y: auto;
+}
+
+.card-container:hover::-webkit-scrollbar-thumb {
+  background-color: var(--headingDark);
+}
+
+.patient-card {
+  margin: 2rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45rem;
+  width: 30rem;
+  padding: 2.5rem;
+  border: .25rem solid var(--orangeYellow);
+  box-shadow: 0 0 1rem rgba(var(--yellowGlow), .75);
+  border-radius: 1.2rem;
+  background: var(--headingDark);
+  font-size: 2rem;
+  transition: .4s ease-in-out;
+  flex: 1 0 30rem;
+}
+
+.patient-card:not(:hover) {
+  background: rgba(var(--inputBox), .4);
+}
+
+.patient-card:hover {
+  box-shadow: 0 0 3rem rgba(var(--yellowGlow), 1);
+  transform: translateY(-2%);
+  backface-visibility: hidden;
+  transition: .35s ease-in-out;
+}
+
+.card-container > .patient-card:first-child {
+  flex: 0 1 100%;
+}
+
+/* icon glows */
+
+.patient-card:hover .timeGlow,
+.patient-card:hover .timeGlowIcon,
+.patient-card:hover .nameGlow,
+.patient-card:hover .nameGlowIcon {
+  backface-visibility: hidden;
+  transition: .2s ease-out;
+}
+
+.patient-card:hover .timeGlow {
+  text-shadow: 0 0 1rem rgba(var(--blueGlow), 1);
+}
+
+.patient-card:hover .timeGlowIcon {
+  filter: invert(53%) sepia(94%) saturate(333%) hue-rotate(143deg) brightness(101%) contrast(102%)
+    drop-shadow(0 0 1rem rgba(var(--blueGlow), 1));
+}
+
+.patient-card:hover .nameGlow {
+  text-shadow: 0 0 1.5rem rgba(var(--yellowGlow), .9);
+  filter: saturate(1.1) brightness(1.05);
+}
+
+.patient-card__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--primaryGray);
+  font-weight: 300;
+}
+
+.align-flex {
+  display: flex;
+  align-items: center;
+}
+
+.avatar-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.patient-card--start {
+  vertical-align: middle;
+  font-size: 2rem;
+}
+
+.patient-card--icon {
+  width: 2rem;
+  filter: invert(100%) sepia(2%) saturate(31%) hue-rotate(109deg) brightness(116%) contrast(87%);
+}
+
+.patient-card--avatar {
+  width: 10rem;
+  margin-bottom: 2rem;
+  filter: invert(69%) sepia(93%) saturate(1025%) hue-rotate(0deg) brightness(105%) contrast(108%);
+}
+
+.patient-card__time {
+  font-weight: 400;
+  color: var(--textBlue);
+}
+
+.patient-card--icon.time {
+  filter: invert(53%) sepia(94%) saturate(333%) hue-rotate(143deg) brightness(101%) contrast(102%);
+}
+
+.patient-card__time,
+.patient-card--icon.time,
+.patient-card__name,
+.patient-card--avatar {
+  transition: .35s ease-in-out;
+}
+
+.patient-card__name {
+  margin: 2.5rem 0;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--primaryYellow);
+  font-size: 2.2rem;
+}
+
+.patient-card__phone {
+  font-size: 1.6rem;
+}
+
+.patient-card__bttn {
+  margin-top: 3rem;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: .1rem;
+  width: 12rem;
+  height: 4rem;
+  text-align: center;
+  color: var(--primaryWhite);
+  text-shadow: rgba(var(--boxShadows), .25) .15rem .3rem .3rem;
+  background-color: var(--orangeYellow);
+  box-shadow: 0 0 1.2rem rgba(var(--yellowGlow), .5);
+  border-radius: .6rem;
+  transition: .2s ease-out;
+}
+
+.patient-card__bttn:hover {
+  cursor: pointer;
+  background-color: var(--primaryYellow);
+  box-shadow: 0 0 1.6rem rgba(var(--yellowGlow), .9);
+  transition: .2s ease-out;
+}
