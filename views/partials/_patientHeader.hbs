@@ -66,11 +66,11 @@ Roles:
 
   <div class="header_navigation_container">
     <!-- logout -->
-    <div class="logout_container">
-      <button onclick="location.href='/'" type="button" id="logout" class="logout_container__bttn">
+    <form class="logout_container" action="/logout" method="POST">
+      <button type="submit" id="logout" class="logout_container__bttn">
         Logout
       </button>
-    </div>
+    </form>
     <!-- ./logout -->
     {{# unless patientListJSCSS }}
     <a href="javascript:history.back()" class="backArrow_container__link">
