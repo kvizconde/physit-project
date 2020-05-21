@@ -10,7 +10,8 @@ function getPatientAppointmentData(physioID, date) {
             INNER JOIN patient p 
                 ON a.patientID = p.patientID
                 WHERE a.physioID = "${physioID}"
-                AND a.appointmentDate = "${date}";`,
+                AND a.appointmentDate = "${date}"
+                ORDER BY appointmentTime ASC;`,
   );
 }
 
