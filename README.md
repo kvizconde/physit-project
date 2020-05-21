@@ -42,6 +42,7 @@ Additionally, when symptoms and diagnosis are saved, a list of exercises will be
 <br/>
 
 ### 😴 Benson Wang (CBO)
+**Roles:**
 - Supporting Back-End Developer
 - Database Admin
 - IT Tech Support
