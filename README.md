@@ -14,6 +14,11 @@ Additionally, when symptoms and diagnosis are saved, a list of exercises will be
 <br/>
 
 **Visit: http://www.physit.tech**
+<br/>
+<br/>
+Demo Login:  
+Username: demo@physit.com  
+Password: demo
 
 <br/>
 
